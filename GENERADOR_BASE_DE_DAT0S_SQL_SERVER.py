@@ -9,599 +9,763 @@ from pygments.formatters import HtmlFormatter
 # Global dictionary of base products
 productos_base = {
    "Videojuegos_y_Consolas": [
-        {"nombre": "PlayStation 5", "categoria": "Consolas", "precio_compra": 500, "precio_venta": 700, "stock": 150},
-        {"nombre": "Xbox Series X", "categoria": "Consolas", "precio_compra": 450, "precio_venta": 650, "stock": 200},
-        {"nombre": "Nintendo Switch", "categoria": "Consolas", "precio_compra": 300, "precio_venta": 450, "stock": 300},
-        {"nombre": "FIFA 24", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 500},
-        {"nombre": "Call of Duty: Modern Warfare III", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 400},
-        {"nombre": "The Legend of Zelda: Tears of the Kingdom", "categoria": "Videojuegos", "precio_compra": 60, "precio_venta": 90, "stock": 350},
-        {"nombre": "Gran Turismo 7", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 70, "stock": 450},
-        {"nombre": "Minecraft", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 600},
-        {"nombre": "Super Mario Odyssey", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 400},
-        {"nombre": "Red Dead Redemption 2", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 500},
-        {"nombre": "Horizon Forbidden West", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 300},
-        {"nombre": "Elden Ring", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 250},
-        {"nombre": "DualSense Wireless Controller", "categoria": "Accesorios", "precio_compra": 60, "precio_venta": 90, "stock": 500},
-        {"nombre": "Xbox Series X Controller", "categoria": "Accesorios", "precio_compra": 50, "precio_venta": 80, "stock": 400},
-        {"nombre": "Nintendo Switch Pro Controller", "categoria": "Accesorios", "precio_compra": 70, "precio_venta": 100, "stock": 350},
-        {"nombre": "Oculus Quest 2", "categoria": "Consolas", "precio_compra": 300, "precio_venta": 450, "stock": 200},
-        {"nombre": "PlayStation VR2", "categoria": "Consolas", "precio_compra": 550, "precio_venta": 800, "stock": 150},
-        {"nombre": "Xbox Game Pass Ultimate", "categoria": "Accesorios", "precio_compra": 10, "precio_venta": 15, "stock": 600},
-        {"nombre": "PlayStation Plus Premium", "categoria": "Accesorios", "precio_compra": 15, "precio_venta": 25, "stock": 550},
-        {"nombre": "Nintendo Switch Online", "categoria": "Accesorios", "precio_compra": 5, "precio_venta": 10, "stock": 700},
-        {"nombre": "Cyberpunk 2077", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 400},
-        {"nombre": "Ghost of Tsushima", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 350},
-        {"nombre": "God of War Ragnarök", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 80, "stock": 300},
-        {"nombre": "Assassin's Creed Valhalla", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 450},
-        {"nombre": "Final Fantasy XVI", "categoria": "Videojuegos", "precio_compra": 60, "precio_venta": 90, "stock": 250},
-        {"nombre": "Demon's Souls", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 500},
-        {"nombre": "Watch Dogs: Legion", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 600},
-        {"nombre": "The Witcher 3: Wild Hunt", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 700},
-        {"nombre": "NBA 2K23", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 300},
-        {"nombre": "Madden NFL 24", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 400},
-        {"nombre": "Street Fighter VI", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 350},
-        {"nombre": "Tekken 7", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 30, "stock": 500},
-        {"nombre": "FIFA 23", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 450},
-        {"nombre": "Super Smash Bros. Ultimate", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 600},
-        {"nombre": "Battlefield 2042", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 550},
-        {"nombre": "Fall Guys", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 40, "stock": 400},
-        {"nombre": "Among Us", "categoria": "Videojuegos", "precio_compra": 10, "precio_venta": 15, "stock": 600},
+        {"nombre": "PlayStation 5", "categoria": "Consolas", "precio_compra": 500, "precio_venta": 700, "stock": 1000},
+        {"nombre": "Xbox Series X", "categoria": "Consolas", "precio_compra": 450, "precio_venta": 650, "stock": 1000},
+        {"nombre": "Nintendo Switch", "categoria": "Consolas", "precio_compra": 300, "precio_venta": 450, "stock": 1000},
+        {"nombre": "FIFA 24", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Call of Duty: Modern Warfare III", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 1000},
+        {"nombre": "The Legend of Zelda: Tears of the Kingdom", "categoria": "Videojuegos", "precio_compra": 60, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Gran Turismo 7", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Minecraft", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Super Mario Odyssey", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Red Dead Redemption 2", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Horizon Forbidden West", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Elden Ring", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 1000},
+        {"nombre": "DualSense Wireless Controller", "categoria": "Accesorios", "precio_compra": 60, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Xbox Series X Controller", "categoria": "Accesorios", "precio_compra": 50, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Nintendo Switch Pro Controller", "categoria": "Accesorios", "precio_compra": 70, "precio_venta": 100, "stock": 1000},
+        {"nombre": "Oculus Quest 2", "categoria": "Consolas", "precio_compra": 300, "precio_venta": 450, "stock": 1000},
+        {"nombre": "PlayStation VR2", "categoria": "Consolas", "precio_compra": 550, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Xbox Game Pass Ultimate", "categoria": "Accesorios", "precio_compra": 10, "precio_venta": 15, "stock": 1000},
+        {"nombre": "PlayStation Plus Premium", "categoria": "Accesorios", "precio_compra": 15, "precio_venta": 25, "stock": 1000},
+        {"nombre": "Nintendo Switch Online", "categoria": "Accesorios", "precio_compra": 5, "precio_venta": 10, "stock": 1000},
+        {"nombre": "Cyberpunk 2077", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 1000},
+        {"nombre": "Ghost of Tsushima", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "God of War Ragnarök", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Assassin's Creed Valhalla", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Final Fantasy XVI", "categoria": "Videojuegos", "precio_compra": 60, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Demon's Souls", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Watch Dogs: Legion", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "The Witcher 3: Wild Hunt", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "NBA 2K23", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Madden NFL 24", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Street Fighter VI", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 1000},
+        {"nombre": "Tekken 7", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 30, "stock": 1000},
+        {"nombre": "FIFA 23", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 1000},
+        {"nombre": "Super Smash Bros. Ultimate", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Battlefield 2042", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Fall Guys", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Among Us", "categoria": "Videojuegos", "precio_compra": 10, "precio_venta": 15, "stock": 1000},
         {"nombre": "Fortnite", "categoria": "Videojuegos", "precio_compra": 0, "precio_venta": 0, "stock": 1000},
-        {"nombre": "Apex Legends", "categoria": "Videojuegos", "precio_compra": 0, "precio_venta": 0, "stock": 800},
-        {"nombre": "Overwatch 2", "categoria": "Videojuegos", "precio_compra": 0, "precio_venta": 0, "stock": 700},
-        {"nombre": "Resident Evil 4 Remake", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 80, "stock": 300},
-        {"nombre": "Silent Hill 2 Remake", "categoria": "Videojuegos", "precio_compra": 55, "precio_venta": 85, "stock": 250},
-        {"nombre": "Starfield", "categoria": "Videojuegos", "precio_compra": 60, "precio_venta": 90, "stock": 200},
-        {"nombre": "Final Fantasy VII Remake", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 400},
-        {"nombre": "Hogwarts Legacy", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 350},
-        {"nombre": "Spider-Man: Miles Morales", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 500},
-        {"nombre": "The Elder Scrolls V: Skyrim", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 600},
-        {"nombre": "Dying Light 2", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 550},
-        {"nombre": "Metro Exodus", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 500},
-        {"nombre": "Mortal Kombat 11", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 600},
-        {"nombre": "Dark Souls III", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 700},
-        {"nombre": "The Last of Us Part II", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 500},
-        {"nombre": "Gran Turismo Sport", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 45, "stock": 600},
-        {"nombre": "Sekiro: Shadows Die Twice", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 350},
-        {"nombre": "Hitman 3", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 500},
-        {"nombre": "CyberConnect2", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 65, "stock": 400},
-        {"nombre": "Dragon Age: Inquisition", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 40, "stock": 550},
-        {"nombre": "Minecraft Dungeons", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 600},
-        {"nombre": "Subnautica", "categoria": "Videojuegos", "precio_compra": 15, "precio_venta": 30, "stock": 700},
-        {"nombre": "The Outer Worlds", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 450},
-        {"nombre": "No Man's Sky", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 500},
-        {"nombre": "Dead Space Remake", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 350},
-        {"nombre": "Metal Gear Solid V: The Phantom Pain", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 600},
-        {"nombre": "Dark Souls II", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 45, "stock": 550},
-        {"nombre": "Bloodborne", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 400},
-        {"nombre": "Nier: Automata", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 450},
-        {"nombre": "Persona 5", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 350},
-        {"nombre": "Control", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 500},
-        {"nombre": "L.A. Noire", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 45, "stock": 600},
-        {"nombre": "Outriders", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 450},
-        {"nombre": "The Division 2", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 500},
-        {"nombre": "Assassin's Creed Odyssey", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 450},
-        {"nombre": "Star Wars Jedi: Fallen Order", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 400},
-        {"nombre": "The Last of Us", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 600},
-        {"nombre": "Tomb Raider: Definitive Edition", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 550},
-        {"nombre": "Assassin's Creed IV: Black Flag", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 40, "stock": 500},
-        {"nombre": "Spelunky 2", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 550},
-        {"nombre": "The Sims 4", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 600},
-        {"nombre": "Call of Duty: Black Ops Cold War", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 500},
-        {"nombre": "Far Cry 6", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 450},
-        {"nombre": "Borderlands 3", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 400},
-        {"nombre": "Uncharted 4: A Thief's End", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 350},
-        {"nombre": "Dragon Quest XI", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 300}
+        {"nombre": "Apex Legends", "categoria": "Videojuegos", "precio_compra": 0, "precio_venta": 0, "stock": 1000},
+        {"nombre": "Overwatch 2", "categoria": "Videojuegos", "precio_compra": 0, "precio_venta": 0, "stock": 1000},
+        {"nombre": "Resident Evil 4 Remake", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Silent Hill 2 Remake", "categoria": "Videojuegos", "precio_compra": 55, "precio_venta": 85, "stock": 1000},
+        {"nombre": "Starfield", "categoria": "Videojuegos", "precio_compra": 60, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Final Fantasy VII Remake", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Hogwarts Legacy", "categoria": "Videojuegos", "precio_compra": 50, "precio_venta": 75, "stock": 1000},
+        {"nombre": "Spider-Man: Miles Morales", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "The Elder Scrolls V: Skyrim", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Dying Light 2", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Metro Exodus", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Mortal Kombat 11", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Dark Souls III", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "The Last of Us Part II", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Gran Turismo Sport", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 45, "stock": 1000},
+        {"nombre": "Sekiro: Shadows Die Twice", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Hitman 3", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "CyberConnect2", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 65, "stock": 1000},
+        {"nombre": "Dragon Age: Inquisition", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Minecraft Dungeons", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Subnautica", "categoria": "Videojuegos", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "The Outer Worlds", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "No Man's Sky", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Dead Space Remake", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Metal Gear Solid V: The Phantom Pain", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Dark Souls II", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 45, "stock": 1000},
+        {"nombre": "Bloodborne", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Nier: Automata", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Persona 5", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Control", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "L.A. Noire", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 45, "stock": 1000},
+        {"nombre": "Outriders", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 1000},
+        {"nombre": "The Division 2", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Assassin's Creed Odyssey", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 1000},
+        {"nombre": "Star Wars Jedi: Fallen Order", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "The Last of Us", "categoria": "Videojuegos", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Tomb Raider: Definitive Edition", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Assassin's Creed IV: Black Flag", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Spelunky 2", "categoria": "Videojuegos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "The Sims 4", "categoria": "Videojuegos", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Call of Duty: Black Ops Cold War", "categoria": "Videojuegos", "precio_compra": 45, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Far Cry 6", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Borderlands 3", "categoria": "Videojuegos", "precio_compra": 35, "precio_venta": 55, "stock": 1000},
+        {"nombre": "Uncharted 4: A Thief's End", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Dragon Quest XI", "categoria": "Videojuegos", "precio_compra": 40, "precio_venta": 60, "stock": 1000}
     ],
     
     "Comida_Rápida": [
-        {"nombre": "Hamburguesa", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 90, "stock": 500},
-        {"nombre": "Pizza", "categoria": "Comida Rápida", "precio_compra": 80, "precio_venta": 150, "stock": 300},
-        {"nombre": "Hot Dog", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 400},
-        {"nombre": "Papas Fritas", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 600},
-        {"nombre": "Refresco", "categoria": "Bebida", "precio_compra": 15, "precio_venta": 30, "stock": 800},
-        {"nombre": "Alitas de Pollo", "categoria": "Comida Rápida", "precio_compra": 60, "precio_venta": 110, "stock": 350},
-        {"nombre": "Nuggets", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 75, "stock": 400},
-        {"nombre": "Tacos", "categoria": "Comida Rápida", "precio_compra": 35, "precio_venta": 70, "stock": 450},
-        {"nombre": "Sandwich", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 500},
-        {"nombre": "Ensalada César", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 300},
-        {"nombre": "Smoothie", "categoria": "Bebida", "precio_compra": 25, "precio_venta": 50, "stock": 400},
-        {"nombre": "Café Helado", "categoria": "Bebida", "precio_compra": 20, "precio_venta": 40, "stock": 350},
-        {"nombre": "Empanadas", "categoria": "Comida Rápida", "precio_compra": 15, "precio_venta": 30, "stock": 500},
-        {"nombre": "Churros", "categoria": "Postre", "precio_compra": 10, "precio_venta": 20, "stock": 700},
-        {"nombre": "Brownie", "categoria": "Postre", "precio_compra": 25, "precio_venta": 50, "stock": 300},
-        {"nombre": "Helado de Vainilla", "categoria": "Postre", "precio_compra": 20, "precio_venta": 40, "stock": 400},
-        {"nombre": "Wrap de Pollo", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 300},
-        {"nombre": "Sushi Roll", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 100, "stock": 200},
-        {"nombre": "Quesadilla", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 400},
-        {"nombre": "Cheesecake", "categoria": "Postre", "precio_compra": 40, "precio_venta": 80, "stock": 250},
-        {"nombre": "Batido de Fresa", "categoria": "Bebida", "precio_compra": 25, "precio_venta": 50, "stock": 300},
-        {"nombre": "Malteada", "categoria": "Bebida", "precio_compra": 35, "precio_venta": 70, "stock": 250},
-        {"nombre": "Mozzarella Sticks", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 350},
-        {"nombre": "Burrito", "categoria": "Comida Rápida", "precio_compra": 45, "precio_venta": 90, "stock": 400},
-        {"nombre": "Crepa de Nutella", "categoria": "Postre", "precio_compra": 30, "precio_venta": 60, "stock": 200},
-        {"nombre": "Donas", "categoria": "Postre", "precio_compra": 15, "precio_venta": 30, "stock": 600},
-        {"nombre": "ChocoFrappé", "categoria": "Bebida", "precio_compra": 30, "precio_venta": 60, "stock": 350},
-        {"nombre": "Patacones", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 450},
-        {"nombre": "Pizza Calzone", "categoria": "Comida Rápida", "precio_compra": 70, "precio_venta": 140, "stock": 150},
-        {"nombre": "Costillas BBQ", "categoria": "Comida Rápida", "precio_compra": 100, "precio_venta": 180, "stock": 200},
-        {"nombre": "Salchipapas", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 400},
-        {"nombre": "Bocadillo", "categoria": "Comida Rápida", "precio_compra": 15, "precio_venta": 30, "stock": 500},
-        {"nombre": "Panini", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 100, "stock": 350},
-        {"nombre": "Croissant", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 450},
-        {"nombre": "Tortilla Española", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 550},
-        {"nombre": "Pizza Margarita", "categoria": "Comida Rápida", "precio_compra": 70, "precio_venta": 130, "stock": 300},
-        {"nombre": "Currywurst", "categoria": "Comida Rápida", "precio_compra": 60, "precio_venta": 120, "stock": 250},
-        {"nombre": "Hot Wings", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 100, "stock": 400},
-        {"nombre": "Patatas Bravas", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 500},
-        {"nombre": "Falafel", "categoria": "Comida Rápida", "precio_compra": 35, "precio_venta": 70, "stock": 350},
-        {"nombre": "Gofre", "categoria": "Postre", "precio_compra": 20, "precio_venta": 40, "stock": 600},
-        {"nombre": "Ceviche", "categoria": "Comida Rápida", "precio_compra": 55, "precio_venta": 110, "stock": 300},
-        {"nombre": "Hummus", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 400},
-        {"nombre": "Ceviche de Pollo", "categoria": "Comida Rápida", "precio_compra": 45, "precio_venta": 90, "stock": 350},
-        {"nombre": "Cachapa", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 500},
-        {"nombre": "Pastelito", "categoria": "Comida Rápida", "precio_compra": 15, "precio_venta": 30, "stock": 600},
-        {"nombre": "Patacón con Queso", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 500},
-        {"nombre": "Papas al Horno", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 400},
-        {"nombre": "Croquetas", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 350},
-        {"nombre": "Tostadas", "categoria": "Comida Rápida", "precio_compra": 10, "precio_venta": 20, "stock": 600},
-        {"nombre": "Sopa Ramen", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 200}
+        {"nombre": "Hamburguesa", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Pizza", "categoria": "Comida Rápida", "precio_compra": 80, "precio_venta": 150, "stock": 1000},
+        {"nombre": "Hot Dog", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Papas Fritas", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Refresco", "categoria": "Bebida", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Alitas de Pollo", "categoria": "Comida Rápida", "precio_compra": 60, "precio_venta": 110, "stock": 1000},
+        {"nombre": "Nuggets", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 75, "stock": 1000},
+        {"nombre": "Tacos", "categoria": "Comida Rápida", "precio_compra": 35, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Sandwich", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Ensalada César", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Smoothie", "categoria": "Bebida", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Café Helado", "categoria": "Bebida", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Empanadas", "categoria": "Comida Rápida", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Churros", "categoria": "Postre", "precio_compra": 10, "precio_venta": 20, "stock": 1000},
+        {"nombre": "Brownie", "categoria": "Postre", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Helado de Vainilla", "categoria": "Postre", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Wrap de Pollo", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Sushi Roll", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+        {"nombre": "Quesadilla", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Cheesecake", "categoria": "Postre", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Batido de Fresa", "categoria": "Bebida", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Malteada", "categoria": "Bebida", "precio_compra": 35, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Mozzarella Sticks", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Burrito", "categoria": "Comida Rápida", "precio_compra": 45, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Crepa de Nutella", "categoria": "Postre", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Donas", "categoria": "Postre", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "ChocoFrappé", "categoria": "Bebida", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Patacones", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Pizza Calzone", "categoria": "Comida Rápida", "precio_compra": 70, "precio_venta": 140, "stock": 1000},
+        {"nombre": "Costillas BBQ", "categoria": "Comida Rápida", "precio_compra": 100, "precio_venta": 180, "stock": 1000},
+        {"nombre": "Salchipapas", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Bocadillo", "categoria": "Comida Rápida", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Panini", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+        {"nombre": "Croissant", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Tortilla Española", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Pizza Margarita", "categoria": "Comida Rápida", "precio_compra": 70, "precio_venta": 130, "stock": 1000},
+        {"nombre": "Currywurst", "categoria": "Comida Rápida", "precio_compra": 60, "precio_venta": 120, "stock": 1000},
+        {"nombre": "Hot Wings", "categoria": "Comida Rápida", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+        {"nombre": "Patatas Bravas", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Falafel", "categoria": "Comida Rápida", "precio_compra": 35, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Gofre", "categoria": "Postre", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Ceviche", "categoria": "Comida Rápida", "precio_compra": 55, "precio_venta": 110, "stock": 1000},
+        {"nombre": "Hummus", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Ceviche de Pollo", "categoria": "Comida Rápida", "precio_compra": 45, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Cachapa", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Pastelito", "categoria": "Comida Rápida", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Patacón con Queso", "categoria": "Comida Rápida", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Papas al Horno", "categoria": "Comida Rápida", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+        {"nombre": "Croquetas", "categoria": "Comida Rápida", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Tostadas", "categoria": "Comida Rápida", "precio_compra": 10, "precio_venta": 20, "stock": 1000},
+        {"nombre": "Sopa Ramen", "categoria": "Comida Rápida", "precio_compra": 40, "precio_venta": 80, "stock": 1000}
     ],
     "Supermercado": [
         {"nombre": "Arroz", "categoria": "Alimentos", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
-        {"nombre": "Aceite", "categoria": "Alimentos", "precio_compra": 50, "precio_venta": 85, "stock": 500},
-        {"nombre": "Leche", "categoria": "Lácteos", "precio_compra": 30, "precio_venta": 55, "stock": 800},
-        {"nombre": "Cereal", "categoria": "Desayuno", "precio_compra": 20, "precio_venta": 40, "stock": 600},
-        {"nombre": "Jugo", "categoria": "Bebidas", "precio_compra": 15, "precio_venta": 30, "stock": 700},
-        {"nombre": "Pan", "categoria": "Panadería", "precio_compra": 10, "precio_venta": 20, "stock": 400},
+        {"nombre": "Aceite", "categoria": "Alimentos", "precio_compra": 50, "precio_venta": 85, "stock": 1000},
+        {"nombre": "Leche", "categoria": "Lácteos", "precio_compra": 30, "precio_venta": 55, "stock": 1000},
+        {"nombre": "Cereal", "categoria": "Desayuno", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Jugo", "categoria": "Bebidas", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Pan", "categoria": "Panadería", "precio_compra": 10, "precio_venta": 20, "stock": 1000},
         {"nombre": "Harina", "categoria": "Alimentos", "precio_compra": 18, "precio_venta": 30, "stock": 1000},
-        {"nombre": "Queso", "categoria": "Lácteos", "precio_compra": 50, "precio_venta": 75, "stock": 300},
-        {"nombre": "Huevos", "categoria": "Alimentos", "precio_compra": 60, "precio_venta": 100, "stock": 200},
-        {"nombre": "Mantequilla", "categoria": "Lácteos", "precio_compra": 40, "precio_venta": 70, "stock": 400},
-        {"nombre": "Pollo", "categoria": "Carnes", "precio_compra": 80, "precio_venta": 120, "stock": 250},
-        {"nombre": "Carne de res", "categoria": "Carnes", "precio_compra": 120, "precio_venta": 180, "stock": 200},
-        {"nombre": "Pescado", "categoria": "Carnes", "precio_compra": 100, "precio_venta": 150, "stock": 150},
-        {"nombre": "Manzanas", "categoria": "Frutas", "precio_compra": 25, "precio_venta": 40, "stock": 300},
-        {"nombre": "Plátanos", "categoria": "Frutas", "precio_compra": 10, "precio_venta": 15, "stock": 1200},
-        {"nombre": "Naranjas", "categoria": "Frutas", "precio_compra": 20, "precio_venta": 35, "stock": 400},
-        {"nombre": "Tomates", "categoria": "Verduras", "precio_compra": 15, "precio_venta": 25, "stock": 500},
-        {"nombre": "Cebollas", "categoria": "Verduras", "precio_compra": 18, "precio_venta": 30, "stock": 600},
-        {"nombre": "Papas", "categoria": "Verduras", "precio_compra": 12, "precio_venta": 20, "stock": 800},
-        {"nombre": "Zanahorias", "categoria": "Verduras", "precio_compra": 10, "precio_venta": 18, "stock": 650},
-        {"nombre": "Refresco", "categoria": "Bebidas", "precio_compra": 25, "precio_venta": 45, "stock": 800},
+        {"nombre": "Queso", "categoria": "Lácteos", "precio_compra": 50, "precio_venta": 75, "stock": 1000},
+        {"nombre": "Huevos", "categoria": "Alimentos", "precio_compra": 60, "precio_venta": 100, "stock": 1000},
+        {"nombre": "Mantequilla", "categoria": "Lácteos", "precio_compra": 40, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Pollo", "categoria": "Carnes", "precio_compra": 80, "precio_venta": 120, "stock": 1000},
+        {"nombre": "Carne de res", "categoria": "Carnes", "precio_compra": 120, "precio_venta": 180, "stock": 1000},
+        {"nombre": "Pescado", "categoria": "Carnes", "precio_compra": 100, "precio_venta": 150, "stock": 1000},
+        {"nombre": "Manzanas", "categoria": "Frutas", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Plátanos", "categoria": "Frutas", "precio_compra": 10, "precio_venta": 15, "stock": 1000},
+        {"nombre": "Naranjas", "categoria": "Frutas", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Tomates", "categoria": "Verduras", "precio_compra": 15, "precio_venta": 25, "stock": 1000},
+        {"nombre": "Cebollas", "categoria": "Verduras", "precio_compra": 18, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Papas", "categoria": "Verduras", "precio_compra": 12, "precio_venta": 20, "stock": 1000},
+        {"nombre": "Zanahorias", "categoria": "Verduras", "precio_compra": 10, "precio_venta": 18, "stock": 1000},
+        {"nombre": "Refresco", "categoria": "Bebidas", "precio_compra": 25, "precio_venta": 45, "stock": 1000},
         {"nombre": "Agua embotellada", "categoria": "Bebidas", "precio_compra": 10, "precio_venta": 20, "stock": 1000},
-        {"nombre": "Galletas", "categoria": "Snacks", "precio_compra": 15, "precio_venta": 30, "stock": 500},
-        {"nombre": "Chocolate", "categoria": "Snacks", "precio_compra": 20, "precio_venta": 35, "stock": 400},
-        {"nombre": "Café", "categoria": "Desayuno", "precio_compra": 50, "precio_venta": 80, "stock": 300},
-        {"nombre": "Té", "categoria": "Desayuno", "precio_compra": 30, "precio_venta": 50, "stock": 400},
-        {"nombre": "Azúcar", "categoria": "Alimentos", "precio_compra": 20, "precio_venta": 35, "stock": 700},
-        {"nombre": "Sal", "categoria": "Alimentos", "precio_compra": 10, "precio_venta": 15, "stock": 800},
-        {"nombre": "Pasta", "categoria": "Alimentos", "precio_compra": 25, "precio_venta": 40, "stock": 900},
-        {"nombre": "Salsa de tomate", "categoria": "Condimentos", "precio_compra": 15, "precio_venta": 30, "stock": 600},
-        {"nombre": "Mayonesa", "categoria": "Condimentos", "precio_compra": 25, "precio_venta": 45, "stock": 500},
-        {"nombre": "Ketchup", "categoria": "Condimentos", "precio_compra": 20, "precio_venta": 35, "stock": 400},
-        {"nombre": "Detergente", "categoria": "Limpieza", "precio_compra": 30, "precio_venta": 55, "stock": 500},
-        {"nombre": "Jabón", "categoria": "Limpieza", "precio_compra": 15, "precio_venta": 25, "stock": 700},
-        {"nombre": "Shampoo", "categoria": "Higiene", "precio_compra": 40, "precio_venta": 70, "stock": 300},
-        {"nombre": "Crema dental", "categoria": "Higiene", "precio_compra": 25, "precio_venta": 45, "stock": 400},
-        {"nombre": "Pañales", "categoria": "Higiene", "precio_compra": 80, "precio_venta": 120, "stock": 200},
-        {"nombre": "Servilletas", "categoria": "Limpieza", "precio_compra": 10, "precio_venta": 18, "stock": 600},
-        {"nombre": "Cloro", "categoria": "Limpieza", "precio_compra": 20, "precio_venta": 35, "stock": 400},
-        {"nombre": "Papel higiénico", "categoria": "Limpieza", "precio_compra": 25, "precio_venta": 40, "stock": 500},
-        {"nombre": "Jabón líquido", "categoria": "Limpieza", "precio_compra": 30, "precio_venta": 55, "stock": 300},
-        {"nombre": "Mermelada", "categoria": "Desayuno", "precio_compra": 20, "precio_venta": 40, "stock": 400},
-        {"nombre": "Miel", "categoria": "Desayuno", "precio_compra": 35, "precio_venta": 60, "stock": 300},
+        {"nombre": "Galletas", "categoria": "Snacks", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Chocolate", "categoria": "Snacks", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Café", "categoria": "Desayuno", "precio_compra": 50, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Té", "categoria": "Desayuno", "precio_compra": 30, "precio_venta": 50, "stock": 1000},
+        {"nombre": "Azúcar", "categoria": "Alimentos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Sal", "categoria": "Alimentos", "precio_compra": 10, "precio_venta": 15, "stock": 1000},
+        {"nombre": "Pasta", "categoria": "Alimentos", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Salsa de tomate", "categoria": "Condimentos", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Mayonesa", "categoria": "Condimentos", "precio_compra": 25, "precio_venta": 45, "stock": 1000},
+        {"nombre": "Ketchup", "categoria": "Condimentos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Detergente", "categoria": "Limpieza", "precio_compra": 30, "precio_venta": 55, "stock": 1000},
+        {"nombre": "Jabón", "categoria": "Limpieza", "precio_compra": 15, "precio_venta": 25, "stock": 1000},
+        {"nombre": "Shampoo", "categoria": "Higiene", "precio_compra": 40, "precio_venta": 70, "stock": 1000},
+        {"nombre": "Crema dental", "categoria": "Higiene", "precio_compra": 25, "precio_venta": 45, "stock": 1000},
+        {"nombre": "Pañales", "categoria": "Higiene", "precio_compra": 80, "precio_venta": 120, "stock": 1000},
+        {"nombre": "Servilletas", "categoria": "Limpieza", "precio_compra": 10, "precio_venta": 18, "stock": 1000},
+        {"nombre": "Cloro", "categoria": "Limpieza", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Papel higiénico", "categoria": "Limpieza", "precio_compra": 25, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Jabón líquido", "categoria": "Limpieza", "precio_compra": 30, "precio_venta": 55, "stock": 1000},
+        {"nombre": "Mermelada", "categoria": "Desayuno", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+        {"nombre": "Miel", "categoria": "Desayuno", "precio_compra": 35, "precio_venta": 60, "stock": 1000},
         {"nombre": "Chicles", "categoria": "Snacks", "precio_compra": 5, "precio_venta": 10, "stock": 1000},
-        {"nombre": "Sopa instantánea", "categoria": "Alimentos", "precio_compra": 12, "precio_venta": 20, "stock": 800},
-        {"nombre": "Yogur", "categoria": "Lácteos", "precio_compra": 20, "precio_venta": 35, "stock": 500},
-        {"nombre": "Helado", "categoria": "Postres", "precio_compra": 50, "precio_venta": 80, "stock": 250},
-        {"nombre": "Guineo", "categoria": "Frutas", "precio_compra": 10, "precio_venta": 20, "stock": 800},
-        {"nombre": "Batata", "categoria": "Verduras", "precio_compra": 18, "precio_venta": 30, "stock": 500},
-        {"nombre": "Yuca", "categoria": "Verduras", "precio_compra": 15, "precio_venta": 25, "stock": 600},
-        {"nombre": "Maíz", "categoria": "Alimentos", "precio_compra": 10, "precio_venta": 15, "stock": 700},
-        {"nombre": "Papas peladas", "categoria": "Verduras", "precio_compra": 20, "precio_venta": 35, "stock": 500}
+        {"nombre": "Sopa instantánea", "categoria": "Alimentos", "precio_compra": 12, "precio_venta": 20, "stock": 1000},
+        {"nombre": "Yogur", "categoria": "Lácteos", "precio_compra": 20, "precio_venta": 35, "stock": 1000},
+        {"nombre": "Helado", "categoria": "Postres", "precio_compra": 50, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Guineo", "categoria": "Frutas", "precio_compra": 10, "precio_venta": 20, "stock": 1000},
+        {"nombre": "Batata", "categoria": "Verduras", "precio_compra": 18, "precio_venta": 30, "stock": 1000},
+        {"nombre": "Yuca", "categoria": "Verduras", "precio_compra": 15, "precio_venta": 25, "stock": 1000},
+        {"nombre": "Maíz", "categoria": "Alimentos", "precio_compra": 10, "precio_venta": 15, "stock": 1000},
+        {"nombre": "Papas peladas", "categoria": "Verduras", "precio_compra": 20, "precio_venta": 35, "stock": 1000}
     ],
 
     "Tienda_Equipos_Electrónicos": [
-        {"nombre": "Control Xbox Series X", "categoria": "Accesorios", "precio_compra": 1500, "precio_venta": 2500, "stock": 100},
-        {"nombre": "PlayStation 5 Digital", "categoria": "Consolas", "precio_compra": 18000, "precio_venta": 22000, "stock": 50},
-        {"nombre": "Mouse Razer DeathAdder", "categoria": "Accesorios", "precio_compra": 500, "precio_venta": 800, "stock": 200},
-        {"nombre": "Auriculares HyperX Cloud", "categoria": "Accesorios", "precio_compra": 700, "precio_venta": 1300, "stock": 150},
-        {"nombre": "Teclado Mecánico RGB", "categoria": "Accesorios", "precio_compra": 1200, "precio_venta": 1800, "stock": 120},
-        {"nombre": "Nintendo Switch OLED", "categoria": "Consolas", "precio_compra": 15000, "precio_venta": 18000, "stock": 40},
-        {"nombre": "Xbox Series S", "categoria": "Consolas", "precio_compra": 14000, "precio_venta": 16500, "stock": 45},
-        {"nombre": "Silla Gamer Pro", "categoria": "Mobiliario", "precio_compra": 4500, "precio_venta": 6000, "stock": 30},
-        {"nombre": "Mousepad XL RGB", "categoria": "Accesorios", "precio_compra": 400, "precio_venta": 700, "stock": 180},
-        {"nombre": "Webcam 1080p", "categoria": "Streaming", "precio_compra": 800, "precio_venta": 1200, "stock": 90},
-        {"nombre": "Micrófono Blue Yeti", "categoria": "Streaming", "precio_compra": 2500, "precio_venta": 3500, "stock": 40},
-        {"nombre": "Control PS5 DualSense", "categoria": "Accesorios", "precio_compra": 1600, "precio_venta": 2600, "stock": 110},
-        {"nombre": "Memoria RAM RGB 16GB", "categoria": "Componentes", "precio_compra": 2000, "precio_venta": 2800, "stock": 75},
-        {"nombre": "GPU RTX 3060", "categoria": "Componentes", "precio_compra": 12000, "precio_venta": 15000, "stock": 25},
-        {"nombre": "Monitor 144Hz 27\"", "categoria": "Pantallas", "precio_compra": 8000, "precio_venta": 10500, "stock": 35},
-        {"nombre": "Capture Card Elgato", "categoria": "Streaming", "precio_compra": 4000, "precio_venta": 5500, "stock": 20},
-        {"nombre": "Base Refrigerante Laptop", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 900, "stock": 140},
-        {"nombre": "Joy-Con Nintendo Switch", "categoria": "Accesorios", "precio_compra": 1800, "precio_venta": 2500, "stock": 80},
-        {"nombre": "Fuente 750W Gold", "categoria": "Componentes", "precio_compra": 2500, "precio_venta": 3500, "stock": 45},
-        {"nombre": "Gabinete RGB", "categoria": "Componentes", "precio_compra": 1800, "precio_venta": 2600, "stock": 55},
-        {"nombre": "Disco SSD 1TB", "categoria": "Componentes", "precio_compra": 2200, "precio_venta": 3000, "stock": 65},
-        {"nombre": "Procesador Ryzen 7", "categoria": "Componentes", "precio_compra": 8500, "precio_venta": 10500, "stock": 30},
-        {"nombre": "Cable HDMI 2.1", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 500, "stock": 250},
-        {"nombre": "Ring Light LED", "categoria": "Streaming", "precio_compra": 900, "precio_venta": 1400, "stock": 70},
-        {"nombre": "Tarjeta PSN $50", "categoria": "Digital", "precio_compra": 1200, "precio_venta": 1500, "stock": 300},
-        {"nombre": "Teclado Corsair K95 RGB", "categoria": "Accesorios", "precio_compra": 2500, "precio_venta": 3500, "stock": 40},
-        {"nombre": "Control Nintendo Switch Pro", "categoria": "Accesorios", "precio_compra": 1500, "precio_venta": 2000, "stock": 100},
-        {"nombre": "Auriculares SteelSeries Arctis 7", "categoria": "Accesorios", "precio_compra": 2000, "precio_venta": 2900, "stock": 90},
-        {"nombre": "Base de Carga Xbox Series X", "categoria": "Accesorios", "precio_compra": 800, "precio_venta": 1200, "stock": 60},
-        {"nombre": "Silla Gamer DXRacer", "categoria": "Mobiliario", "precio_compra": 7000, "precio_venta": 9500, "stock": 25},
-        {"nombre": "Monitor Curvo Samsung 32\"", "categoria": "Pantallas", "precio_compra": 15000, "precio_venta": 20000, "stock": 15},
-        {"nombre": "Mouse Logitech G Pro", "categoria": "Accesorios", "precio_compra": 900, "precio_venta": 1500, "stock": 120},
-        {"nombre": "CPU i9-11900K", "categoria": "Componentes", "precio_compra": 10000, "precio_venta": 13000, "stock": 10},
-        {"nombre": "Razer Blade 15", "categoria": "Laptops", "precio_compra": 40000, "precio_venta": 48000, "stock": 8},
-        {"nombre": "Control Xbox Elite Series 2", "categoria": "Accesorios", "precio_compra": 4000, "precio_venta": 6000, "stock": 40},
-        {"nombre": "Auriculares Logitech G933", "categoria": "Accesorios", "precio_compra": 3000, "precio_venta": 4200, "stock": 50},
-        {"nombre": "Cámara 4K Logitech Brio", "categoria": "Streaming", "precio_compra": 4000, "precio_venta": 5500, "stock": 30},
-        {"nombre": "Microfono Rode NT-USB", "categoria": "Streaming", "precio_compra": 3000, "precio_venta": 4500, "stock": 40},
-        {"nombre": "GPU RTX 3080", "categoria": "Componentes", "precio_compra": 22000, "precio_venta": 28000, "stock": 12},
-        {"nombre": "Teclado Logitech G Pro X", "categoria": "Accesorios", "precio_compra": 2300, "precio_venta": 3500, "stock": 35},
-        {"nombre": "Torre Fractal Design Meshify C", "categoria": "Componentes", "precio_compra": 2500, "precio_venta": 3500, "stock": 20},
-        {"nombre": "Fuente EVGA 850W", "categoria": "Componentes", "precio_compra": 3000, "precio_venta": 4500, "stock": 30},
-        {"nombre": "Auriculares Astro A50", "categoria": "Accesorios", "precio_compra": 4000, "precio_venta": 5500, "stock": 25},
-        {"nombre": "Lápiz óptico Wacom Intuos Pro", "categoria": "Accesorios", "precio_compra": 5000, "precio_venta": 7000, "stock": 15},
-        {"nombre": "Router Gaming ASUS RT-AC5300", "categoria": "Accesorios", "precio_compra": 8000, "precio_venta": 10500, "stock": 10},
-        {"nombre": "Silla SecretLab Titan Evo", "categoria": "Mobiliario", "precio_compra": 9000, "precio_venta": 12000, "stock": 12},
-        {"nombre": "Webcam Logitech C920", "categoria": "Streaming", "precio_compra": 1200, "precio_venta": 1700, "stock": 60},
-        {"nombre": "Base para PS5", "categoria": "Accesorios", "precio_compra": 500, "precio_venta": 800, "stock": 150},
-        {"nombre": "Monitor ASUS ROG Swift", "categoria": "Pantallas", "precio_compra": 12000, "precio_venta": 15000, "stock": 25},
-        {"nombre": "Smartphone Samsung Galaxy S23", "categoria": "Smartphones", "tipo": "Android", "marca": "Samsung", "precio_compra": 30000, "precio_venta": 40000, "stock": 50},
-        {"nombre": "Apple iPhone 15", "categoria": "Smartphones", "tipo": "iOS", "marca": "Apple", "precio_compra": 40000, "precio_venta": 50000, "stock": 30},
-        {"nombre": "MacBook Pro 16\" M2", "categoria": "Computadoras", "tipo": "Laptop", "marca": "Apple", "precio_compra": 80000, "precio_venta": 100000, "stock": 15},
-        {"nombre": "Lenovo ThinkPad X1 Carbon", "categoria": "Computadoras", "tipo": "Laptop", "marca": "Lenovo", "precio_compra": 60000, "precio_venta": 75000, "stock": 25},
-        {"nombre": "Sony WH-1000XM5", "categoria": "Audífonos", "tipo": "Inalámbricos", "marca": "Sony", "precio_compra": 8000, "precio_venta": 12000, "stock": 40},
-        {"nombre": "Bose QuietComfort 45", "categoria": "Audífonos", "tipo": "Inalámbricos", "marca": "Bose", "precio_compra": 9000, "precio_venta": 13000, "stock": 35},
-        {"nombre": "Xiaomi Mi Band 8", "categoria": "Wearables", "tipo": "Smartband", "marca": "Xiaomi", "precio_compra": 1500, "precio_venta": 2500, "stock": 100},
-        {"nombre": "Garmin Forerunner 945", "categoria": "Wearables", "tipo": "Smartwatch", "marca": "Garmin", "precio_compra": 12000, "precio_venta": 17000, "stock": 20},
-        {"nombre": "Nintendo Switch OLED", "categoria": "Consolas de Videojuegos", "tipo": "Portátil", "marca": "Nintendo", "precio_compra": 12000, "precio_venta": 16000, "stock": 25},
-        {"nombre": "PlayStation 5", "categoria": "Consolas de Videojuegos", "tipo": "De mesa", "marca": "Sony", "precio_compra": 25000, "precio_venta": 35000, "stock": 20},
-        {"nombre": "Microsoft Xbox Series X", "categoria": "Consolas de Videojuegos", "tipo": "De mesa", "marca": "Microsoft", "precio_compra": 27000, "precio_venta": 37000, "stock": 15},
-        {"nombre": "GoPro Hero 11 Black", "categoria": "Cámaras", "tipo": "De acción", "marca": "GoPro", "precio_compra": 12000, "precio_venta": 15000, "stock": 30},
-        {"nombre": "Canon EOS 90D", "categoria": "Cámaras", "tipo": "DSLR", "marca": "Canon", "precio_compra": 40000, "precio_venta": 50000, "stock": 10},
-        {"nombre": "DJI Mavic Air 2", "categoria": "Drones", "tipo": "Aéreo", "marca": "DJI", "precio_compra": 30000, "precio_venta": 45000, "stock": 12},
-        {"nombre": "Samsung QLED 4K 55\"", "categoria": "Televisores", "tipo": "Smart TV", "marca": "Samsung", "precio_compra": 25000, "precio_venta": 35000, "stock": 20},
-        {"nombre": "LG OLED 65\" 4K", "categoria": "Televisores", "tipo": "Smart TV", "marca": "LG", "precio_compra": 40000, "precio_venta": 60000, "stock": 8},
-        {"nombre": "Amazon Echo Dot 5ta Gen", "categoria": "Smart Home", "tipo": "Altavoz inteligente", "marca": "Amazon", "precio_compra": 1500, "precio_venta": 2500, "stock": 60},
-        {"nombre": "Google Nest Thermostat", "categoria": "Smart Home", "tipo": "Termostato inteligente", "marca": "Google", "precio_compra": 3500, "precio_venta": 5000, "stock": 40},
-        {"nombre": "Ring Video Doorbell 4", "categoria": "Smart Home", "tipo": "Cámara de seguridad", "marca": "Ring", "precio_compra": 7000, "precio_venta": 10000, "stock": 30},
-        {"nombre": "Anker PowerCore 26800", "categoria": "Accesorios", "tipo": "Batería portátil", "marca": "Anker", "precio_compra": 2500, "precio_venta": 4000, "stock": 80},
-        {"nombre": "Bose SoundLink Revolve", "categoria": "Accesorios", "tipo": "Altavoz Bluetooth", "marca": "Bose", "precio_compra": 7000, "precio_venta": 10000, "stock": 25},
-        {"nombre": "Logitech MX Master 3", "categoria": "Accesorios", "tipo": "Ratón inalámbrico", "marca": "Logitech", "precio_compra": 3500, "precio_venta": 5000, "stock": 50},
-        {"nombre": "Apple AirPods Pro 2", "categoria": "Accesorios", "tipo": "Auriculares", "marca": "Apple", "precio_compra": 6000, "precio_venta": 8000, "stock": 40},
-        {"nombre": "Samsung T7 SSD 1TB", "categoria": "Accesorios", "tipo": "Almacenamiento", "marca": "Samsung", "precio_compra": 4000, "precio_venta": 6000, "stock": 70},
-        {"nombre": "Sony PlayStation VR2", "categoria": "Accesorios", "tipo": "Realidad virtual", "marca": "Sony", "precio_compra": 15000, "precio_venta": 20000, "stock": 10}
+        {"nombre": "Control Xbox Series X", "categoria": "Accesorios", "precio_compra": 1500, "precio_venta": 2500, "stock": 1000},
+        {"nombre": "PlayStation 5 Digital", "categoria": "Consolas", "precio_compra": 18000, "precio_venta": 22000, "stock": 1000},
+        {"nombre": "Mouse Razer DeathAdder", "categoria": "Accesorios", "precio_compra": 500, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Auriculares HyperX Cloud", "categoria": "Accesorios", "precio_compra": 700, "precio_venta": 1300, "stock": 1000},
+        {"nombre": "Teclado Mecánico RGB", "categoria": "Accesorios", "precio_compra": 1200, "precio_venta": 1800, "stock": 1000},
+        {"nombre": "Nintendo Switch OLED", "categoria": "Consolas", "precio_compra": 15000, "precio_venta": 18000, "stock": 1000},
+        {"nombre": "Xbox Series S", "categoria": "Consolas", "precio_compra": 14000, "precio_venta": 16500, "stock": 1000},
+        {"nombre": "Silla Gamer Pro", "categoria": "Mobiliario", "precio_compra": 4500, "precio_venta": 6000, "stock": 1000},
+        {"nombre": "Mousepad XL RGB", "categoria": "Accesorios", "precio_compra": 400, "precio_venta": 700, "stock": 1000},
+        {"nombre": "Webcam 1080p", "categoria": "Streaming", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Micrófono Blue Yeti", "categoria": "Streaming", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+        {"nombre": "Control PS5 DualSense", "categoria": "Accesorios", "precio_compra": 1600, "precio_venta": 2600, "stock": 1000},
+        {"nombre": "Memoria RAM RGB 16GB", "categoria": "Componentes", "precio_compra": 2000, "precio_venta": 2800, "stock": 1000},
+        {"nombre": "GPU RTX 3060", "categoria": "Componentes", "precio_compra": 12000, "precio_venta": 15000, "stock": 1000},
+        {"nombre": "Monitor 144Hz 27\"", "categoria": "Pantallas", "precio_compra": 8000, "precio_venta": 10500, "stock": 1000},
+        {"nombre": "Capture Card Elgato", "categoria": "Streaming", "precio_compra": 4000, "precio_venta": 5500, "stock": 1000},
+        {"nombre": "Base Refrigerante Laptop", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 900, "stock": 1000},
+        {"nombre": "Joy-Con Nintendo Switch", "categoria": "Accesorios", "precio_compra": 1800, "precio_venta": 2500, "stock": 1000},
+        {"nombre": "Fuente 750W Gold", "categoria": "Componentes", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+        {"nombre": "Gabinete RGB", "categoria": "Componentes", "precio_compra": 1800, "precio_venta": 2600, "stock": 1000},
+        {"nombre": "Disco SSD 1TB", "categoria": "Componentes", "precio_compra": 2200, "precio_venta": 3000, "stock": 1000},
+        {"nombre": "Procesador Ryzen 7", "categoria": "Componentes", "precio_compra": 8500, "precio_venta": 10500, "stock": 1000},
+        {"nombre": "Cable HDMI 2.1", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+        {"nombre": "Ring Light LED", "categoria": "Streaming", "precio_compra": 900, "precio_venta": 1400, "stock": 1000},
+        {"nombre": "Tarjeta PSN $50", "categoria": "Digital", "precio_compra": 1200, "precio_venta": 1500, "stock": 1000},
+        {"nombre": "Teclado Corsair K95 RGB", "categoria": "Accesorios", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+        {"nombre": "Control Nintendo Switch Pro", "categoria": "Accesorios", "precio_compra": 1500, "precio_venta": 2000, "stock": 1000},
+        {"nombre": "Auriculares SteelSeries Arctis 7", "categoria": "Accesorios", "precio_compra": 2000, "precio_venta": 2900, "stock": 1000},
+        {"nombre": "Base de Carga Xbox Series X", "categoria": "Accesorios", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Silla Gamer DXRacer", "categoria": "Mobiliario", "precio_compra": 7000, "precio_venta": 9500, "stock": 1000},
+        {"nombre": "Monitor Curvo Samsung 32\"", "categoria": "Pantallas", "precio_compra": 15000, "precio_venta": 20000, "stock": 1000},
+        {"nombre": "Mouse Logitech G Pro", "categoria": "Accesorios", "precio_compra": 900, "precio_venta": 1500, "stock": 1000},
+        {"nombre": "CPU i9-11900K", "categoria": "Componentes", "precio_compra": 10000, "precio_venta": 13000, "stock": 1000},
+        {"nombre": "Razer Blade 15", "categoria": "Laptops", "precio_compra": 40000, "precio_venta": 48000, "stock": 1000},
+        {"nombre": "Control Xbox Elite Series 2", "categoria": "Accesorios", "precio_compra": 4000, "precio_venta": 6000, "stock": 1000},
+        {"nombre": "Auriculares Logitech G933", "categoria": "Accesorios", "precio_compra": 3000, "precio_venta": 4200, "stock": 1000},
+        {"nombre": "Cámara 4K Logitech Brio", "categoria": "Streaming", "precio_compra": 4000, "precio_venta": 5500, "stock": 1000},
+        {"nombre": "Microfono Rode NT-USB", "categoria": "Streaming", "precio_compra": 3000, "precio_venta": 4500, "stock": 1000},
+        {"nombre": "GPU RTX 3080", "categoria": "Componentes", "precio_compra": 22000, "precio_venta": 28000, "stock": 1000},
+        {"nombre": "Teclado Logitech G Pro X", "categoria": "Accesorios", "precio_compra": 2300, "precio_venta": 3500, "stock": 1000},
+        {"nombre": "Torre Fractal Design Meshify C", "categoria": "Componentes", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+        {"nombre": "Fuente EVGA 850W", "categoria": "Componentes", "precio_compra": 3000, "precio_venta": 4500, "stock": 1000},
+        {"nombre": "Auriculares Astro A50", "categoria": "Accesorios", "precio_compra": 4000, "precio_venta": 5500, "stock": 1000},
+        {"nombre": "Lápiz óptico Wacom Intuos Pro", "categoria": "Accesorios", "precio_compra": 5000, "precio_venta": 7000, "stock": 1000},
+        {"nombre": "Router Gaming ASUS RT-AC5300", "categoria": "Accesorios", "precio_compra": 8000, "precio_venta": 10500, "stock": 1000},
+        {"nombre": "Silla SecretLab Titan Evo", "categoria": "Mobiliario", "precio_compra": 9000, "precio_venta": 12000, "stock": 1000},
+        {"nombre": "Webcam Logitech C920", "categoria": "Streaming", "precio_compra": 1200, "precio_venta": 1700, "stock": 1000},
+        {"nombre": "Base para PS5", "categoria": "Accesorios", "precio_compra": 500, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Monitor ASUS ROG Swift", "categoria": "Pantallas", "precio_compra": 12000, "precio_venta": 15000, "stock": 1000},
+        {"nombre": "Smartphone Samsung Galaxy S23", "categoria": "Smartphones", "tipo": "Android", "marca": "Samsung", "precio_compra": 30000, "precio_venta": 40000, "stock": 1000},
+        {"nombre": "Apple iPhone 15", "categoria": "Smartphones", "tipo": "iOS", "marca": "Apple", "precio_compra": 40000, "precio_venta": 50000, "stock": 1000},
+        {"nombre": "MacBook Pro 16\" M2", "categoria": "Computadoras", "tipo": "Laptop", "marca": "Apple", "precio_compra": 80000, "precio_venta": 100000, "stock": 1000},
+        {"nombre": "Lenovo ThinkPad X1 Carbon", "categoria": "Computadoras", "tipo": "Laptop", "marca": "Lenovo", "precio_compra": 60000, "precio_venta": 75000, "stock": 1000},
+        {"nombre": "Sony WH-1000XM5", "categoria": "Audífonos", "tipo": "Inalámbricos", "marca": "Sony", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+        {"nombre": "Bose QuietComfort 45", "categoria": "Audífonos", "tipo": "Inalámbricos", "marca": "Bose", "precio_compra": 9000, "precio_venta": 13000, "stock": 1000},
+        {"nombre": "Xiaomi Mi Band 8", "categoria": "Wearables", "tipo": "Smartband", "marca": "Xiaomi", "precio_compra": 1500, "precio_venta": 2500, "stock": 1000},
+        {"nombre": "Garmin Forerunner 945", "categoria": "Wearables", "tipo": "Smartwatch", "marca": "Garmin", "precio_compra": 12000, "precio_venta": 17000, "stock": 1000},
+        {"nombre": "Nintendo Switch OLED", "categoria": "Consolas de Videojuegos", "tipo": "Portátil", "marca": "Nintendo", "precio_compra": 12000, "precio_venta": 16000, "stock": 1000},
+        {"nombre": "PlayStation 5", "categoria": "Consolas de Videojuegos", "tipo": "De mesa", "marca": "Sony", "precio_compra": 25000, "precio_venta": 35000, "stock": 1000},
+        {"nombre": "Microsoft Xbox Series X", "categoria": "Consolas de Videojuegos", "tipo": "De mesa", "marca": "Microsoft", "precio_compra": 27000, "precio_venta": 37000, "stock": 1000},
+        {"nombre": "GoPro Hero 11 Black", "categoria": "Cámaras", "tipo": "De acción", "marca": "GoPro", "precio_compra": 12000, "precio_venta": 15000, "stock": 1000},
+        {"nombre": "Canon EOS 90D", "categoria": "Cámaras", "tipo": "DSLR", "marca": "Canon", "precio_compra": 40000, "precio_venta": 50000, "stock": 1000},
+        {"nombre": "DJI Mavic Air 2", "categoria": "Drones", "tipo": "Aéreo", "marca": "DJI", "precio_compra": 30000, "precio_venta": 45000, "stock": 1000},
+        {"nombre": "Samsung QLED 4K 55\"", "categoria": "Televisores", "tipo": "Smart TV", "marca": "Samsung", "precio_compra": 25000, "precio_venta": 35000, "stock": 1000},
+        {"nombre": "LG OLED 65\" 4K", "categoria": "Televisores", "tipo": "Smart TV", "marca": "LG", "precio_compra": 40000, "precio_venta": 60000, "stock": 1000},
+        {"nombre": "Amazon Echo Dot 5ta Gen", "categoria": "Smart Home", "tipo": "Altavoz inteligente", "marca": "Amazon", "precio_compra": 1500, "precio_venta": 2500, "stock": 1000},
+        {"nombre": "Google Nest Thermostat", "categoria": "Smart Home", "tipo": "Termostato inteligente", "marca": "Google", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+        {"nombre": "Ring Video Doorbell 4", "categoria": "Smart Home", "tipo": "Cámara de seguridad", "marca": "Ring", "precio_compra": 7000, "precio_venta": 10000, "stock": 1000},
+        {"nombre": "Anker PowerCore 26800", "categoria": "Accesorios", "tipo": "Batería portátil", "marca": "Anker", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+        {"nombre": "Bose SoundLink Revolve", "categoria": "Accesorios", "tipo": "Altavoz Bluetooth", "marca": "Bose", "precio_compra": 7000, "precio_venta": 10000, "stock": 1000},
+        {"nombre": "Logitech MX Master 3", "categoria": "Accesorios", "tipo": "Ratón inalámbrico", "marca": "Logitech", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+        {"nombre": "Apple AirPods Pro 2", "categoria": "Accesorios", "tipo": "Auriculares", "marca": "Apple", "precio_compra": 6000, "precio_venta": 8000, "stock": 1000},
+        {"nombre": "Samsung T7 SSD 1TB", "categoria": "Accesorios", "tipo": "Almacenamiento", "marca": "Samsung", "precio_compra": 4000, "precio_venta": 6000, "stock": 1000},
+        {"nombre": "Sony PlayStation VR2", "categoria": "Accesorios", "tipo": "Realidad virtual", "marca": "Sony", "precio_compra": 15000, "precio_venta": 20000, "stock": 1000}
     ],
 
     "Ventas_Autos": [
-        {"nombre": "Toyota Corolla 2023", "categoria": "Autos", "precio_compra": 500000, "precio_venta": 600000, "stock": 5},
-        {"nombre": "Honda Civic 2022", "categoria": "Autos", "precio_compra": 450000, "precio_venta": 520000, "stock": 3},
-        {"nombre": "Nissan Altima 2021", "categoria": "Autos", "precio_compra": 400000, "precio_venta": 470000, "stock": 2},
-        {"nombre": "Ford Focus 2023", "categoria": "Autos", "precio_compra": 420000, "precio_venta": 490000, "stock": 4},
-        {"nombre": "Chevrolet Spark 2022", "categoria": "Autos", "precio_compra": 300000, "precio_venta": 350000, "stock": 6},
-        {"nombre": "Hyundai Elantra 2023", "categoria": "Autos", "precio_compra": 480000, "precio_venta": 550000, "stock": 3},
-        {"nombre": "Kia Rio 2022", "categoria": "Autos", "precio_compra": 350000, "precio_venta": 420000, "stock": 4},
-        {"nombre": "Toyota Camry 2023", "categoria": "Autos", "precio_compra": 550000, "precio_venta": 650000, "stock": 2},
-        {"nombre": "Mazda 3 2022", "categoria": "Autos", "precio_compra": 460000, "precio_venta": 540000, "stock": 3},
-        {"nombre": "Volkswagen Jetta 2023", "categoria": "Autos", "precio_compra": 490000, "precio_venta": 580000, "stock": 4},
-        {"nombre": "Honda Accord 2023", "categoria": "Autos", "precio_compra": 580000, "precio_venta": 680000, "stock": 2},
-        {"nombre": "Nissan Sentra 2022", "categoria": "Autos", "precio_compra": 420000, "precio_venta": 500000, "stock": 5},
-        {"nombre": "Hyundai Accent 2023", "categoria": "Autos", "precio_compra": 380000, "precio_venta": 450000, "stock": 4},
-        {"nombre": "Toyota Yaris 2022", "categoria": "Autos", "precio_compra": 340000, "precio_venta": 410000, "stock": 6},
-        {"nombre": "Kia Forte 2023", "categoria": "Autos", "precio_compra": 430000, "precio_venta": 510000, "stock": 3},
-        {"nombre": "Chevrolet Cruze 2022", "categoria": "Autos", "precio_compra": 440000, "precio_venta": 520000, "stock": 4},
-        {"nombre": "Honda Fit 2022", "categoria": "Autos", "precio_compra": 360000, "precio_venta": 430000, "stock": 5},
-        {"nombre": "Nissan Versa 2023", "categoria": "Autos", "precio_compra": 370000, "precio_venta": 440000, "stock": 4},
-        {"nombre": "Mazda 2 2022", "categoria": "Autos", "precio_compra": 350000, "precio_venta": 420000, "stock": 3},
-        {"nombre": "Volkswagen Golf 2023", "categoria": "Autos", "precio_compra": 470000, "precio_venta": 550000, "stock": 2},
-        {"nombre": "Toyota RAV4 2023", "categoria": "SUV", "precio_compra": 600000, "precio_venta": 700000, "stock": 3},
-        {"nombre": "Honda CR-V 2022", "categoria": "SUV", "precio_compra": 580000, "precio_venta": 680000, "stock": 4},
-        {"nombre": "Hyundai Tucson 2023", "categoria": "SUV", "precio_compra": 550000, "precio_venta": 650000, "stock": 3},
-        {"nombre": "Nissan Rogue 2022", "categoria": "SUV", "precio_compra": 540000, "precio_venta": 640000, "stock": 2},
-        {"nombre": "Kia Sportage 2023", "categoria": "SUV", "precio_compra": 520000, "precio_venta": 620000, "stock": 3},
-        {"nombre": "Mercedes-Benz S-Class 2023", "categoria": "Autos de lujo", "precio_compra": 2500000, "precio_venta": 3000000, "stock": 1},
-        {"nombre": "BMW M5 2022", "categoria": "Autos de lujo", "precio_compra": 2200000, "precio_venta": 2600000, "stock": 1},
-        {"nombre": "Audi Q7 2023", "categoria": "SUV de lujo", "precio_compra": 2100000, "precio_venta": 2500000, "stock": 1},
-        {"nombre": "Porsche 911 2022", "categoria": "Autos de lujo", "precio_compra": 3500000, "precio_venta": 4000000, "stock": 1},
-        {"nombre": "Land Rover Defender 2022", "categoria": "SUV de lujo", "precio_compra": 2800000, "precio_venta": 3300000, "stock": 1},
-        {"nombre": "Chevrolet Aveo 2022", "categoria": "Autos", "precio_compra": 280000, "precio_venta": 350000, "stock": 6},
-        {"nombre": "Renault Kwid 2023", "categoria": "Autos", "precio_compra": 270000, "precio_venta": 320000, "stock": 7},
-        {"nombre": "Dodge Neon 2022", "categoria": "Autos", "precio_compra": 300000, "precio_venta": 360000, "stock": 5},
-        {"nombre": "Kia Picanto 2023", "categoria": "Autos", "precio_compra": 310000, "precio_venta": 380000, "stock": 4},
-        {"nombre": "Ford Fiesta 2022", "categoria": "Autos", "precio_compra": 350000, "precio_venta": 420000, "stock": 5},
-        {"nombre": "Chevrolet Malibu 2022", "categoria": "Autos", "precio_compra": 450000, "precio_venta": 520000, "stock": 3},
-        {"nombre": "Hyundai Kona 2023", "categoria": "SUV", "precio_compra": 520000, "precio_venta": 600000, "stock": 2},
-        {"nombre": "Ford Explorer 2023", "categoria": "SUV", "precio_compra": 720000, "precio_venta": 850000, "stock": 2},
-        {"nombre": "BMW X5 2022", "categoria": "SUV de lujo", "precio_compra": 1500000, "precio_venta": 1800000, "stock": 1},
-        {"nombre": "Audi A3 2023", "categoria": "Autos de lujo", "precio_compra": 800000, "precio_venta": 950000, "stock": 3},
-        {"nombre": "Honda HR-V 2022", "categoria": "SUV", "precio_compra": 480000, "precio_venta": 550000, "stock": 4},
-        {"nombre": "Chrysler Pacifica 2023", "categoria": "Minivans", "precio_compra": 650000, "precio_venta": 750000, "stock": 2},
-        {"nombre": "Toyota Highlander 2022", "categoria": "SUV", "precio_compra": 750000, "precio_venta": 900000, "stock": 1},
-        {"nombre": "Subaru Outback 2023", "categoria": "SUV", "precio_compra": 550000, "precio_venta": 650000, "stock": 3},
-        {"nombre": "Ford Mustang 2023", "categoria": "Autos deportivos", "precio_compra": 1100000, "precio_venta": 1300000, "stock": 1},
-        {"nombre": "Chevrolet Camaro 2022", "categoria": "Autos deportivos", "precio_compra": 1200000, "precio_venta": 1400000, "stock": 1},
-        {"nombre": "Tesla Model 3 2023", "categoria": "Autos eléctricos", "precio_compra": 1500000, "precio_venta": 1800000, "stock": 2},
-        {"nombre": "Ford F-150 2022", "categoria": "Pickups", "precio_compra": 850000, "precio_venta": 1000000, "stock": 2},
-        {"nombre": "Ram 1500 2023", "categoria": "Pickups", "precio_compra": 900000, "precio_venta": 1100000, "stock": 2},
-        {"nombre": "Jeep Wrangler 2023", "categoria": "SUV", "precio_compra": 700000, "precio_venta": 850000, "stock": 2},
-        {"nombre": "Toyota Tacoma 2022", "categoria": "Pickups", "precio_compra": 650000, "precio_venta": 750000, "stock": 3},
-        {"nombre": "Chevrolet Silverado 2023", "categoria": "Pickups", "precio_compra": 900000, "precio_venta": 1050000, "stock": 3}
+        {"nombre": "Toyota Corolla 2023", "categoria": "Autos", "precio_compra": 500000, "precio_venta": 600000, "stock": 1000},
+        {"nombre": "Honda Civic 2022", "categoria": "Autos", "precio_compra": 450000, "precio_venta": 520000, "stock": 1000},
+        {"nombre": "Nissan Altima 2021", "categoria": "Autos", "precio_compra": 400000, "precio_venta": 470000, "stock": 1000},
+        {"nombre": "Ford Focus 2023", "categoria": "Autos", "precio_compra": 420000, "precio_venta": 490000, "stock": 1000},
+        {"nombre": "Chevrolet Spark 2022", "categoria": "Autos", "precio_compra": 300000, "precio_venta": 350000, "stock": 1000},
+        {"nombre": "Hyundai Elantra 2023", "categoria": "Autos", "precio_compra": 480000, "precio_venta": 550000, "stock": 1000},
+        {"nombre": "Kia Rio 2022", "categoria": "Autos", "precio_compra": 350000, "precio_venta": 420000, "stock": 1000},
+        {"nombre": "Toyota Camry 2023", "categoria": "Autos", "precio_compra": 550000, "precio_venta": 650000, "stock": 1000},
+        {"nombre": "Mazda 3 2022", "categoria": "Autos", "precio_compra": 460000, "precio_venta": 540000, "stock": 1000},
+        {"nombre": "Volkswagen Jetta 2023", "categoria": "Autos", "precio_compra": 490000, "precio_venta": 580000, "stock": 1000},
+        {"nombre": "Honda Accord 2023", "categoria": "Autos", "precio_compra": 580000, "precio_venta": 680000, "stock": 1000},
+        {"nombre": "Nissan Sentra 2022", "categoria": "Autos", "precio_compra": 420000, "precio_venta": 500000, "stock": 1000},
+        {"nombre": "Hyundai Accent 2023", "categoria": "Autos", "precio_compra": 380000, "precio_venta": 450000, "stock": 1000},
+        {"nombre": "Toyota Yaris 2022", "categoria": "Autos", "precio_compra": 340000, "precio_venta": 410000, "stock": 1000},
+        {"nombre": "Kia Forte 2023", "categoria": "Autos", "precio_compra": 430000, "precio_venta": 510000, "stock": 1000},
+        {"nombre": "Chevrolet Cruze 2022", "categoria": "Autos", "precio_compra": 440000, "precio_venta": 520000, "stock": 1000},
+        {"nombre": "Honda Fit 2022", "categoria": "Autos", "precio_compra": 360000, "precio_venta": 430000, "stock": 1000},
+        {"nombre": "Nissan Versa 2023", "categoria": "Autos", "precio_compra": 370000, "precio_venta": 440000, "stock": 1000},
+        {"nombre": "Mazda 2 2022", "categoria": "Autos", "precio_compra": 350000, "precio_venta": 420000, "stock": 1000},
+        {"nombre": "Volkswagen Golf 2023", "categoria": "Autos", "precio_compra": 470000, "precio_venta": 550000, "stock": 1000},
+        {"nombre": "Toyota RAV4 2023", "categoria": "SUV", "precio_compra": 600000, "precio_venta": 700000, "stock": 1000},
+        {"nombre": "Honda CR-V 2022", "categoria": "SUV", "precio_compra": 580000, "precio_venta": 680000, "stock": 1000},
+        {"nombre": "Hyundai Tucson 2023", "categoria": "SUV", "precio_compra": 550000, "precio_venta": 650000, "stock": 1000},
+        {"nombre": "Nissan Rogue 2022", "categoria": "SUV", "precio_compra": 540000, "precio_venta": 640000, "stock": 1000},
+        {"nombre": "Kia Sportage 2023", "categoria": "SUV", "precio_compra": 520000, "precio_venta": 620000, "stock": 1000},
+        {"nombre": "Mercedes-Benz S-Class 2023", "categoria": "Autos de lujo", "precio_compra": 2500000, "precio_venta": 3000000, "stock": 1000},
+        {"nombre": "BMW M5 2022", "categoria": "Autos de lujo", "precio_compra": 2200000, "precio_venta": 2600000, "stock": 1000},
+        {"nombre": "Audi Q7 2023", "categoria": "SUV de lujo", "precio_compra": 2100000, "precio_venta": 2500000, "stock": 1000},
+        {"nombre": "Porsche 911 2022", "categoria": "Autos de lujo", "precio_compra": 3500000, "precio_venta": 4000000, "stock": 1000},
+        {"nombre": "Land Rover Defender 2022", "categoria": "SUV de lujo", "precio_compra": 2800000, "precio_venta": 3300000, "stock": 1000},
+        {"nombre": "Chevrolet Aveo 2022", "categoria": "Autos", "precio_compra": 280000, "precio_venta": 350000, "stock": 1000},
+        {"nombre": "Renault Kwid 2023", "categoria": "Autos", "precio_compra": 270000, "precio_venta": 320000, "stock": 1000},
+        {"nombre": "Dodge Neon 2022", "categoria": "Autos", "precio_compra": 300000, "precio_venta": 360000, "stock": 1000},
+        {"nombre": "Kia Picanto 2023", "categoria": "Autos", "precio_compra": 310000, "precio_venta": 380000, "stock": 1000},
+        {"nombre": "Ford Fiesta 2022", "categoria": "Autos", "precio_compra": 350000, "precio_venta": 420000, "stock": 1000},
+        {"nombre": "Chevrolet Malibu 2022", "categoria": "Autos", "precio_compra": 450000, "precio_venta": 520000, "stock": 1000},
+        {"nombre": "Hyundai Kona 2023", "categoria": "SUV", "precio_compra": 520000, "precio_venta": 600000, "stock": 1000},
+        {"nombre": "Ford Explorer 2023", "categoria": "SUV", "precio_compra": 720000, "precio_venta": 850000, "stock": 1000},
+        {"nombre": "BMW X5 2022", "categoria": "SUV de lujo", "precio_compra": 1500000, "precio_venta": 1800000, "stock": 1000},
+        {"nombre": "Audi A3 2023", "categoria": "Autos de lujo", "precio_compra": 800000, "precio_venta": 950000, "stock": 1000},
+        {"nombre": "Honda HR-V 2022", "categoria": "SUV", "precio_compra": 480000, "precio_venta": 550000, "stock": 1000},
+        {"nombre": "Chrysler Pacifica 2023", "categoria": "Minivans", "precio_compra": 650000, "precio_venta": 750000, "stock": 1000},
+        {"nombre": "Toyota Highlander 2022", "categoria": "SUV", "precio_compra": 750000, "precio_venta": 900000, "stock": 1000},
+        {"nombre": "Subaru Outback 2023", "categoria": "SUV", "precio_compra": 550000, "precio_venta": 650000, "stock": 1000},
+        {"nombre": "Ford Mustang 2023", "categoria": "Autos deportivos", "precio_compra": 1100000, "precio_venta": 1300000, "stock": 1000},
+        {"nombre": "Chevrolet Camaro 2022", "categoria": "Autos deportivos", "precio_compra": 1200000, "precio_venta": 1400000, "stock": 1000},
+        {"nombre": "Tesla Model 3 2023", "categoria": "Autos eléctricos", "precio_compra": 1500000, "precio_venta": 1800000, "stock": 1000},
+        {"nombre": "Ford F-150 2022", "categoria": "Pickups", "precio_compra": 850000, "precio_venta": 1000000, "stock": 1000},
+        {"nombre": "Ram 1500 2023", "categoria": "Pickups", "precio_compra": 900000, "precio_venta": 1100000, "stock": 1000},
+        {"nombre": "Jeep Wrangler 2023", "categoria": "SUV", "precio_compra": 700000, "precio_venta": 850000, "stock": 1000},
+        {"nombre": "Toyota Tacoma 2022", "categoria": "Pickups", "precio_compra": 650000, "precio_venta": 750000, "stock": 1000},
+        {"nombre": "Chevrolet Silverado 2023", "categoria": "Pickups", "precio_compra": 900000, "precio_venta": 1050000, "stock": 1000}
     ],
     
     "Ferretería": [
-        {"nombre": "Cemento Gris Portland", "categoria": "Construcción", "precio_compra": 380, "precio_venta": 450, "stock": 200},
-        {"nombre": "Varilla 3/8 Corrugada", "categoria": "Construcción", "precio_compra": 220, "precio_venta": 280, "stock": 500},
-        {"nombre": "Pintura Tropical Base Agua 5G", "categoria": "Pinturas", "precio_compra": 1200, "precio_venta": 1500, "stock": 45},
+        {"nombre": "Cemento Gris Portland", "categoria": "Construcción", "precio_compra": 380, "precio_venta": 450, "stock": 1000},
+        {"nombre": "Varilla 3/8 Corrugada", "categoria": "Construcción", "precio_compra": 220, "precio_venta": 280, "stock": 1000},
+        {"nombre": "Pintura Tropical Base Agua 5G", "categoria": "Pinturas", "precio_compra": 1200, "precio_venta": 1500, "stock": 1000},
         {"nombre": "Blocks 6\"", "categoria": "Construcción", "precio_compra": 45, "precio_venta": 60, "stock": 1000},
-        {"nombre": "Plafón PVC Blanco", "categoria": "Techos", "precio_compra": 180, "precio_venta": 250, "stock": 300},
-        {"nombre": "Juego Destornilladores Stanley", "categoria": "Herramientas", "precio_compra": 850, "precio_venta": 1100, "stock": 25},
-        {"nombre": "Bombillos LED 9W", "categoria": "Eléctricos", "precio_compra": 95, "precio_venta": 140, "stock": 150},
-        {"nombre": "Tomacorriente Cooper 110V", "categoria": "Eléctricos", "precio_compra": 120, "precio_venta": 180, "stock": 80},
-        {"nombre": "Llave de Agua Plástica 1/2\"", "categoria": "Plomería", "precio_compra": 160, "precio_venta": 220, "stock": 60},
+        {"nombre": "Plafón PVC Blanco", "categoria": "Techos", "precio_compra": 180, "precio_venta": 250, "stock": 1000},
+        {"nombre": "Juego Destornilladores Stanley", "categoria": "Herramientas", "precio_compra": 850, "precio_venta": 1100, "stock": 1000},
+        {"nombre": "Bombillos LED 9W", "categoria": "Eléctricos", "precio_compra": 95, "precio_venta": 140, "stock": 1000},
+        {"nombre": "Tomacorriente Cooper 110V", "categoria": "Eléctricos", "precio_compra": 120, "precio_venta": 180, "stock": 1000},
+        {"nombre": "Llave de Agua Plástica 1/2\"", "categoria": "Plomería", "precio_compra": 160, "precio_venta": 220, "stock": 1000},
         {"nombre": "Cable THW #12 (metro)", "categoria": "Eléctricos", "precio_compra": 35, "precio_venta": 50, "stock": 1000},
-        {"nombre": "Martillo Truper", "categoria": "Herramientas", "precio_compra": 340, "precio_venta": 450, "stock": 30},
-        {"nombre": "Sierra Circular DeWalt", "categoria": "Herramientas Eléctricas", "precio_compra": 5800, "precio_venta": 7200, "stock": 8},
-        {"nombre": "Tubo PVC 4\" (6m)", "categoria": "Plomería", "precio_compra": 420, "precio_venta": 580, "stock": 100},
-        {"nombre": "Zinc Acanalado 6'", "categoria": "Techos", "precio_compra": 580, "precio_venta": 750, "stock": 150},
-        {"nombre": "Cubeta Pintura Base Agua", "categoria": "Pinturas", "precio_compra": 2800, "precio_venta": 3500, "stock": 25},
-        {"nombre": "Arena Lavada 1m³", "categoria": "Construcción", "precio_compra": 400, "precio_venta": 500, "stock": 150},
-        {"nombre": "Varilla 1/2\" Corrugada", "categoria": "Construcción", "precio_compra": 240, "precio_venta": 300, "stock": 500},
-        {"nombre": "Carretilla Metálica", "categoria": "Herramientas", "precio_compra": 950, "precio_venta": 1200, "stock": 30},
-        {"nombre": "Madera Pino 2x4 (6m)", "categoria": "Construcción", "precio_compra": 750, "precio_venta": 950, "stock": 200},
-        {"nombre": "Inodoro Blanco Standard", "categoria": "Sanitarios", "precio_compra": 2500, "precio_venta": 3200, "stock": 40},
+        {"nombre": "Martillo Truper", "categoria": "Herramientas", "precio_compra": 340, "precio_venta": 450, "stock": 1000},
+        {"nombre": "Sierra Circular DeWalt", "categoria": "Herramientas Eléctricas", "precio_compra": 5800, "precio_venta": 7200, "stock": 1000},
+        {"nombre": "Tubo PVC 4\" (6m)", "categoria": "Plomería", "precio_compra": 420, "precio_venta": 580, "stock": 1000},
+        {"nombre": "Zinc Acanalado 6'", "categoria": "Techos", "precio_compra": 580, "precio_venta": 750, "stock": 1000},
+        {"nombre": "Cubeta Pintura Base Agua", "categoria": "Pinturas", "precio_compra": 2800, "precio_venta": 3500, "stock": 1000},
+        {"nombre": "Arena Lavada 1m³", "categoria": "Construcción", "precio_compra": 400, "precio_venta": 500, "stock": 1000},
+        {"nombre": "Varilla 1/2\" Corrugada", "categoria": "Construcción", "precio_compra": 240, "precio_venta": 300, "stock": 1000},
+        {"nombre": "Carretilla Metálica", "categoria": "Herramientas", "precio_compra": 950, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Madera Pino 2x4 (6m)", "categoria": "Construcción", "precio_compra": 750, "precio_venta": 950, "stock": 1000},
+        {"nombre": "Inodoro Blanco Standard", "categoria": "Sanitarios", "precio_compra": 2500, "precio_venta": 3200, "stock": 1000},
         {"nombre": "Piso Cerámico 30x30cm", "categoria": "Pisos", "precio_compra": 450, "precio_venta": 600, "stock": 1000},
-        {"nombre": "Lavamanos Cerámico 50cm", "categoria": "Sanitarios", "precio_compra": 950, "precio_venta": 1200, "stock": 50},
-        {"nombre": "Fregadero de Acero Inoxidable", "categoria": "Sanitarios", "precio_compra": 1800, "precio_venta": 2200, "stock": 30},
-        {"nombre": "Destornillador Phillips 6\"", "categoria": "Herramientas", "precio_compra": 70, "precio_venta": 110, "stock": 500},
-        {"nombre": "Destornillador Plano 6\"", "categoria": "Herramientas", "precio_compra": 60, "precio_venta": 90, "stock": 400},
-        {"nombre": "Cinta Métrica 3m", "categoria": "Herramientas", "precio_compra": 50, "precio_venta": 80, "stock": 350},
-        {"nombre": "Cemento Blanco Portland 40kg", "categoria": "Construcción", "precio_compra": 390, "precio_venta": 490, "stock": 100},
-        {"nombre": "Piso Vinílico 50x50cm", "categoria": "Pisos", "precio_compra": 1200, "precio_venta": 1500, "stock": 100},
-        {"nombre": "Arenas de Contrucción 1m³", "categoria": "Construcción", "precio_compra": 450, "precio_venta": 600, "stock": 200},
-        {"nombre": "Baldosa de Madera 30x30", "categoria": "Pisos", "precio_compra": 850, "precio_venta": 1100, "stock": 200},
-        {"nombre": "Pintura Acrílica Exterior 4L", "categoria": "Pinturas", "precio_compra": 950, "precio_venta": 1200, "stock": 60},
-        {"nombre": "Clavos de Acero (500g)", "categoria": "Herramientas", "precio_compra": 80, "precio_venta": 120, "stock": 250},
-        {"nombre": "Pintura Esmalte Sintético 1L", "categoria": "Pinturas", "precio_compra": 300, "precio_venta": 400, "stock": 100},
-        {"nombre": "Tejas Asfálticas 20x30cm", "categoria": "Techos", "precio_compra": 600, "precio_venta": 800, "stock": 100},
-        {"nombre": "Tubería PVC 2\" (6m)", "categoria": "Plomería", "precio_compra": 380, "precio_venta": 500, "stock": 200},
-        {"nombre": "Pegamento para Piso 1kg", "categoria": "Construcción", "precio_compra": 180, "precio_venta": 250, "stock": 350},
-        {"nombre": "Tornillo 3/4\" x 2\" (100 unidades)", "categoria": "Herramientas", "precio_compra": 150, "precio_venta": 200, "stock": 500},
-        {"nombre": "Tubos de Cartón para Cable", "categoria": "Eléctricos", "precio_compra": 100, "precio_venta": 150, "stock": 600},
-        {"nombre": "Piso Porcelanato 60x60cm", "categoria": "Pisos", "precio_compra": 3500, "precio_venta": 4500, "stock": 150},
-        {"nombre": "Aislante Térmico 5mm (rollo)", "categoria": "Construcción", "precio_compra": 250, "precio_venta": 350, "stock": 100},
-        {"nombre": "Cinta de Fibra de Vidrio 50mm", "categoria": "Construcción", "precio_compra": 70, "precio_venta": 100, "stock": 400},
-        {"nombre": "Ladrillo Rojo Común", "categoria": "Construcción", "precio_compra": 15, "precio_venta": 20, "stock": 2000},
-        {"nombre": "Bomba Manual para Agua", "categoria": "Herramientas", "precio_compra": 950, "precio_venta": 1200, "stock": 25},
-        {"nombre": "Carretera de Grava 1m³", "categoria": "Construcción", "precio_compra": 450, "precio_venta": 600, "stock": 200},
-        {"nombre": "Manguera Eléctrica 10m", "categoria": "Eléctricos", "precio_compra": 400, "precio_venta": 550, "stock": 150},
-        {"nombre": "Escalera de Aluminio 3 Metros", "categoria": "Herramientas", "precio_compra": 1700, "precio_venta": 2200, "stock": 50},
-        {"nombre": "Llave de Paso 3/4\"", "categoria": "Plomería", "precio_compra": 150, "precio_venta": 200, "stock": 150},
-        {"nombre": "Cemento Gris 50kg", "categoria": "Construcción", "precio_compra": 250, "precio_venta": 300, "stock": 500},
-        {"nombre": "Bloc de Vidrio 30x30", "categoria": "Construcción", "precio_compra": 350, "precio_venta": 450, "stock": 100},
-        {"nombre": "Grava para Construcción 1m³", "categoria": "Construcción", "precio_compra": 500, "precio_venta": 700, "stock": 100},
-        {"nombre": "Cinta aislante 3M", "categoria": "Eléctricos", "precio_compra": 40, "precio_venta": 60, "stock": 600}
+        {"nombre": "Lavamanos Cerámico 50cm", "categoria": "Sanitarios", "precio_compra": 950, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Fregadero de Acero Inoxidable", "categoria": "Sanitarios", "precio_compra": 1800, "precio_venta": 2200, "stock": 1000},
+        {"nombre": "Destornillador Phillips 6\"", "categoria": "Herramientas", "precio_compra": 70, "precio_venta": 110, "stock": 1000},
+        {"nombre": "Destornillador Plano 6\"", "categoria": "Herramientas", "precio_compra": 60, "precio_venta": 90, "stock": 1000},
+        {"nombre": "Cinta Métrica 3m", "categoria": "Herramientas", "precio_compra": 50, "precio_venta": 80, "stock": 1000},
+        {"nombre": "Cemento Blanco Portland 40kg", "categoria": "Construcción", "precio_compra": 390, "precio_venta": 490, "stock": 1000},
+        {"nombre": "Piso Vinílico 50x50cm", "categoria": "Pisos", "precio_compra": 1200, "precio_venta": 1500, "stock": 1000},
+        {"nombre": "Arenas de Contrucción 1m³", "categoria": "Construcción", "precio_compra": 450, "precio_venta": 600, "stock": 1000},
+        {"nombre": "Baldosa de Madera 30x30", "categoria": "Pisos", "precio_compra": 850, "precio_venta": 1100, "stock": 1000},
+        {"nombre": "Pintura Acrílica Exterior 4L", "categoria": "Pinturas", "precio_compra": 950, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Clavos de Acero (500g)", "categoria": "Herramientas", "precio_compra": 80, "precio_venta": 120, "stock": 1000},
+        {"nombre": "Pintura Esmalte Sintético 1L", "categoria": "Pinturas", "precio_compra": 300, "precio_venta": 400, "stock": 1000},
+        {"nombre": "Tejas Asfálticas 20x30cm", "categoria": "Techos", "precio_compra": 600, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Tubería PVC 2\" (6m)", "categoria": "Plomería", "precio_compra": 380, "precio_venta": 500, "stock": 1000},
+        {"nombre": "Pegamento para Piso 1kg", "categoria": "Construcción", "precio_compra": 180, "precio_venta": 250, "stock": 1000},
+        {"nombre": "Tornillo 3/4\" x 2\" (100 unidades)", "categoria": "Herramientas", "precio_compra": 150, "precio_venta": 200, "stock": 1000},
+        {"nombre": "Tubos de Cartón para Cable", "categoria": "Eléctricos", "precio_compra": 100, "precio_venta": 150, "stock": 1000},
+        {"nombre": "Piso Porcelanato 60x60cm", "categoria": "Pisos", "precio_compra": 3500, "precio_venta": 4500, "stock": 1000},
+        {"nombre": "Aislante Térmico 5mm (rollo)", "categoria": "Construcción", "precio_compra": 250, "precio_venta": 350, "stock": 1000},
+        {"nombre": "Cinta de Fibra de Vidrio 50mm", "categoria": "Construcción", "precio_compra": 70, "precio_venta": 100, "stock": 1000},
+        {"nombre": "Ladrillo Rojo Común", "categoria": "Construcción", "precio_compra": 15, "precio_venta": 20, "stock": 1000},
+        {"nombre": "Bomba Manual para Agua", "categoria": "Herramientas", "precio_compra": 950, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Carretera de Grava 1m³", "categoria": "Construcción", "precio_compra": 450, "precio_venta": 600, "stock": 1000},
+        {"nombre": "Manguera Eléctrica 10m", "categoria": "Eléctricos", "precio_compra": 400, "precio_venta": 550, "stock": 1000},
+        {"nombre": "Escalera de Aluminio 3 Metros", "categoria": "Herramientas", "precio_compra": 1700, "precio_venta": 2200, "stock": 1000},
+        {"nombre": "Llave de Paso 3/4\"", "categoria": "Plomería", "precio_compra": 150, "precio_venta": 200, "stock": 1000},
+        {"nombre": "Cemento Gris 50kg", "categoria": "Construcción", "precio_compra": 250, "precio_venta": 300, "stock": 1000},
+        {"nombre": "Bloc de Vidrio 30x30", "categoria": "Construcción", "precio_compra": 350, "precio_venta": 450, "stock": 1000},
+        {"nombre": "Grava para Construcción 1m³", "categoria": "Construcción", "precio_compra": 500, "precio_venta": 700, "stock": 1000},
+        {"nombre": "Cinta aislante 3M", "categoria": "Eléctricos", "precio_compra": 40, "precio_venta": 60, "stock": 1000}
         ],
+    
     "Tienda_Articulos_Motos": [
-        {"nombre": "Casco Integral DOT", "categoria": "Accesorios", "precio_compra": 2500, "precio_venta": 4000, "stock": 50},
-        {"nombre": "Guantes de Moto Reforzados", "categoria": "Accesorios", "precio_compra": 800, "precio_venta": 1200, "stock": 100},
-        {"nombre": "Cubre Asiento Antideslizante", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 600, "stock": 150},
-        {"nombre": "Soporte para Teléfono", "categoria": "Accesorios", "precio_compra": 500, "precio_venta": 800, "stock": 120},
-        {"nombre": "Chaleco Reflectante LED", "categoria": "Seguridad", "precio_compra": 900, "precio_venta": 1400, "stock": 75},
-        {"nombre": "Luces LED para Moto", "categoria": "Iluminación", "precio_compra": 600, "precio_venta": 1000, "stock": 200},
-        {"nombre": "Escape Deportivo", "categoria": "Repuestos", "precio_compra": 3500, "precio_venta": 5000, "stock": 30},
-        {"nombre": "Espejos Retrovisores", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 600, "stock": 180},
-        {"nombre": "Batería de Moto 12V", "categoria": "Componentes", "precio_compra": 1200, "precio_venta": 1800, "stock": 40},
-        {"nombre": "Cargador USB para Moto", "categoria": "Accesorios", "precio_compra": 400, "precio_venta": 700, "stock": 100},
-        {"nombre": "Pantalones de Protección", "categoria": "Vestimenta", "precio_compra": 1800, "precio_venta": 2600, "stock": 60},
-        {"nombre": "Cámara de Llanta 17\"", "categoria": "Repuestos", "precio_compra": 500, "precio_venta": 800, "stock": 100},
-        {"nombre": "Cadena y Piñón", "categoria": "Repuestos", "precio_compra": 900, "precio_venta": 1400, "stock": 50},
-        {"nombre": "Impermeable para Moto", "categoria": "Vestimenta", "precio_compra": 700, "precio_venta": 1200, "stock": 80},
-        {"nombre": "Frenos de Disco", "categoria": "Repuestos", "precio_compra": 1500, "precio_venta": 2200, "stock": 40},
-        {"nombre": "Kit de Herramientas", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 1000, "stock": 70},
-        {"nombre": "Aceite para Motor 10W40", "categoria": "Lubricantes", "precio_compra": 400, "precio_venta": 700, "stock": 120},
-        {"nombre": "Filtro de Aire", "categoria": "Repuestos", "precio_compra": 300, "precio_venta": 500, "stock": 100},
-        {"nombre": "Cubre Manos", "categoria": "Accesorios", "precio_compra": 200, "precio_venta": 400, "stock": 150},
-        {"nombre": "Casco Abierto", "categoria": "Accesorios", "precio_compra": 1800, "precio_venta": 2500, "stock": 40},
-        {"nombre": "Pastillas de Freno", "categoria": "Repuestos", "precio_compra": 500, "precio_venta": 800, "stock": 90},
-        {"nombre": "Antirrobo para Moto", "categoria": "Seguridad", "precio_compra": 700, "precio_venta": 1200, "stock": 70},
-        {"nombre": "Protección de Tanque", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 600, "stock": 80},
-        {"nombre": "Maletero para Moto", "categoria": "Accesorios", "precio_compra": 2500, "precio_venta": 4000, "stock": 30},
-        {"nombre": "Pito Eléctrico", "categoria": "Componentes", "precio_compra": 200, "precio_venta": 400, "stock": 200},
-        {"nombre": "Rodilleras de Protección", "categoria": "Vestimenta", "precio_compra": 400, "precio_venta": 800, "stock": 100},
-        {"nombre": "Chaleco de Seguridad para Moto", "categoria": "Seguridad", "precio_compra": 1500, "precio_venta": 2200, "stock": 50},
-        {"nombre": "Linterna LED Recargable", "categoria": "Iluminación", "precio_compra": 350, "precio_venta": 600, "stock": 200},
-        {"nombre": "Soporte para Espejo Retrovisor", "categoria": "Accesorios", "precio_compra": 100, "precio_venta": 200, "stock": 300},
-        {"nombre": "Alarma Antirrobo para Moto", "categoria": "Seguridad", "precio_compra": 850, "precio_venta": 1300, "stock": 60},
-        {"nombre": "Banda Reflectante para Moto", "categoria": "Seguridad", "precio_compra": 150, "precio_venta": 250, "stock": 100},
-        {"nombre": "Kit de Lubricación para Cadena", "categoria": "Lubricantes", "precio_compra": 300, "precio_venta": 500, "stock": 120},
-        {"nombre": "Cable de Arranque para Moto", "categoria": "Componentes", "precio_compra": 150, "precio_venta": 250, "stock": 200},
-        {"nombre": "Llanta de Moto 110/70-17", "categoria": "Repuestos", "precio_compra": 1000, "precio_venta": 1500, "stock": 80},
-        {"nombre": "Frenos de Tambor", "categoria": "Repuestos", "precio_compra": 750, "precio_venta": 1100, "stock": 60},
-        {"nombre": "Chaleco de Protección para Conductor", "categoria": "Seguridad", "precio_compra": 1000, "precio_venta": 1500, "stock": 80},
-        {"nombre": "Cubre Manos para Moto", "categoria": "Accesorios", "precio_compra": 150, "precio_venta": 300, "stock": 120},
-        {"nombre": "Protección de Rodillas", "categoria": "Vestimenta", "precio_compra": 450, "precio_venta": 700, "stock": 90},
-        {"nombre": "Lubricante para Cadenas", "categoria": "Lubricantes", "precio_compra": 250, "precio_venta": 400, "stock": 100},
-        {"nombre": "Funda de Moto Impermeable", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 900, "stock": 50},
-        {"nombre": "Aceite para Transmisión 80W90", "categoria": "Lubricantes", "precio_compra": 450, "precio_venta": 650, "stock": 90},
-        {"nombre": "Cadenas para Moto", "categoria": "Repuestos", "precio_compra": 350, "precio_venta": 600, "stock": 110},
-        {"nombre": "Rodilleras para Moto", "categoria": "Vestimenta", "precio_compra": 600, "precio_venta": 1000, "stock": 120},
-        {"nombre": "Limpieza de Cadena de Moto", "categoria": "Lubricantes", "precio_compra": 300, "precio_venta": 500, "stock": 130},
-        {"nombre": "Aceite para Suspensión de Moto", "categoria": "Lubricantes", "precio_compra": 500, "precio_venta": 700, "stock": 100},
-        {"nombre": "Tornillos de Freno", "categoria": "Repuestos", "precio_compra": 120, "precio_venta": 200, "stock": 400},
-        {"nombre": "Disco de Freno para Moto", "categoria": "Repuestos", "precio_compra": 800, "precio_venta": 1200, "stock": 80},
-        {"nombre": "Soporte para Luz LED", "categoria": "Iluminación", "precio_compra": 200, "precio_venta": 350, "stock": 250},
-        {"nombre": "Frenos Hidráulicos para Moto", "categoria": "Repuestos", "precio_compra": 2000, "precio_venta": 3000, "stock": 40},
-        {"nombre": "Mochila para Moto", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 1000, "stock": 100},
-        {"nombre": "Aceite Sintético para Moto", "categoria": "Lubricantes", "precio_compra": 500, "precio_venta": 750, "stock": 90},
-        {"nombre": "Espejos Retrovisores LED", "categoria": "Accesorios", "precio_compra": 800, "precio_venta": 1200, "stock": 60},
-        {"nombre": "Funda de Protección para Moto", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 500, "stock": 150},
-        {"nombre": "Protección para Espalda", "categoria": "Vestimenta", "precio_compra": 400, "precio_venta": 700, "stock": 130}
+        {"nombre": "Casco Integral DOT", "categoria": "Accesorios", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+        {"nombre": "Guantes de Moto Reforzados", "categoria": "Accesorios", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Cubre Asiento Antideslizante", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 600, "stock": 1000},
+        {"nombre": "Soporte para Teléfono", "categoria": "Accesorios", "precio_compra": 500, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Chaleco Reflectante LED", "categoria": "Seguridad", "precio_compra": 900, "precio_venta": 1400, "stock": 1000},
+        {"nombre": "Luces LED para Moto", "categoria": "Iluminación", "precio_compra": 600, "precio_venta": 1000, "stock": 1000},
+        {"nombre": "Escape Deportivo", "categoria": "Repuestos", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+        {"nombre": "Espejos Retrovisores", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 600, "stock": 1000},
+        {"nombre": "Batería de Moto 12V", "categoria": "Componentes", "precio_compra": 1200, "precio_venta": 1800, "stock": 1000},
+        {"nombre": "Cargador USB para Moto", "categoria": "Accesorios", "precio_compra": 400, "precio_venta": 700, "stock": 1000},
+        {"nombre": "Pantalones de Protección", "categoria": "Vestimenta", "precio_compra": 1800, "precio_venta": 2600, "stock": 1000},
+        {"nombre": "Cámara de Llanta 17\"", "categoria": "Repuestos", "precio_compra": 500, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Cadena y Piñón", "categoria": "Repuestos", "precio_compra": 900, "precio_venta": 1400, "stock": 1000},
+        {"nombre": "Impermeable para Moto", "categoria": "Vestimenta", "precio_compra": 700, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Frenos de Disco", "categoria": "Repuestos", "precio_compra": 1500, "precio_venta": 2200, "stock": 1000},
+        {"nombre": "Kit de Herramientas", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 1000, "stock": 1000},
+        {"nombre": "Aceite para Motor 10W40", "categoria": "Lubricantes", "precio_compra": 400, "precio_venta": 700, "stock": 1000},
+        {"nombre": "Filtro de Aire", "categoria": "Repuestos", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+        {"nombre": "Cubre Manos", "categoria": "Accesorios", "precio_compra": 200, "precio_venta": 400, "stock": 1000},
+        {"nombre": "Casco Abierto", "categoria": "Accesorios", "precio_compra": 1800, "precio_venta": 2500, "stock": 1000},
+        {"nombre": "Pastillas de Freno", "categoria": "Repuestos", "precio_compra": 500, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Antirrobo para Moto", "categoria": "Seguridad", "precio_compra": 700, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Protección de Tanque", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 600, "stock": 1000},
+        {"nombre": "Maletero para Moto", "categoria": "Accesorios", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+        {"nombre": "Pito Eléctrico", "categoria": "Componentes", "precio_compra": 200, "precio_venta": 400, "stock": 1000},
+        {"nombre": "Rodilleras de Protección", "categoria": "Vestimenta", "precio_compra": 400, "precio_venta": 800, "stock": 1000},
+        {"nombre": "Chaleco de Seguridad para Moto", "categoria": "Seguridad", "precio_compra": 1500, "precio_venta": 2200, "stock": 1000},
+        {"nombre": "Linterna LED Recargable", "categoria": "Iluminación", "precio_compra": 350, "precio_venta": 600, "stock": 1000},
+        {"nombre": "Soporte para Espejo Retrovisor", "categoria": "Accesorios", "precio_compra": 100, "precio_venta": 200, "stock": 1000},
+        {"nombre": "Alarma Antirrobo para Moto", "categoria": "Seguridad", "precio_compra": 850, "precio_venta": 1300, "stock": 1000},
+        {"nombre": "Banda Reflectante para Moto", "categoria": "Seguridad", "precio_compra": 150, "precio_venta": 250, "stock": 1000},
+        {"nombre": "Kit de Lubricación para Cadena", "categoria": "Lubricantes", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+        {"nombre": "Cable de Arranque para Moto", "categoria": "Componentes", "precio_compra": 150, "precio_venta": 250, "stock": 1000},
+        {"nombre": "Llanta de Moto 110/70-17", "categoria": "Repuestos", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+        {"nombre": "Frenos de Tambor", "categoria": "Repuestos", "precio_compra": 750, "precio_venta": 1100, "stock": 1000},
+        {"nombre": "Chaleco de Protección para Conductor", "categoria": "Seguridad", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+        {"nombre": "Cubre Manos para Moto", "categoria": "Accesorios", "precio_compra": 150, "precio_venta": 300, "stock": 1000},
+        {"nombre": "Protección de Rodillas", "categoria": "Vestimenta", "precio_compra": 450, "precio_venta": 700, "stock": 1000},
+        {"nombre": "Lubricante para Cadenas", "categoria": "Lubricantes", "precio_compra": 250, "precio_venta": 400, "stock": 1000},
+        {"nombre": "Funda de Moto Impermeable", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 900, "stock": 1000},
+        {"nombre": "Aceite para Transmisión 80W90", "categoria": "Lubricantes", "precio_compra": 450, "precio_venta": 650, "stock": 1000},
+        {"nombre": "Cadenas para Moto", "categoria": "Repuestos", "precio_compra": 350, "precio_venta": 600, "stock": 1000},
+        {"nombre": "Rodilleras para Moto", "categoria": "Vestimenta", "precio_compra": 600, "precio_venta": 1000, "stock": 1000},
+        {"nombre": "Limpieza de Cadena de Moto", "categoria": "Lubricantes", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+        {"nombre": "Aceite para Suspensión de Moto", "categoria": "Lubricantes", "precio_compra": 500, "precio_venta": 700, "stock": 1000},
+        {"nombre": "Tornillos de Freno", "categoria": "Repuestos", "precio_compra": 120, "precio_venta": 200, "stock": 1000},
+        {"nombre": "Disco de Freno para Moto", "categoria": "Repuestos", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Soporte para Luz LED", "categoria": "Iluminación", "precio_compra": 200, "precio_venta": 350, "stock": 1000},
+        {"nombre": "Frenos Hidráulicos para Moto", "categoria": "Repuestos", "precio_compra": 2000, "precio_venta": 3000, "stock": 1000},
+        {"nombre": "Mochila para Moto", "categoria": "Accesorios", "precio_compra": 600, "precio_venta": 1000, "stock": 1000},
+        {"nombre": "Aceite Sintético para Moto", "categoria": "Lubricantes", "precio_compra": 500, "precio_venta": 750, "stock": 1000},
+        {"nombre": "Espejos Retrovisores LED", "categoria": "Accesorios", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+        {"nombre": "Funda de Protección para Moto", "categoria": "Accesorios", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+        {"nombre": "Protección para Espalda", "categoria": "Vestimenta", "precio_compra": 400, "precio_venta": 700, "stock": 1000}
     ],
 
     "Tienda_de_Ropa_de_Marca": [
-            {"nombre": "Camiseta Polo Ralph Lauren", "categoria": "Camisetas", "precio_compra": 2500, "precio_venta": 4000, "stock": 50},
-            {"nombre": "Pantalón Chino Dockers", "categoria": "Pantalones", "precio_compra": 3500, "precio_venta": 5000, "stock": 40},
-            {"nombre": "Vestido Zara", "categoria": "Vestidos", "precio_compra": 4500, "precio_venta": 7000, "stock": 30},
-            {"nombre": "Jeans Levi's 501", "categoria": "Jeans", "precio_compra": 4000, "precio_venta": 6000, "stock": 60},
-            {"nombre": "Chaqueta de Cuero Guess", "categoria": "Chaquetas", "precio_compra": 8000, "precio_venta": 12000, "stock": 20},
-            {"nombre": "Camiseta Nike Dri-Fit", "categoria": "Camisetas", "precio_compra": 1800, "precio_venta": 3000, "stock": 80},
-            {"nombre": "Sudadera Adidas Originals", "categoria": "Sudaderas", "precio_compra": 3000, "precio_venta": 4500, "stock": 50},
-            {"nombre": "Traje Hugo Boss", "categoria": "Trajes", "precio_compra": 15000, "precio_venta": 20000, "stock": 15},
-            {"nombre": "Falda Mango", "categoria": "Faldas", "precio_compra": 2500, "precio_venta": 3800, "stock": 40},
-            {"nombre": "Camisa Formal Tommy Hilfiger", "categoria": "Camisas", "precio_compra": 3000, "precio_venta": 5000, "stock": 30},
-            {"nombre": "Blusa H&M", "categoria": "Blusas", "precio_compra": 1200, "precio_venta": 2000, "stock": 80},
-            {"nombre": "Short Calvin Klein", "categoria": "Shorts", "precio_compra": 2000, "precio_venta": 3500, "stock": 50},
-            {"nombre": "Abrigo Burberry", "categoria": "Abrigos", "precio_compra": 20000, "precio_venta": 28000, "stock": 10},
-            {"nombre": "Polo Lacoste", "categoria": "Polos", "precio_compra": 4000, "precio_venta": 6000, "stock": 40},
-            {"nombre": "Pantalón Deportivo Puma", "categoria": "Pantalones", "precio_compra": 1800, "precio_venta": 2800, "stock": 60},
-            {"nombre": "Chamarra Levi's", "categoria": "Chaquetas", "precio_compra": 4500, "precio_venta": 6500, "stock": 25},
-            {"nombre": "Mono Deportivo Nike", "categoria": "Monos", "precio_compra": 3500, "precio_venta": 5000, "stock": 30},
-            {"nombre": "Cardigan Zara", "categoria": "Suéteres", "precio_compra": 2500, "precio_venta": 4000, "stock": 40},
-            {"nombre": "Jeans Skinny Fit Levi's", "categoria": "Jeans", "precio_compra": 4200, "precio_venta": 6500, "stock": 50},
-            {"nombre": "Blazer Massimo Dutti", "categoria": "Blazers", "precio_compra": 6000, "precio_venta": 9000, "stock": 15},
-            {"nombre": "Leggings Gymshark", "categoria": "Leggings", "precio_compra": 1500, "precio_venta": 2500, "stock": 100},
-            {"nombre": "Camisa Casual Springfield", "categoria": "Camisas", "precio_compra": 2500, "precio_venta": 4000, "stock": 50},
-            {"nombre": "Vestido Corto Bershka", "categoria": "Vestidos", "precio_compra": 2000, "precio_venta": 3500, "stock": 60},
-            {"nombre": "Chaleco North Face", "categoria": "Chalecos", "precio_compra": 6000, "precio_venta": 8500, "stock": 20},
-            {"nombre": "Top Crop Forever 21", "categoria": "Tops", "precio_compra": 1200, "precio_venta": 2000, "stock": 90},
-            {"nombre": "Falda Midi Stradivarius", "categoria": "Faldas", "precio_compra": 1800, "precio_venta": 3000, "stock": 50},
-            {"nombre": "Bikini Victoria's Secret", "categoria": "Trajes de baño", "precio_compra": 2200, "precio_venta": 3500, "stock": 40},
-            {"nombre": "Overol GAP", "categoria": "Overoles", "precio_compra": 3000, "precio_venta": 4800, "stock": 20},
-            {"nombre": "Suéter Columbia", "categoria": "Suéteres", "precio_compra": 2800, "precio_venta": 4000, "stock": 30},
-            {"nombre": "Chamarra Deportiva Adidas", "categoria": "Chaquetas", "precio_compra": 4000, "precio_venta": 6000, "stock": 25},
-            {"nombre": "Camiseta Estampada Uniqlo", "categoria": "Camisetas", "precio_compra": 1200, "precio_venta": 2000, "stock": 100},
-            {"nombre": "Traje de Baño Speedo", "categoria": "Trajes de baño", "precio_compra": 2500, "precio_venta": 4000, "stock": 40},
-            {"nombre": "Short Denim Levi's", "categoria": "Shorts", "precio_compra": 2200, "precio_venta": 3500, "stock": 30},
-            {"nombre": "Abrigo Largo Mango", "categoria": "Abrigos", "precio_compra": 15000, "precio_venta": 20000, "stock": 15},
-            {"nombre": "Camiseta Básica H&M", "categoria": "Camisetas", "precio_compra": 800, "precio_venta": 1500, "stock": 120},
-            {"nombre": "Camisa Formal Massimo Dutti", "categoria": "Camisas", "precio_compra": 3500, "precio_venta": 5000, "stock": 40},
-            {"nombre": "Vestido Largo Guess", "categoria": "Vestidos", "precio_compra": 6000, "precio_venta": 9000, "stock": 20},
-            {"nombre": "Falda Plisada Zara", "categoria": "Faldas", "precio_compra": 2000, "precio_venta": 3500, "stock": 50},
-            {"nombre": "Leggings Adidas", "categoria": "Leggings", "precio_compra": 1800, "precio_venta": 3000, "stock": 70},
-            {"nombre": "Cárdigan H&M", "categoria": "Suéteres", "precio_compra": 1500, "precio_venta": 2500, "stock": 40},
-            {"nombre": "Parka Timberland", "categoria": "Chaquetas", "precio_compra": 8000, "precio_venta": 12000, "stock": 10},
-            {"nombre": "Traje Completo Zara", "categoria": "Trajes", "precio_compra": 10000, "precio_venta": 15000, "stock": 10},
-            {"nombre": "Camisa de Lino Springfield", "categoria": "Camisas", "precio_compra": 3000, "precio_venta": 4500, "stock": 30},
-            {"nombre": "Bermudas Pull&Bear", "categoria": "Shorts", "precio_compra": 1500, "precio_venta": 2500, "stock": 60},
-            {"nombre": "Mono Largo H&M", "categoria": "Monos", "precio_compra": 3500, "precio_venta": 5000, "stock": 25},
-            {"nombre": "Pantalón Jogger Puma", "categoria": "Pantalones", "precio_compra": 2000, "precio_venta": 3500, "stock": 40},
-            {"nombre": "Blusa Zara", "categoria": "Blusas", "precio_compra": 1800, "precio_venta": 3000, "stock": 70},
+            {"nombre": "Camiseta Polo Ralph Lauren", "categoria": "Camisetas", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+            {"nombre": "Pantalón Chino Dockers", "categoria": "Pantalones", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Vestido Zara", "categoria": "Vestidos", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Jeans Levi's 501", "categoria": "Jeans", "precio_compra": 4000, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Chaqueta de Cuero Guess", "categoria": "Chaquetas", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Camiseta Nike Dri-Fit", "categoria": "Camisetas", "precio_compra": 1800, "precio_venta": 3000, "stock": 1000},
+            {"nombre": "Sudadera Adidas Originals", "categoria": "Sudaderas", "precio_compra": 3000, "precio_venta": 4500, "stock": 1000},
+            {"nombre": "Traje Hugo Boss", "categoria": "Trajes", "precio_compra": 15000, "precio_venta": 20000, "stock": 1000},
+            {"nombre": "Falda Mango", "categoria": "Faldas", "precio_compra": 2500, "precio_venta": 3800, "stock": 1000},
+            {"nombre": "Camisa Formal Tommy Hilfiger", "categoria": "Camisas", "precio_compra": 3000, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Blusa H&M", "categoria": "Blusas", "precio_compra": 1200, "precio_venta": 2000, "stock": 1000},
+            {"nombre": "Short Calvin Klein", "categoria": "Shorts", "precio_compra": 2000, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Abrigo Burberry", "categoria": "Abrigos", "precio_compra": 20000, "precio_venta": 28000, "stock": 1000},
+            {"nombre": "Polo Lacoste", "categoria": "Polos", "precio_compra": 4000, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Pantalón Deportivo Puma", "categoria": "Pantalones", "precio_compra": 1800, "precio_venta": 2800, "stock": 1000},
+            {"nombre": "Chamarra Levi's", "categoria": "Chaquetas", "precio_compra": 4500, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Mono Deportivo Nike", "categoria": "Monos", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Cardigan Zara", "categoria": "Suéteres", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+            {"nombre": "Jeans Skinny Fit Levi's", "categoria": "Jeans", "precio_compra": 4200, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Blazer Massimo Dutti", "categoria": "Blazers", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Leggings Gymshark", "categoria": "Leggings", "precio_compra": 1500, "precio_venta": 2500, "stock": 1000},
+            {"nombre": "Camisa Casual Springfield", "categoria": "Camisas", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+            {"nombre": "Vestido Corto Bershka", "categoria": "Vestidos", "precio_compra": 2000, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Chaleco North Face", "categoria": "Chalecos", "precio_compra": 6000, "precio_venta": 8500, "stock": 1000},
+            {"nombre": "Top Crop Forever 21", "categoria": "Tops", "precio_compra": 1200, "precio_venta": 2000, "stock": 1000},
+            {"nombre": "Falda Midi Stradivarius", "categoria": "Faldas", "precio_compra": 1800, "precio_venta": 3000, "stock": 1000},
+            {"nombre": "Bikini Victoria's Secret", "categoria": "Trajes de baño", "precio_compra": 2200, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Overol GAP", "categoria": "Overoles", "precio_compra": 3000, "precio_venta": 4800, "stock": 1000},
+            {"nombre": "Suéter Columbia", "categoria": "Suéteres", "precio_compra": 2800, "precio_venta": 4000, "stock": 1000},
+            {"nombre": "Chamarra Deportiva Adidas", "categoria": "Chaquetas", "precio_compra": 4000, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Camiseta Estampada Uniqlo", "categoria": "Camisetas", "precio_compra": 1200, "precio_venta": 2000, "stock": 1000},
+            {"nombre": "Traje de Baño Speedo", "categoria": "Trajes de baño", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+            {"nombre": "Short Denim Levi's", "categoria": "Shorts", "precio_compra": 2200, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Abrigo Largo Mango", "categoria": "Abrigos", "precio_compra": 15000, "precio_venta": 20000, "stock": 1000},
+            {"nombre": "Camiseta Básica H&M", "categoria": "Camisetas", "precio_compra": 800, "precio_venta": 1500, "stock": 1000},
+            {"nombre": "Camisa Formal Massimo Dutti", "categoria": "Camisas", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Vestido Largo Guess", "categoria": "Vestidos", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Falda Plisada Zara", "categoria": "Faldas", "precio_compra": 2000, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Leggings Adidas", "categoria": "Leggings", "precio_compra": 1800, "precio_venta": 3000, "stock": 1000},
+            {"nombre": "Cárdigan H&M", "categoria": "Suéteres", "precio_compra": 1500, "precio_venta": 2500, "stock": 1000},
+            {"nombre": "Parka Timberland", "categoria": "Chaquetas", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Traje Completo Zara", "categoria": "Trajes", "precio_compra": 10000, "precio_venta": 15000, "stock": 1000},
+            {"nombre": "Camisa de Lino Springfield", "categoria": "Camisas", "precio_compra": 3000, "precio_venta": 4500, "stock": 1000},
+            {"nombre": "Bermudas Pull&Bear", "categoria": "Shorts", "precio_compra": 1500, "precio_venta": 2500, "stock": 1000},
+            {"nombre": "Mono Largo H&M", "categoria": "Monos", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Pantalón Jogger Puma", "categoria": "Pantalones", "precio_compra": 2000, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Blusa Zara", "categoria": "Blusas", "precio_compra": 1800, "precio_venta": 3000, "stock": 1000},
     ],
+    
     "Liquor_Store": [
-            {"nombre": "Brugal Extra Viejo", "categoria": "Ron", "marca": "Brugal", "precio_compra": 800, "precio_venta": 1200, "stock": 50},
-            {"nombre": "Barceló Imperial", "categoria": "Ron", "marca": "Barceló", "precio_compra": 1200, "precio_venta": 1700, "stock": 40},
-            {"nombre": "Ron Matusalem Gran Reserva", "categoria": "Ron", "marca": "Matusalem", "precio_compra": 1000, "precio_venta": 1500, "stock": 45},
-            {"nombre": "Bacardi 8 Años", "categoria": "Ron", "marca": "Bacardi", "precio_compra": 1400, "precio_venta": 2000, "stock": 35},
-            {"nombre": "Ron La Fortaleza", "categoria": "Ron", "marca": "La Fortaleza", "precio_compra": 1100, "precio_venta": 1600, "stock": 30},
-            {"nombre": "Brugal 1888", "categoria": "Ron", "marca": "Brugal", "precio_compra": 2500, "precio_venta": 3500, "stock": 20},
-            {"nombre": "Ron Clásico Barcelo", "categoria": "Ron", "marca": "Barceló", "precio_compra": 600, "precio_venta": 1000, "stock": 70},
-            {"nombre": "Ron Presidente", "categoria": "Ron", "marca": "Presidente", "precio_compra": 400, "precio_venta": 700, "stock": 100},
-            {"nombre": "Santo Domingo Ron", "categoria": "Ron", "marca": "Santo Domingo", "precio_compra": 350, "precio_venta": 600, "stock": 90},
-            {"nombre": "Mango Bay Rum", "categoria": "Ron", "marca": "Mango Bay", "precio_compra": 1200, "precio_venta": 1700, "stock": 50},
-            {"nombre": "Cerveza Presidente", "categoria": "Cerveza", "marca": "Presidente", "precio_compra": 80, "precio_venta": 150, "stock": 200},
-            {"nombre": "Cerveza Brahma Light", "categoria": "Cerveza", "marca": "Brahma", "precio_compra": 70, "precio_venta": 120, "stock": 180},
-            {"nombre": "Cerveza Red Stripe", "categoria": "Cerveza", "marca": "Red Stripe", "precio_compra": 90, "precio_venta": 140, "stock": 160},
-            {"nombre": "Cerveza Presidente Light", "categoria": "Cerveza", "marca": "Presidente", "precio_compra": 85, "precio_venta": 130, "stock": 170},
-            {"nombre": "Vino Sangría Don Simon", "categoria": "Vino", "marca": "Don Simon", "precio_compra": 400, "precio_venta": 650, "stock": 60},
-            {"nombre": "Vino Tinto Lancers", "categoria": "Vino", "marca": "Lancers", "precio_compra": 600, "precio_venta": 900, "stock": 50},
-            {"nombre": "Vino Blanco Sutter Home", "categoria": "Vino", "marca": "Sutter Home", "precio_compra": 800, "precio_venta": 1200, "stock": 30},
-            {"nombre": "Vino Dominicano Vino del Sol", "categoria": "Vino", "marca": "Vino del Sol", "precio_compra": 700, "precio_venta": 1000, "stock": 40},
-            {"nombre": "Tequila José Cuervo", "categoria": "Tequila", "marca": "José Cuervo", "precio_compra": 1200, "precio_venta": 1700, "stock": 20},
-            {"nombre": "Tequila Don Julio 1942", "categoria": "Tequila", "marca": "Don Julio", "precio_compra": 3000, "precio_venta": 4500, "stock": 10},
-            {"nombre": "Tequila El Jimador", "categoria": "Tequila", "marca": "El Jimador", "precio_compra": 1500, "precio_venta": 2200, "stock": 25},
-            {"nombre": "Gin Tanqueray", "categoria": "Ginebra", "marca": "Tanqueray", "precio_compra": 1800, "precio_venta": 2600, "stock": 30},
-            {"nombre": "Gin Beefeater", "categoria": "Ginebra", "marca": "Beefeater", "precio_compra": 1500, "precio_venta": 2200, "stock": 40},
-            {"nombre": "Vodka Absolut", "categoria": "Vodka", "marca": "Absolut", "precio_compra": 1200, "precio_venta": 1800, "stock": 35},
-            {"nombre": "Vodka Smirnoff", "categoria": "Vodka", "marca": "Smirnoff", "precio_compra": 1000, "precio_venta": 1500, "stock": 50},
-            {"nombre": "Whisky Johnnie Walker Black", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 2000, "precio_venta": 3000, "stock": 30},
-            {"nombre": "Whisky Macallan 12 Años", "categoria": "Whisky", "marca": "Macallan", "precio_compra": 5000, "precio_venta": 7500, "stock": 10},
-            {"nombre": "Whisky Chivas Regal 12", "categoria": "Whisky", "marca": "Chivas Regal", "precio_compra": 2500, "precio_venta": 3500, "stock": 25},
-            {"nombre": "Whisky Glenfiddich 18", "categoria": "Whisky", "marca": "Glenfiddich", "precio_compra": 4500, "precio_venta": 6500, "stock": 15},
-            {"nombre": "Vino Dominicano Casa de Campo", "categoria": "Vino", "marca": "Casa de Campo", "precio_compra": 1000, "precio_venta": 1500, "stock": 40},
-            {"nombre": "Mojito Ron Matusalem", "categoria": "Cócteles", "marca": "Matusalem", "precio_compra": 1500, "precio_venta": 2200, "stock": 30},
-            {"nombre": "Coñac Hennessy VS", "categoria": "Coñac", "marca": "Hennessy", "precio_compra": 2500, "precio_venta": 3500, "stock": 20},
-            {"nombre": "Coñac Rémy Martin VSOP", "categoria": "Coñac", "marca": "Rémy Martin", "precio_compra": 3000, "precio_venta": 4500, "stock": 15},
-            {"nombre": "Pina Colada Presidente", "categoria": "Cócteles", "marca": "Presidente", "precio_compra": 1800, "precio_venta": 2600, "stock": 25},
-            {"nombre": "Aguardiente La Caña", "categoria": "Aguardiente", "marca": "La Caña", "precio_compra": 700, "precio_venta": 1000, "stock": 60},
-            {"nombre": "Ron Quorhum 30", "categoria": "Ron", "marca": "Quorhum", "precio_compra": 2000, "precio_venta": 3000, "stock": 20},
-            {"nombre": "Ron Blanco Barcelo", "categoria": "Ron", "marca": "Barceló", "precio_compra": 600, "precio_venta": 900, "stock": 70},
-            {"nombre": "Vino Moscato Stella Rosa", "categoria": "Vino", "marca": "Stella Rosa", "precio_compra": 1200, "precio_venta": 1800, "stock": 40},
-            {"nombre": "Vino Espumante Dom Perignon", "categoria": "Vino", "marca": "Dom Perignon", "precio_compra": 8000, "precio_venta": 12000, "stock": 5},
-            {"nombre": "Cerveza Presidente Dorada", "categoria": "Cerveza", "marca": "Presidente", "precio_compra": 90, "precio_venta": 140, "stock": 150},
-            {"nombre": "Cerveza Ambar", "categoria": "Cerveza", "marca": "Ambar", "precio_compra": 120, "precio_venta": 180, "stock": 110},
-            {"nombre": "Cerveza Corona", "categoria": "Cerveza", "marca": "Corona", "precio_compra": 110, "precio_venta": 160, "stock": 130},
-            {"nombre": "Vino Tinto Concha y Toro", "categoria": "Vino", "marca": "Concha y Toro", "precio_compra": 800, "precio_venta": 1200, "stock": 60},
-            {"nombre": "Aguardiente Anis", "categoria": "Aguardiente", "marca": "Anis", "precio_compra": 400, "precio_venta": 600, "stock": 90},
-            {"nombre": "Limoncello Italiano", "categoria": "Licores", "marca": "Limoncello", "precio_compra": 2000, "precio_venta": 2900, "stock": 15},
-            {"nombre": "Vino Blanco Santa Carolina", "categoria": "Vino", "marca": "Santa Carolina", "precio_compra": 900, "precio_venta": 1400, "stock": 50},
-            {"nombre": "Tequila Espolon Blanco", "categoria": "Tequila", "marca": "Espolon", "precio_compra": 1000, "precio_venta": 1500, "stock": 45},
-            {"nombre": "Johnnie Walker Red Label", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 1000, "precio_venta": 1500, "stock": 40},
-            {"nombre": "Johnnie Walker Black Label", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 2000, "precio_venta": 3000, "stock": 30},
-            {"nombre": "Chivas Regal 12 Años", "categoria": "Whisky", "marca": "Chivas Regal", "precio_compra": 1500, "precio_venta": 2200, "stock": 35},
-            {"nombre": "Jameson Irish Whiskey", "categoria": "Whisky", "marca": "Jameson", "precio_compra": 1400, "precio_venta": 2000, "stock": 50},
-            {"nombre": "Glenfiddich 12 Años", "categoria": "Whisky", "marca": "Glenfiddich", "precio_compra": 2500, "precio_venta": 3500, "stock": 25},
-            {"nombre": "Macallan 12 Años", "categoria": "Whisky", "marca": "Macallan", "precio_compra": 4500, "precio_venta": 6500, "stock": 20},
-            {"nombre": "Ballantine's Finest", "categoria": "Whisky", "marca": "Ballantine's", "precio_compra": 1200, "precio_venta": 1700, "stock": 60},
-            {"nombre": "Aberlour 12 Años", "categoria": "Whisky", "marca": "Aberlour", "precio_compra": 3500, "precio_venta": 5000, "stock": 15},
-            {"nombre": "The Glenlivet 12 Años", "categoria": "Whisky", "marca": "The Glenlivet", "precio_compra": 2800, "precio_venta": 4000, "stock": 30},
-            {"nombre": "Bushmills Original", "categoria": "Whisky", "marca": "Bushmills", "precio_compra": 1300, "precio_venta": 1800, "stock": 50},
-            {"nombre": "Dewar's White Label", "categoria": "Whisky", "marca": "Dewar's", "precio_compra": 1000, "precio_venta": 1500, "stock": 70},
-            {"nombre": "Royal Salute 21 Años", "categoria": "Whisky", "marca": "Royal Salute", "precio_compra": 8000, "precio_venta": 12000, "stock": 10},
-            {"nombre": "Glenmorangie Original 10 Años", "categoria": "Whisky", "marca": "Glenmorangie", "precio_compra": 3500, "precio_venta": 5000, "stock": 15},
-            {"nombre": "Red Label Johnnie Walker", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 1100, "precio_venta": 1600, "stock": 40},
-            {"nombre": "Ardbeg 10 Años", "categoria": "Whisky", "marca": "Ardbeg", "precio_compra": 4000, "precio_venta": 6000, "stock": 10},
-             {"nombre": "Vino Tinto Concha y Toro", "categoria": "Vino Tinto", "marca": "Concha y Toro", "precio_compra": 800, "precio_venta": 1200, "stock": 60},
-            {"nombre": "Vino Blanco Santa Carolina", "categoria": "Vino Blanco", "marca": "Santa Carolina", "precio_compra": 900, "precio_venta": 1400, "stock": 50},
-            {"nombre": "Vino Tinto Casillero del Diablo", "categoria": "Vino Tinto", "marca": "Casillero del Diablo", "precio_compra": 850, "precio_venta": 1300, "stock": 55},
-            {"nombre": "Vino Rosado Santa Rita 120", "categoria": "Vino Rosado", "marca": "Santa Rita", "precio_compra": 700, "precio_venta": 1100, "stock": 45},
-            {"nombre": "Vino Tinto Marqués de Riscal", "categoria": "Vino Tinto", "marca": "Marqués de Riscal", "precio_compra": 1500, "precio_venta": 2200, "stock": 30},
-            {"nombre": "Vino Blanco Torres", "categoria": "Vino Blanco", "marca": "Torres", "precio_compra": 950, "precio_venta": 1400, "stock": 60},
-            {"nombre": "Vino Tinto Robert Mondavi", "categoria": "Vino Tinto", "marca": "Robert Mondavi", "precio_compra": 1800, "precio_venta": 2500, "stock": 40},
-            {"nombre": "Vino Tinto Bodega Norton Reserva", "categoria": "Vino Tinto", "marca": "Bodega Norton", "precio_compra": 1200, "precio_venta": 1800, "stock": 50},
-            {"nombre": "Vino Tinto La Caña", "categoria": "Vino Tinto", "marca": "La Caña", "precio_compra": 600, "precio_venta": 1000, "stock": 70},
-            {"nombre": "Vino Dominicano Viticultura La Penda", "categoria": "Vino Tinto", "marca": "Viticultura La Penda", "precio_compra": 1500, "precio_venta": 2300, "stock": 25}
+            {"nombre": "Brugal Extra Viejo", "categoria": "Ron", "marca": "Brugal", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+            {"nombre": "Barceló Imperial", "categoria": "Ron", "marca": "Barceló", "precio_compra": 1200, "precio_venta": 1700, "stock": 1000},
+            {"nombre": "Ron Matusalem Gran Reserva", "categoria": "Ron", "marca": "Matusalem", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+            {"nombre": "Bacardi 8 Años", "categoria": "Ron", "marca": "Bacardi", "precio_compra": 1400, "precio_venta": 2000, "stock": 1000},
+            {"nombre": "Ron La Fortaleza", "categoria": "Ron", "marca": "La Fortaleza", "precio_compra": 1100, "precio_venta": 1600, "stock": 1000},
+            {"nombre": "Brugal 1888", "categoria": "Ron", "marca": "Brugal", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Ron Clásico Barcelo", "categoria": "Ron", "marca": "Barceló", "precio_compra": 600, "precio_venta": 1000, "stock": 1000},
+            {"nombre": "Ron Presidente", "categoria": "Ron", "marca": "Presidente", "precio_compra": 400, "precio_venta": 700, "stock": 1000},
+            {"nombre": "Santo Domingo Ron", "categoria": "Ron", "marca": "Santo Domingo", "precio_compra": 350, "precio_venta": 600, "stock": 1000},
+            {"nombre": "Mango Bay Rum", "categoria": "Ron", "marca": "Mango Bay", "precio_compra": 1200, "precio_venta": 1700, "stock": 1000},
+            {"nombre": "Cerveza Presidente", "categoria": "Cerveza", "marca": "Presidente", "precio_compra": 80, "precio_venta": 150, "stock": 1000},
+            {"nombre": "Cerveza Brahma Light", "categoria": "Cerveza", "marca": "Brahma", "precio_compra": 70, "precio_venta": 120, "stock": 1000},
+            {"nombre": "Cerveza Red Stripe", "categoria": "Cerveza", "marca": "Red Stripe", "precio_compra": 90, "precio_venta": 140, "stock": 1000},
+            {"nombre": "Cerveza Presidente Light", "categoria": "Cerveza", "marca": "Presidente", "precio_compra": 85, "precio_venta": 130, "stock": 1000},
+            {"nombre": "Vino Sangría Don Simon", "categoria": "Vino", "marca": "Don Simon", "precio_compra": 400, "precio_venta": 650, "stock": 1000},
+            {"nombre": "Vino Tinto Lancers", "categoria": "Vino", "marca": "Lancers", "precio_compra": 600, "precio_venta": 900, "stock": 1000},
+            {"nombre": "Vino Blanco Sutter Home", "categoria": "Vino", "marca": "Sutter Home", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+            {"nombre": "Vino Dominicano Vino del Sol", "categoria": "Vino", "marca": "Vino del Sol", "precio_compra": 700, "precio_venta": 1000, "stock": 1000},
+            {"nombre": "Tequila José Cuervo", "categoria": "Tequila", "marca": "José Cuervo", "precio_compra": 1200, "precio_venta": 1700, "stock": 1000},
+            {"nombre": "Tequila Don Julio 1942", "categoria": "Tequila", "marca": "Don Julio", "precio_compra": 3000, "precio_venta": 4500, "stock": 1000},
+            {"nombre": "Tequila El Jimador", "categoria": "Tequila", "marca": "El Jimador", "precio_compra": 1500, "precio_venta": 2200, "stock": 1000},
+            {"nombre": "Gin Tanqueray", "categoria": "Ginebra", "marca": "Tanqueray", "precio_compra": 1800, "precio_venta": 2600, "stock": 1000},
+            {"nombre": "Gin Beefeater", "categoria": "Ginebra", "marca": "Beefeater", "precio_compra": 1500, "precio_venta": 2200, "stock": 1000},
+            {"nombre": "Vodka Absolut", "categoria": "Vodka", "marca": "Absolut", "precio_compra": 1200, "precio_venta": 1800, "stock": 1000},
+            {"nombre": "Vodka Smirnoff", "categoria": "Vodka", "marca": "Smirnoff", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+            {"nombre": "Whisky Johnnie Walker Black", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 2000, "precio_venta": 3000, "stock": 1000},
+            {"nombre": "Whisky Macallan 12 Años", "categoria": "Whisky", "marca": "Macallan", "precio_compra": 5000, "precio_venta": 7500, "stock": 1000},
+            {"nombre": "Whisky Chivas Regal 12", "categoria": "Whisky", "marca": "Chivas Regal", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Whisky Glenfiddich 18", "categoria": "Whisky", "marca": "Glenfiddich", "precio_compra": 4500, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Vino Dominicano Casa de Campo", "categoria": "Vino", "marca": "Casa de Campo", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+            {"nombre": "Mojito Ron Matusalem", "categoria": "Cócteles", "marca": "Matusalem", "precio_compra": 1500, "precio_venta": 2200, "stock": 1000},
+            {"nombre": "Coñac Hennessy VS", "categoria": "Coñac", "marca": "Hennessy", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Coñac Rémy Martin VSOP", "categoria": "Coñac", "marca": "Rémy Martin", "precio_compra": 3000, "precio_venta": 4500, "stock": 1000},
+            {"nombre": "Pina Colada Presidente", "categoria": "Cócteles", "marca": "Presidente", "precio_compra": 1800, "precio_venta": 2600, "stock": 1000},
+            {"nombre": "Aguardiente La Caña", "categoria": "Aguardiente", "marca": "La Caña", "precio_compra": 700, "precio_venta": 1000, "stock": 1000},
+            {"nombre": "Ron Quorhum 30", "categoria": "Ron", "marca": "Quorhum", "precio_compra": 2000, "precio_venta": 3000, "stock": 1000},
+            {"nombre": "Ron Blanco Barcelo", "categoria": "Ron", "marca": "Barceló", "precio_compra": 600, "precio_venta": 900, "stock": 1000},
+            {"nombre": "Vino Moscato Stella Rosa", "categoria": "Vino", "marca": "Stella Rosa", "precio_compra": 1200, "precio_venta": 1800, "stock": 1000},
+            {"nombre": "Vino Espumante Dom Perignon", "categoria": "Vino", "marca": "Dom Perignon", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Cerveza Presidente Dorada", "categoria": "Cerveza", "marca": "Presidente", "precio_compra": 90, "precio_venta": 140, "stock": 1000},
+            {"nombre": "Cerveza Ambar", "categoria": "Cerveza", "marca": "Ambar", "precio_compra": 120, "precio_venta": 180, "stock": 1000},
+            {"nombre": "Cerveza Corona", "categoria": "Cerveza", "marca": "Corona", "precio_compra": 110, "precio_venta": 160, "stock": 1000},
+            {"nombre": "Vino Tinto Concha y Toro", "categoria": "Vino", "marca": "Concha y Toro", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+            {"nombre": "Aguardiente Anis", "categoria": "Aguardiente", "marca": "Anis", "precio_compra": 400, "precio_venta": 600, "stock": 1000},
+            {"nombre": "Limoncello Italiano", "categoria": "Licores", "marca": "Limoncello", "precio_compra": 2000, "precio_venta": 2900, "stock": 1000},
+            {"nombre": "Vino Blanco Santa Carolina", "categoria": "Vino", "marca": "Santa Carolina", "precio_compra": 900, "precio_venta": 1400, "stock": 1000},
+            {"nombre": "Tequila Espolon Blanco", "categoria": "Tequila", "marca": "Espolon", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+            {"nombre": "Johnnie Walker Red Label", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+            {"nombre": "Johnnie Walker Black Label", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 2000, "precio_venta": 3000, "stock": 1000},
+            {"nombre": "Chivas Regal 12 Años", "categoria": "Whisky", "marca": "Chivas Regal", "precio_compra": 1500, "precio_venta": 2200, "stock": 1000},
+            {"nombre": "Jameson Irish Whiskey", "categoria": "Whisky", "marca": "Jameson", "precio_compra": 1400, "precio_venta": 2000, "stock": 1000},
+            {"nombre": "Glenfiddich 12 Años", "categoria": "Whisky", "marca": "Glenfiddich", "precio_compra": 2500, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Macallan 12 Años", "categoria": "Whisky", "marca": "Macallan", "precio_compra": 4500, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Ballantine's Finest", "categoria": "Whisky", "marca": "Ballantine's", "precio_compra": 1200, "precio_venta": 1700, "stock": 1000},
+            {"nombre": "Aberlour 12 Años", "categoria": "Whisky", "marca": "Aberlour", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "The Glenlivet 12 Años", "categoria": "Whisky", "marca": "The Glenlivet", "precio_compra": 2800, "precio_venta": 4000, "stock": 1000},
+            {"nombre": "Bushmills Original", "categoria": "Whisky", "marca": "Bushmills", "precio_compra": 1300, "precio_venta": 1800, "stock": 1000},
+            {"nombre": "Dewar's White Label", "categoria": "Whisky", "marca": "Dewar's", "precio_compra": 1000, "precio_venta": 1500, "stock": 1000},
+            {"nombre": "Royal Salute 21 Años", "categoria": "Whisky", "marca": "Royal Salute", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Glenmorangie Original 10 Años", "categoria": "Whisky", "marca": "Glenmorangie", "precio_compra": 3500, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Red Label Johnnie Walker", "categoria": "Whisky", "marca": "Johnnie Walker", "precio_compra": 1100, "precio_venta": 1600, "stock": 1000},
+            {"nombre": "Ardbeg 10 Años", "categoria": "Whisky", "marca": "Ardbeg", "precio_compra": 4000, "precio_venta": 6000, "stock": 1000},
+             {"nombre": "Vino Tinto Concha y Toro", "categoria": "Vino Tinto", "marca": "Concha y Toro", "precio_compra": 800, "precio_venta": 1200, "stock": 1000},
+            {"nombre": "Vino Blanco Santa Carolina", "categoria": "Vino Blanco", "marca": "Santa Carolina", "precio_compra": 900, "precio_venta": 1400, "stock": 1000},
+            {"nombre": "Vino Tinto Casillero del Diablo", "categoria": "Vino Tinto", "marca": "Casillero del Diablo", "precio_compra": 850, "precio_venta": 1300, "stock": 1000},
+            {"nombre": "Vino Rosado Santa Rita 120", "categoria": "Vino Rosado", "marca": "Santa Rita", "precio_compra": 700, "precio_venta": 1100, "stock": 1000},
+            {"nombre": "Vino Tinto Marqués de Riscal", "categoria": "Vino Tinto", "marca": "Marqués de Riscal", "precio_compra": 1500, "precio_venta": 2200, "stock": 1000},
+            {"nombre": "Vino Blanco Torres", "categoria": "Vino Blanco", "marca": "Torres", "precio_compra": 950, "precio_venta": 1400, "stock": 1000},
+            {"nombre": "Vino Tinto Robert Mondavi", "categoria": "Vino Tinto", "marca": "Robert Mondavi", "precio_compra": 1800, "precio_venta": 2500, "stock": 1000},
+            {"nombre": "Vino Tinto Bodega Norton Reserva", "categoria": "Vino Tinto", "marca": "Bodega Norton", "precio_compra": 1200, "precio_venta": 1800, "stock": 1000},
+            {"nombre": "Vino Tinto La Caña", "categoria": "Vino Tinto", "marca": "La Caña", "precio_compra": 600, "precio_venta": 1000, "stock": 1000},
+            {"nombre": "Vino Dominicano Viticultura La Penda", "categoria": "Vino Tinto", "marca": "Viticultura La Penda", "precio_compra": 1500, "precio_venta": 2300, "stock": 1000}
         ],
-       "Tienda_de_Calzados": [
-            {"nombre": "Nike Air Max 90", "categoria": "Tenis/Hombre", "tipo": "Deportivo", "genero": "Hombre", "marca": "Nike", "precio_compra": 3000, "precio_venta": 4500, "stock": 80},
-            {"nombre": "Adidas Ultraboost 22", "categoria": "Tenis/Hombre", "tipo": "Deportivo", "genero": "Hombre", "marca": "Adidas", "precio_compra": 3500, "precio_venta": 5000, "stock": 70},
-            {"nombre": "Converse Chuck Taylor All Star", "categoria": "Zapatillas/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "Converse", "precio_compra": 2000, "precio_venta": 3000, "stock": 100},
-            {"nombre": "Vans Old Skool", "categoria": "Zapatillas/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "Vans", "precio_compra": 2500, "precio_venta": 3700, "stock": 90},
-            {"nombre": "Reebok Classic Leather", "categoria": "Zapatillas/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "Reebok", "precio_compra": 2200, "precio_venta": 3400, "stock": 85},
-            {"nombre": "Puma RS-X", "categoria": "Tenis/Hombre", "tipo": "Deportivo", "genero": "Hombre", "marca": "Puma", "precio_compra": 3000, "precio_venta": 4500, "stock": 60},
-            {"nombre": "Dr. Martens 1460", "categoria": "Botas/Unisex", "tipo": "Clásico", "genero": "Unisex", "marca": "Dr. Martens", "precio_compra": 5000, "precio_venta": 7000, "stock": 40},
-            {"nombre": "Timberland Premium Waterproof Boots", "categoria": "Botas/Hombre", "tipo": "Casual", "genero": "Hombre", "marca": "Timberland", "precio_compra": 4800, "precio_venta": 6500, "stock": 50},
-            {"nombre": "Clarks Desert Boots", "categoria": "Botas/Hombre", "tipo": "Casual", "genero": "Hombre", "marca": "Clarks", "precio_compra": 3000, "precio_venta": 4500, "stock": 60},
-            {"nombre": "Nike Dunk Low", "categoria": "Tenis/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "Nike", "precio_compra": 3500, "precio_venta": 5000, "stock": 75},
-            {"nombre": "Adidas Gazelle", "categoria": "Zapatillas/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "Adidas", "precio_compra": 2500, "precio_venta": 4000, "stock": 90},
-            {"nombre": "Asics Gel-Kayano 28", "categoria": "Tenis/Hombre", "tipo": "Deportivo", "genero": "Hombre", "marca": "Asics", "precio_compra": 3200, "precio_venta": 4800, "stock": 65},
-            {"nombre": "Hoka Clifton 9", "categoria": "Tenis/Hombre", "tipo": "Deportivo", "genero": "Hombre", "marca": "Hoka", "precio_compra": 4000, "precio_venta": 6000, "stock": 50},
-            {"nombre": "New Balance 574", "categoria": "Zapatillas/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "New Balance", "precio_compra": 2600, "precio_venta": 3900, "stock": 80},
-            {"nombre": "Gucci Ace Sneakers", "categoria": "Tenis de Lujo/Unisex", "tipo": "De Vestir", "genero": "Unisex", "marca": "Gucci", "precio_compra": 12000, "precio_venta": 18000, "stock": 20},
-            {"nombre": "Balenciaga Triple S", "categoria": "Tenis de Lujo/Unisex", "tipo": "Deportivo", "genero": "Unisex", "marca": "Balenciaga", "precio_compra": 14000, "precio_venta": 21000, "stock": 15},
-            {"nombre": "Christian Louboutin So Kate", "categoria": "Tacos/Mujer", "tipo": "De Vestir", "genero": "Mujer", "marca": "Christian Louboutin", "precio_compra": 8000, "precio_venta": 12000, "stock": 25},
-            {"nombre": "Jimmy Choo Romy 100", "categoria": "Tacos/Mujer", "tipo": "De Vestir", "genero": "Mujer", "marca": "Jimmy Choo", "precio_compra": 7000, "precio_venta": 11000, "stock": 30},
-            {"nombre": "Steve Madden Carrson", "categoria": "Tacos/Mujer", "tipo": "Casual", "genero": "Mujer", "marca": "Steve Madden", "precio_compra": 3500, "precio_venta": 5000, "stock": 40},
-            {"nombre": "Crocs Classic Clog", "categoria": "Sandalias/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "Crocs", "precio_compra": 1500, "precio_venta": 2200, "stock": 100},
-            {"nombre": "Birkenstock Arizona", "categoria": "Sandalias/Unisex", "tipo": "Casual", "genero": "Unisex", "marca": "Birkenstock", "precio_compra": 1800, "precio_venta": 2700, "stock": 80},
-            {"nombre": "Tory Burch Miller Sandal", "categoria": "Sandalias/Mujer", "tipo": "Casual", "genero": "Mujer", "marca": "Tory Burch", "precio_compra": 4000, "precio_venta": 6000, "stock": 35},
-            {"nombre": "Cole Haan GrandPro Tennis", "categoria": "Tenis/Hombre", "tipo": "Casual", "genero": "Hombre", "marca": "Cole Haan", "precio_compra": 3200, "precio_venta": 4800, "stock": 45},
-            {"nombre": "Aldo Men's Dress Shoes", "categoria": "Zapatos Formales/Hombre", "tipo": "De Vestir", "genero": "Hombre", "marca": "Aldo", "precio_compra": 3000, "precio_venta": 4500, "stock": 40},
-            {"nombre": "Salvatore Ferragamo Oxford", "categoria": "Zapatos Formales/Hombre", "tipo": "De Vestir", "genero": "Hombre", "marca": "Salvatore Ferragamo", "precio_compra": 9000, "precio_venta": 13500, "stock": 20},
-            {"nombre": "Allen Edmonds Park Avenue", "categoria": "Zapatos Formales/Hombre", "tipo": "De Vestir", "genero": "Hombre", "marca": "Allen Edmonds", "precio_compra": 6000, "precio_venta": 9000, "stock": 30},
-            {"nombre": "Nike ZoomX Vaporfly", "categoria": "Tenis/Hombre", "tipo": "Deportivo", "genero": "Hombre", "marca": "Nike", "precio_compra": 4500, "precio_venta": 7000, "stock": 40},
-            {"nombre": "Saucony Endorphin Speed 3", "categoria": "Tenis/Unisex", "tipo": "Deportivo", "genero": "Unisex", "marca": "Saucony", "precio_compra": 4000, "precio_venta": 6000, "stock": 50},
-            {"nombre": "Clarks Women's Pump", "categoria": "Tacos/Mujer", "tipo": "De Vestir", "genero": "Mujer", "marca": "Clarks", "precio_compra": 3500, "precio_venta": 5000, "stock": 60},
-            {"nombre": "Bomba Power Retro", "categoria": "Tenis/Hombre", "tipo": "Deportivo", "genero": "Hombre", "marca": "Bomba", "precio_compra": 4000, "precio_venta": 5500, "stock": 70},
-            {"nombre": "Crocs Women's Tulum", "categoria": "Sandalias/Mujer", "tipo": "Casual", "genero": "Mujer", "marca": "Crocs", "precio_compra": 1500, "precio_venta": 2500, "stock": 100}
-        ]
+    
+    "Tienda_de_Zapatos_de_Marca": [
+            {"nombre": "Sneakers Nike Air Max", "categoria": "Deportivos", "precio_compra": 5000, "precio_venta": 8000, "stock": 1000},
+            {"nombre": "Zapatos Formales Salvatore Ferragamo", "categoria": "Elegantes", "precio_compra": 20000, "precio_venta": 30000, "stock": 1000},
+            {"nombre": "Botas Timberland", "categoria": "Botas", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Zapatillas Adidas Ultraboost", "categoria": "Running", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Mocasines Tod's", "categoria": "Casuales", "precio_compra": 12000, "precio_venta": 18000, "stock": 1000},
+            {"nombre": "Zapatos de Tacón Jimmy Choo", "categoria": "Tacones", "precio_compra": 15000, "precio_venta": 25000, "stock": 1000},
+            {"nombre": "Zapatillas Converse Chuck Taylor", "categoria": "Casuales", "precio_compra": 2000, "precio_venta": 3500, "stock": 1000},
+            {"nombre": "Botines Chelsea Christian Louboutin", "categoria": "Botas", "precio_compra": 25000, "precio_venta": 35000, "stock": 1000},
+            {"nombre": "Zapatos de Golf FootJoy", "categoria": "Deportivos", "precio_compra": 4000, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Sandalias Gucci", "categoria": "Casuales", "precio_compra": 10000, "precio_venta": 15000, "stock": 1000},
+            {"nombre": "Tenis Under Armour Curry", "categoria": "Baloncesto", "precio_compra": 5500, "precio_venta": 8500, "stock": 1000},
+            {"nombre": "Zapatos de Vestir Hugo Boss", "categoria": "Formales", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Botas de Montaña Salomon", "categoria": "Outdoor", "precio_compra": 7000, "precio_venta": 10000, "stock": 1000},
+            {"nombre": "Zapatillas New Balance 990", "categoria": "Running", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Zapatos Náuticos Sperry", "categoria": "Casuales", "precio_compra": 3000, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Botines de Diseñador Balenciaga", "categoria": "Moda", "precio_compra": 30000, "precio_venta": 45000, "stock": 1000},
+            {"nombre": "Zapatillas de Trail Hoka One One", "categoria": "Running", "precio_compra": 5500, "precio_venta": 8500, "stock": 1000},
+            {"nombre": "Zapatos de Tacón Stuart Weitzman", "categoria": "Tacones", "precio_compra": 18000, "precio_venta": 28000, "stock": 1000},
+            {"nombre": "Sneakers Puma RS-X", "categoria": "Deportivos", "precio_compra": 3500, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Zapatos de Baile Freire", "categoria": "Especializados", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Botas Militares Dr. Martens", "categoria": "Casual", "precio_compra": 5000, "precio_venta": 8000, "stock": 1000},
+            {"nombre": "Zapatos de Futbol Nike Mercurial", "categoria": "Deportivos", "precio_compra": 6000, "precio_venta": 9500, "stock": 1000},
+            {"nombre": "Mocasines Santoni", "categoria": "Elegantes", "precio_compra": 15000, "precio_venta": 22000, "stock": 1000},
+            {"nombre": "Zapatillas Jordan Retro", "categoria": "Sneakers", "precio_compra": 7000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Botines de Tacón Saint Laurent", "categoria": "Moda", "precio_compra": 28000, "precio_venta": 40000, "stock": 1000},
+            {"nombre": "Zapatos de Running Asics Gel", "categoria": "Running", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Sandalias Birkenstock", "categoria": "Casuales", "precio_compra": 3000, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Zapatos de Marinero Sebago", "categoria": "Náuticos", "precio_compra": 4000, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Botas de Cowboy Lucchese", "categoria": "Western", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Zapatillas de Skate Vans Old Skool", "categoria": "Casuales", "precio_compra": 2500, "precio_venta": 4000, "stock": 1000},
+            {"nombre": "Zapatos de Gala Manolo Blahnik", "categoria": "Tacones", "precio_compra": 25000, "precio_venta": 35000, "stock": 1000},
+            {"nombre": "Tenis de Tenis K-Swiss", "categoria": "Deportivos", "precio_compra": 3000, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Botas de Nieve Sorel", "categoria": "Outdoor", "precio_compra": 5500, "precio_venta": 8500, "stock": 1000},
+            {"nombre": "Zapatos de Golf Ecco", "categoria": "Deportivos", "precio_compra": 5000, "precio_venta": 8000, "stock": 1000},
+            {"nombre": "Mocasines de Diseñador Berluti", "categoria": "Elegantes", "precio_compra": 30000, "precio_venta": 45000, "stock": 1000},
+            {"nombre": "Zapatillas de Running Saucony", "categoria": "Running", "precio_compra": 4000, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Botines Chelsea Clarks", "categoria": "Casuales", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Zapatos de Danza Bloch", "categoria": "Especializados", "precio_compra": 5000, "precio_venta": 8000, "stock": 1000},
+            {"nombre": "Sneakers Golden Goose", "categoria": "Moda", "precio_compra": 15000, "precio_venta": 22000, "stock": 1000},
+            {"nombre": "Zapatos de Rugby Kooga", "categoria": "Deportivos", "precio_compra": 4000, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Botas de Moto Alpinestars", "categoria": "Especializados", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Zapatillas de Crossfit Nike Metcon", "categoria": "Deportivos", "precio_compra": 5500, "precio_venta": 8500, "stock": 1000},
+            {"nombre": "Zapatos de Teatro Capezio", "categoria": "Especializados", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Botas de Lluvia Hunter", "categoria": "Outdoor", "precio_compra": 3500, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Tenis de Mesa Butterfly", "categoria": "Deportivos", "precio_compra": 3000, "precio_venta": 5000, "stock": 1000},
+            {"nombre": "Zapatos de Escalada La Sportiva", "categoria": "Outdoor", "precio_compra": 5000, "precio_venta": 8000, "stock": 1000},
+            {"nombre": "Mocasines Ermenegildo Zegna", "categoria": "Elegantes", "precio_compra": 25000, "precio_venta": 35000, "stock": 1000},
+            {"nombre": "Zapatillas de Boxeo Nike", "categoria": "Deportivos", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Botines de Invierno Merrell", "categoria": "Outdoor", "precio_compra": 5500, "precio_venta": 8500, "stock": 1000},
+            {"nombre": "Zapatos de Hockey CCM", "categoria": "Deportivos", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Sandalias de Diseñador Dolce & Gabbana", "categoria": "Moda", "precio_compra": 20000, "precio_venta": 30000, "stock": 1000},
+            {"nombre": "Zapatos de Patinaje Vans", "categoria": "Deportivos", "precio_compra": 3500, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Botas de Equitación Ariat", "categoria": "Especializados", "precio_compra": 7000, "precio_venta": 10000, "stock": 1000},
+            {"nombre": "Zapatillas de Natación Speedo", "categoria": "Deportivos", "precio_compra": 2500, "precio_venta": 4500, "stock": 1000},
+            {"nombre": "Zapatos de Ciclismo Sidi", "categoria": "Deportivos", "precio_compra": 5000, "precio_venta": 8000, "stock": 1000},
+            {"nombre": "Botines de Diseñador Valentino", "categoria": "Moda", "precio_compra": 35000, "precio_venta": 50000, "stock": 1000},
+            {"nombre": "Zapatillas de Parkour Parkour Shoe", "categoria": "Deportivos", "precio_compra": 4000, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Zapatos de Béisbol New Balance", "categoria": "Deportivos", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Botas de Buceo Scubapro", "categoria": "Especializados", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Zapatillas de Ultimate Frisbee", "categoria": "Deportivos", "precio_compra": 3500, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Zapatos de Polo", "categoria": "Especializados", "precio_compra": 8000, "precio_venta": 12000, "stock": 1000},
+            {"nombre": "Botas de Paracaidismo", "categoria": "Especializados", "precio_compra": 7000, "precio_venta": 10000, "stock": 1000},
+            {"nombre": "Tenis de Squash", "categoria": "Deportivos", "precio_compra": 4000, "precio_venta": 6500, "stock": 1000},
+            {"nombre": "Zapatos de Cricket", "categoria": "Deportivos", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Botas de Montañismo La Sportiva", "categoria": "Outdoor", "precio_compra": 6000, "precio_venta": 9000, "stock": 1000},
+            {"nombre": "Zapatillas de Kendo", "categoria": "Especializados", "precio_compra": 5000, "precio_venta": 8000, "stock": 1000},
+            {"nombre": "Zapatos de Baile Salsa", "categoria": "Especializados", "precio_compra": 4500, "precio_venta": 7000, "stock": 1000},
+            {"nombre": "Botas de Alpinismo Scarpa", "categoria": "Outdoor", "precio_compra": 7000, "precio_venta": 10000, "stock": 1000},
+            {"nombre": "Zapatillas de Tiro con Arco", "categoria": "Deportivos", "precio_compra": 3500, "precio_venta": 6000, "stock": 1000},
+            {"nombre": "Zapatos de Remo Concept2", "categoria": "Deportivos", "precio_compra": 4000, "precio_venta": 6500, "stock": 1000}
+        ],
+        "Libreria_Papeleria": [
+            {"nombre": "Cuaderno Moleskine Classic", "categoria": "Cuadernos", "precio_compra": 250, "precio_venta": 450, "stock": 1000},
+            {"nombre": "Bolígrafo Pilot G2", "categoria": "Bolígrafos", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+            {"nombre": "Lápiz Staedtler Noris", "categoria": "Lápices", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+            {"nombre": "Marcadores Sharpie Pack 12", "categoria": "Marcadores", "precio_compra": 120, "precio_venta": 220, "stock": 1000},
+            {"nombre": "Agenda Planner Paperblanks", "categoria": "Agendas", "precio_compra": 300, "precio_venta": 550, "stock": 1000},
+            {"nombre": "Folder Manila Carta", "categoria": "Papelería", "precio_compra": 10, "precio_venta": 25, "stock": 1000},
+            {"nombre": "Libreta Universitaria", "categoria": "Cuadernos", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+            {"nombre": "Post-it 3M Original", "categoria": "Notas Adhesivas", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+            {"nombre": "Calculadora Científica Casio", "categoria": "Electrónicos", "precio_compra": 500, "precio_venta": 800, "stock": 1000},
+            {"nombre": "Borrador Staedtler", "categoria": "Útiles Escolares", "precio_compra": 10, "precio_venta": 25, "stock": 1000},
+            {"nombre": "Set de Plumas Fuente Parker", "categoria": "Plumas", "precio_compra": 400, "precio_venta": 700, "stock": 1000},
+            {"nombre": "Estuche Escolar Kiut", "categoria": "Accesorios", "precio_compra": 100, "precio_venta": 200, "stock": 1000},
+            {"nombre": "Resaltadores Zebra", "categoria": "Marcadores", "precio_compra": 60, "precio_venta": 120, "stock": 1000},
+            {"nombre": "Cuaderno Italiana", "categoria": "Cuadernos", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+            {"nombre": "Sacapuntas Metálico", "categoria": "Útiles Escolares", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+            {"nombre": "Libros de Texto Universitario", "categoria": "Libros", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Pegamento Blanco Resistol", "categoria": "Papelería", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+            {"nombre": "Regla de Aluminio", "categoria": "Útiles Escolares", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+            {"nombre": "Cartulinas de Colores Pack", "categoria": "Papelería", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+            {"nombre": "Biblia de Estudio", "categoria": "Libros", "precio_compra": 400, "precio_venta": 700, "stock": 1000},
+            {"nombre": "Lámpara de Escritorio LED", "categoria": "Electrónicos", "precio_compra": 250, "precio_venta": 450, "stock": 1000},
+            {"nombre": "Compás Metálico Profesional", "categoria": "Útiles Escolares", "precio_compra": 80, "precio_venta": 150, "stock": 1000},
+            {"nombre": "Libro Clásico Literatura", "categoria": "Libros", "precio_compra": 150, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Set de Dibujo Artístico", "categoria": "Arte", "precio_compra": 200, "precio_venta": 350, "stock": 1000},
+            {"nombre": "Tijeras Escolares", "categoria": "Útiles Escolares", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+            {"nombre": "Portafolio Ejecutivo", "categoria": "Accesorios", "precio_compra": 250, "precio_venta": 450, "stock": 1000},
+            {"nombre": "Cuaderno Profesional Rayado", "categoria": "Cuadernos", "precio_compra": 60, "precio_venta": 120, "stock": 1000},
+            {"nombre": "Set de Pinturas Acuarela", "categoria": "Arte", "precio_compra": 150, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Bibliorato", "categoria": "Papelería", "precio_compra": 80, "precio_venta": 150, "stock": 1000},
+            {"nombre": "Diccionario Español", "categoria": "Libros", "precio_compra": 200, "precio_venta": 350, "stock": 1000},
+            {"nombre": "Engrapadora Metálica", "categoria": "Útiles Escolares", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+            {"nombre": "Cinta Adhesiva Transparente", "categoria": "Papelería", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+            {"nombre": "Libro Infantil Ilustrado", "categoria": "Libros", "precio_compra": 100, "precio_venta": 200, "stock": 1000},
+            {"nombre": "Set de Colores Prismacolor", "categoria": "Arte", "precio_compra": 250, "precio_venta": 450, "stock": 1000},
+            {"nombre": "Perforadora de Papel", "categoria": "Útiles Escolares", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+            {"nombre": "Mochila Escolar", "categoria": "Accesorios", "precio_compra": 200, "precio_venta": 350, "stock": 1000},
+            {"nombre": "Libro de Cocina Gourmet", "categoria": "Libros", "precio_compra": 250, "precio_venta": 450, "stock": 1000},
+            {"nombre": "Bloc de Notas Ejecutivo", "categoria": "Cuadernos", "precio_compra": 80, "precio_venta": 150, "stock": 1000},
+            {"nombre": "Estuche de Acuarelas Profesional", "categoria": "Arte", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Clip de Metal Pack", "categoria": "Papelería", "precio_compra": 15, "precio_venta": 30, "stock": 1000},
+            {"nombre": "Libro de Autoayuda", "categoria": "Libros", "precio_compra": 150, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Pizarra Blanca Pequeña", "categoria": "Útiles Escolares", "precio_compra": 150, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Rotuladores Profesionales", "categoria": "Marcadores", "precio_compra": 180, "precio_venta": 300, "stock": 1000},
+            {"nombre": "Set de Tiza Escolar", "categoria": "Útiles Escolares", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+            {"nombre": "Libro de Matemáticas", "categoria": "Libros", "precio_compra": 200, "precio_venta": 350, "stock": 1000},
+            {"nombre": "Cuaderno de Dibujo", "categoria": "Cuadernos", "precio_compra": 70, "precio_venta": 140, "stock": 1000},
+            {"nombre": "Marcador Permanente", "categoria": "Marcadores", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+            {"nombre": "Atlas Mundial", "categoria": "Libros", "precio_compra": 250, "precio_venta": 450, "stock": 1000},
+            {"nombre": "Set de Geometría", "categoria": "Útiles Escolares", "precio_compra": 60, "precio_venta": 120, "stock": 1000},
+            {"nombre": "Libro de Historia Universal", "categoria": "Libros", "precio_compra": 200, "precio_venta": 350, "stock": 1000},
+            {"nombre": "Corrector Líquido", "categoria": "Papelería", "precio_compra": 20, "precio_venta": 40, "stock": 1000},
+            {"nombre": "Set de Pinceles Artísticos", "categoria": "Arte", "precio_compra": 150, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Cuaderno de Notas Pequeño", "categoria": "Cuadernos", "precio_compra": 30, "precio_venta": 60, "stock": 1000},
+            {"nombre": "Libro de Geografía", "categoria": "Libros", "precio_compra": 180, "precio_venta": 300, "stock": 1000},
+            {"nombre": "Sacador de Clips", "categoria": "Útiles Escolares", "precio_compra": 25, "precio_venta": 50, "stock": 1000},
+            {"nombre": "Set de Contabilidad", "categoria": "Útiles Escolares", "precio_compra": 100, "precio_venta": 200, "stock": 1000},
+            {"nombre": "Libro de Ciencias", "categoria": "Libros", "precio_compra": 200, "precio_venta": 350, "stock": 1000},
+            {"nombre": "Carpeta Organizadora", "categoria": "Papelería", "precio_compra": 70, "precio_venta": 140, "stock": 1000},
+            {"nombre": "Portaminas Metálico", "categoria": "Útiles Escolares", "precio_compra": 40, "precio_venta": 80, "stock": 1000},
+            {"nombre": "Set de Manualidades", "categoria": "Arte", "precio_compra": 180, "precio_venta": 300, "stock": 1000}
+        ],
+        "Farmacia_Natural": [
+            {"nombre": "Vitamina C 1000mg", "categoria": "Suplementos", "precio_compra": 150, "precio_venta": 300, "stock": 1000},
+            {"nombre": "Té de Manzanilla", "categoria": "Infusiones", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+            {"nombre": "Crema Hidratante Aloe Vera", "categoria": "Cuidado de la Piel", "precio_compra": 120, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Aceite Esencial de Lavanda", "categoria": "Aromaterapia", "precio_compra": 200, "precio_venta": 400, "stock": 1000},
+            {"nombre": "Proteína Vegana 500g", "categoria": "Nutrición", "precio_compra": 600, "precio_venta": 1200, "stock": 1000},
+            {"nombre": "Pastillas de Jengibre", "categoria": "Remedios Naturales", "precio_compra": 80, "precio_venta": 160, "stock": 1000},
+            {"nombre": "Miel Orgánica 500g", "categoria": "Alimentos Saludables", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Té Verde Matcha", "categoria": "Infusiones", "precio_compra": 250, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Shampoo Natural de Romero", "categoria": "Cuidado del Cabello", "precio_compra": 400, "precio_venta": 750, "stock": 1000},
+            {"nombre": "Colágeno Hidrolizado 300g", "categoria": "Nutrición", "precio_compra": 500, "precio_venta": 1000, "stock": 1000},
+            {"nombre": "Bálsamo Labial de Cera de Abeja", "categoria": "Cuidado Personal", "precio_compra": 60, "precio_venta": 120, "stock": 1000},
+            {"nombre": "Pastillas de Hierba de San Juan", "categoria": "Remedios Naturales", "precio_compra": 200, "precio_venta": 400, "stock": 1000},
+            {"nombre": "Té de Menta", "categoria": "Infusiones", "precio_compra": 70, "precio_venta": 150, "stock": 1000},
+            {"nombre": "Leche de Almendras 1L", "categoria": "Bebidas Saludables", "precio_compra": 300, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Mascarilla Facial de Carbón", "categoria": "Cuidado de la Piel", "precio_compra": 250, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Aceite de Coco Orgánico", "categoria": "Cuidado Personal", "precio_compra": 300, "precio_venta": 600, "stock": 1000},
+            {"nombre": "Jarabe de Propóleo", "categoria": "Remedios Naturales", "precio_compra": 150, "precio_venta": 300, "stock": 1000},
+            {"nombre": "Gel Frío para Piernas Cansadas", "categoria": "Cuidado Corporal", "precio_compra": 400, "precio_venta": 800, "stock": 1000},
+            {"nombre": "Pastillas de Vitamina D", "categoria": "Suplementos", "precio_compra": 100, "precio_venta": 200, "stock": 1000},
+            {"nombre": "Té de Rooibos", "categoria": "Infusiones", "precio_compra": 200, "precio_venta": 400, "stock": 1000},
+            {"nombre": "Crema de Caléndula", "categoria": "Cuidado de la Piel", "precio_compra": 180, "precio_venta": 350, "stock": 1000},
+            {"nombre": "Magnesio en Polvo 300g", "categoria": "Nutrición", "precio_compra": 500, "precio_venta": 1000, "stock": 1000},
+            {"nombre": "Cepillo de Dientes de Bambú", "categoria": "Cuidado Personal", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+            {"nombre": "Aceite de Árbol de Té", "categoria": "Aromaterapia", "precio_compra": 150, "precio_venta": 300, "stock": 1000},
+            {"nombre": "Té Detox", "categoria": "Infusiones", "precio_compra": 180, "precio_venta": 400, "stock": 1000},
+            {"nombre": "Mascarilla de Arcilla Verde", "categoria": "Cuidado de la Piel", "precio_compra": 220, "precio_venta": 450, "stock": 1000},
+            {"nombre": "Cápsulas de Ashwagandha", "categoria": "Suplementos", "precio_compra": 350, "precio_venta": 700, "stock": 1000},
+            {"nombre": "Té de Jamaica", "categoria": "Infusiones", "precio_compra": 100, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Jabón Artesanal de Lavanda", "categoria": "Cuidado Personal", "precio_compra": 100, "precio_venta": 200, "stock": 1000},
+            {"nombre": "Agua Micelar Natural", "categoria": "Cuidado de la Piel", "precio_compra": 250, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Pastillas de Melatonina", "categoria": "Suplementos", "precio_compra": 200, "precio_venta": 400, "stock": 1000},
+            {"nombre": "Té de Limón con Jengibre", "categoria": "Infusiones", "precio_compra": 120, "precio_venta": 250, "stock": 1000},
+            {"nombre": "Serum Facial con Vitamina E", "categoria": "Cuidado de la Piel", "precio_compra": 300, "precio_venta": 600, "stock": 1000},
+            {"nombre": "Proteína Whey 1kg", "categoria": "Nutrición", "precio_compra": 1000, "precio_venta": 2000, "stock": 1000},
+            {"nombre": "Eucalipto Seco para Vaporizaciones", "categoria": "Aromaterapia", "precio_compra": 150, "precio_venta": 300, "stock": 1000},
+            {"nombre": "Crema para Manos con Manteca de Karité", "categoria": "Cuidado Personal", "precio_compra": 100, "precio_venta": 200, "stock": 1000},
+            {"nombre": "Té Oolong", "categoria": "Infusiones", "precio_compra": 250, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Crema para Dolores Musculares", "categoria": "Cuidado Corporal", "precio_compra": 400, "precio_venta": 800, "stock": 1000},
+            {"nombre": "Omega 3 en Cápsulas", "categoria": "Suplementos", "precio_compra": 300, "precio_venta": 600, "stock": 1000},
+            {"nombre": "Té Blanco", "categoria": "Infusiones", "precio_compra": 250, "precio_venta": 500, "stock": 1000},
+            {"nombre": "Crema Facial de Ácido Hialurónico", "categoria": "Cuidado de la Piel", "precio_compra": 400, "precio_venta": 800, "stock": 1000},
+            {"nombre": "Barra Energética Orgánica", "categoria": "Nutrición", "precio_compra": 50, "precio_venta": 100, "stock": 1000},
+            {"nombre": "Velas de Cera Natural", "categoria": "Aromaterapia", "precio_compra": 200, "precio_venta": 400, "stock": 1000},
+            {"nombre": "Cápsulas de Ginseng", "categoria": "Suplementos", "precio_compra": 300, "precio_venta": 600, "stock": 1000},
+            {"nombre": "Sales de Baño con Lavanda", "categoria": "Cuidado Corporal", "precio_compra": 150, "precio_venta": 300, "stock": 1000}
+        ],
 
 }
+
+# Alternativamente, si quieres un método más dinámico:
+def normalizar_stock(productos_base):
+    for tipo_negocio in productos_base:
+        productos_base[tipo_negocio] = [
+            {**producto, 'stock': 1000} if isinstance(producto, dict) and 'stock' in producto 
+            else producto 
+            for producto in productos_base[tipo_negocio]
+        ]
+    return productos_base
+
+# Aplicar la normalización
+productos_base = normalizar_stock(productos_base)
 
 def generar_nombre():
     """Genera un nombre aleatorio"""
@@ -837,7 +1001,7 @@ VALUES\n"""
 CREATE TABLE Productos (
     Producto_ID      INT PRIMARY KEY,
     Nombre           VARCHAR(255),
-    Tipo_Negocio     VARCHAR(50),
+    categoria     VARCHAR(50),
     Fecha_Entrada    DATE,
     Existencia       INT,
     Precio_Compra    DECIMAL(10,2),
@@ -846,19 +1010,22 @@ CREATE TABLE Productos (
 
 --Inserción de Productos:
 
-INSERT INTO Productos (Producto_ID, Nombre, Tipo_Negocio, Fecha_Entrada, Existencia, Precio_Compra, Precio_Venta) 
+INSERT INTO Productos (Producto_ID, Nombre, categoria, Fecha_Entrada, Existencia, Precio_Compra, Precio_Venta) 
 VALUES\n"""
 
      # Productos
+    productos_lista = productos_base.get(tipo_negocio, [])
     for i in range(productos):
-        producto = random.choice(productos_base[tipo_negocio])
-        nombre_producto = escape_single_quotes(producto['nombre'])  # Escapar las comillas simples
-        fecha_entrada = random_date(fecha_inicio, fecha_fin).strftime("%Y-%m-%d")
-        existencia = random.randint(50, 200)
-        
-        script_sql += f"    ({i+1}, '{nombre_producto}', '{tipo_negocio}', '{fecha_entrada}', {existencia}, {producto['precio_compra']}, {producto['precio_venta']})"
-        script_sql += ",\n" if i < productos - 1 else ";\n\n"
+            producto = random.choice(productos_lista)
+            nombre_producto = escape_single_quotes(producto['nombre'])
+            categoria = producto['categoria']
+            fecha_entrada = random_date(fecha_inicio, fecha_fin).strftime("%Y-%m-%d")
+            existencia = random.randint(50, 200)
+            precio_compra = producto['precio_compra']
+            precio_venta = producto['precio_venta']
 
+            script_sql += f"    ({i+1}, '{nombre_producto}', '{categoria}', '{fecha_entrada}', {existencia}, {precio_compra}, {precio_venta})"
+            script_sql += ",\n" if i < productos - 1 else ";\n\n"
 
     # Resto del script (Stored Procedures, Triggers, Tablas de Ventas, etc.)
     script_sql += """
@@ -1054,52 +1221,6 @@ VALUES\n"""
 
     script_sql += ",\n".join(detalles_ventas) + ";\n\n"
 
-
-    # # Consultas básicas sobre las tablas
-    # script_sql += "-- =========================================\n"
-    # script_sql += "-- CONSULTAS BÁSICAS SOBRE LAS TABLAS\n"
-    # script_sql += "-- =========================================\n\n"
-
-    # tablas_consultas = [
-    #     ("Ciudades", [
-    #         ("Contar los registros de la tabla Ciudades", "SELECT COUNT(*) AS TotalCiudades FROM Ciudades;"),
-    #         ("Consultar los primeros 10 registros de la tabla Ciudades", "SELECT TOP 10 * FROM Ciudades;"),
-    #         ("Consultar el esquema de la tabla Ciudades (columnas y tipos de datos)", "EXEC sp_columns Ciudades;"),
-    #         ("Ver el tamaño de la tabla Ciudades (espacio utilizado)", "EXEC sp_spaceused 'Ciudades';")
-    #     ]),
-        
-    #     ("Clientes", [
-    #         ("Consultar los primeros 10 registros de la tabla Clientes", "SELECT TOP 10 * FROM Clientes;"),
-    #         ("Contar los registros de la tabla Clientes", "SELECT COUNT(*) AS TotalClientes FROM Clientes;"),
-    #         ("Consultar el esquema de la tabla Clientes", "EXEC sp_columns Clientes;"),
-    #         ("Ver el tamaño de la tabla Clientes", "EXEC sp_spaceused 'Clientes';")
-    #     ]),
-        
-    #     ("Vendedores", [
-    #         ("Consultar los primeros 10 registros de la tabla Vendedores", "SELECT TOP 10 * FROM Vendedores;"),
-    #         ("Contar los registros de la tabla Vendedores", "SELECT COUNT(*) AS TotalVendedores FROM Vendedores;"),
-    #         ("Consultar el esquema de la tabla Vendedores", "EXEC sp_columns Vendedores;"),
-    #         ("Ver el tamaño de la tabla Vendedores", "EXEC sp_spaceused 'Vendedores';")
-    #     ]),
-        
-    #     ("Productos", [
-    #         ("Consultar los primeros 10 registros de la tabla Productos", "SELECT TOP 10 * FROM Productos;"),
-    #         ("Contar los registros de la tabla Productos", "SELECT COUNT(*) AS TotalProductos FROM Productos;"),
-    #         ("Consultar el esquema de la tabla Productos", "EXEC sp_columns Productos;"),
-    #         ("Ver el tamaño de la tabla Productos", "EXEC sp_spaceused 'Productos';"),
-    #         ("Consultar productos con más de 100 unidades en inventario", "SELECT * FROM Productos WHERE Existencia > 100;"),
-    #         ("Consultar productos cuyo precio de venta es mayor a 50", "SELECT Producto_ID, Nombre, Precio_Venta FROM Productos WHERE Precio_Venta > 50;"),
-    #         ("Consultar el producto con el precio de compra más bajo", "SELECT TOP 1 Producto_ID, Nombre, Precio_Compra FROM Productos ORDER BY Precio_Compra ASC;"),
-    #         ("Consultar el producto más caro", "SELECT TOP 1 Producto_ID, Nombre, Precio_Venta FROM Productos ORDER BY Precio_Venta DESC;"),
-    #         ("Ver el total de ventas (cantidad * precio de venta) por cada producto", "SELECT Nombre, Existencia, Precio_Venta, (Existencia * Precio_Venta) AS TotalVentas FROM Productos;"),
-    #         ("Consultar el producto con la menor cantidad de stock", "SELECT TOP 1 Producto_ID, Nombre, Existencia FROM Productos ORDER BY Existencia ASC;"),
-    #         ("Consultar la existencia total de productos por tipo de negocio", "SELECT Tipo_Negocio, SUM(Existencia) AS TotalExistencia FROM Productos GROUP BY Tipo_Negocio;"),
-    #         ("Consultar productos que fueron ingresados en el inventario después del 2022-01-01", "SELECT * FROM Productos WHERE Fecha_Entrada > '2022-01-01';")
-    #     ])
-    # ]
-    
-    # for descripcion, consulta in tablas_consultas:
-    #     script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
         
     # Consultas básicas sobre la base de datos
     script_sql += "-- =========================================\n"
@@ -1404,7 +1525,7 @@ VALUES\n"""
 
         ("Obtener el total de ventas por tipo de negocio de los productos",
         
-        "SELECT P.Tipo_Negocio,\nSUM(DV.Subtotal) AS Total_Ventas_Tipo_Negocio\nFROM Detalle_Ventas DV INNER JOIN Productos P ON DV.Producto_ID = P.Producto_ID GROUP BY P.Tipo_Negocio ORDER BY Total_Ventas_Tipo_Negocio DESC;"),
+        "SELECT P.categoria,\nSUM(DV.Subtotal) AS Total_Ventas_Tipo_Negocio\nFROM Detalle_Ventas DV INNER JOIN Productos P ON DV.Producto_ID = P.Producto_ID GROUP BY P.categoria  ORDER BY Total_Ventas_Tipo_Negocio DESC;"),
 
         ("Obtener las ventas totales por año",
        
@@ -1568,7 +1689,7 @@ VALUES\n"""
         ("Total ventas por tipo de negocio de producto", """
            
             SELECT 
-                P.Tipo_Negocio,
+                P.categoria,
                 SUM(DV.Cantidad * DV.Precio_Unitario) AS Total_Ventas
             FROM 
                 Detalle_Ventas DV
@@ -1577,7 +1698,7 @@ VALUES\n"""
             INNER JOIN 
                 Ventas V ON DV.Venta_ID = V.Venta_ID
             GROUP BY 
-                P.Tipo_Negocio
+                P.categoria
             ORDER BY 
                 Total_Ventas DESC;
         """
@@ -1813,33 +1934,220 @@ VALUES\n"""
     """
     
     ),
-
    
-    ("Clientes clasificados por tipo ABC", """
-           
-            WITH VentasPorCliente AS (
-                SELECT 
-                    C.Cliente_ID,
-                    C.Nombre_Completo,
-                    SUM(V.Total_Venta) AS Total_Vendido
-                FROM 
-                    Clientes C
-                JOIN 
-                    Ventas V ON C.Cliente_ID = V.Cliente_ID
-                GROUP BY 
-                    C.Cliente_ID, C.Nombre_Completo
-            ),
-            ClasificacionABC AS (
-                SELECT *,
-                    CASE WHEN Total_Vendido >= (SELECT SUM(Total_Vendido) * 0.8 FROM VentasPorCliente) THEN 'A'
-                        WHEN Total_Vendido >= (SELECT SUM(Total_Vendido) * 0.5 FROM VentasPorCliente) THEN 'B'
-                        ELSE 'C' END AS Clasificacion
-                FROM VentasPorCliente
-            )
-            SELECT * FROM ClasificacionABC;
-            
+   ("Ventas por Cliente, Ciudad, Cantidad, Total, Latitud y Longitud", """
+    SELECT 
+        C.Nombre_Completo AS Cliente,
+        CIU.Nombre AS Ciudad,
+        SUM(DV.Cantidad) AS Cantidad,
+        SUM(DV.Cantidad * P.Precio_Venta) AS Total,
+        CIU.Latitud,
+        CIU.Longitud
+    FROM 
+        Ventas V
+    INNER JOIN 
+        Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+    INNER JOIN 
+        Productos P ON DV.Producto_ID = P.Producto_ID
+    INNER JOIN 
+        Clientes C ON V.Cliente_ID = C.Cliente_ID
+    INNER JOIN 
+        Ciudades CIU ON C.Ciudad_ID = CIU.Ciudad_ID
+    GROUP BY 
+        C.Nombre_Completo, CIU.Nombre, CIU.Latitud, CIU.Longitud
+    ORDER BY 
+        Cliente;
+"""
+),
+
+
+
+    ("Ventas Mensuales por Producto con Totales por Mes y Año", """
+    -- Esta consulta muestra las ventas mensuales por producto de 2020 a 2024,
+    -- y calcula el total acumulado para cada producto. 
+    -- Además, incluye una fila con los totales mensuales para todos los productos.
+
+    SELECT  
+        Producto,
+        ISNULL([2020-01], 0) AS Enero_2020, ISNULL([2020-02], 0) AS Febrero_2020, ISNULL([2020-03], 0) AS Marzo_2020,
+        ISNULL([2020-04], 0) AS Abril_2020, ISNULL([2020-05], 0) AS Mayo_2020, ISNULL([2020-06], 0) AS Junio_2020,
+        ISNULL([2020-07], 0) AS Julio_2020, ISNULL([2020-08], 0) AS Agosto_2020, ISNULL([2020-09], 0) AS Septiembre_2020,
+        ISNULL([2020-10], 0) AS Octubre_2020, ISNULL([2020-11], 0) AS Noviembre_2020, ISNULL([2020-12], 0) AS Diciembre_2020,
+        ISNULL([2021-01], 0) AS Enero_2021, ISNULL([2021-02], 0) AS Febrero_2021, 
+        -- Continúa con los demás meses y años hasta:
+        ISNULL([2024-12], 0) AS Diciembre_2024,
+        -- Total acumulado por producto
+        ISNULL([2020-01], 0) + ISNULL([2020-02], 0) + ISNULL([2020-03], 0) + 
+        ISNULL([2024-12], 0) AS Total_Producto
+    FROM 
+        (SELECT 
+            FORMAT(V.Fecha_Venta, 'yyyy-MM') AS Periodo,
+            P.Nombre AS Producto,
+            SUM(DV.Cantidad * DV.Precio_Unitario) AS Total_Vendido
+        FROM Ventas V
+        JOIN Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+        JOIN Productos P ON DV.Producto_ID = P.Producto_ID
+        GROUP BY 
+            FORMAT(V.Fecha_Venta, 'yyyy-MM'),
+            P.Nombre
+        ) AS Ventas_Mensuales
+    PIVOT
+        (SUM(Total_Vendido) FOR Periodo IN (
+            [2020-01], [2020-02], [2020-03], [2020-04], [2020-05], [2020-06], [2020-07], 
+            [2020-08], [2020-09], [2020-10], [2020-11], [2020-12], [2021-01], [2021-02], 
+            -- Continúa con todos los periodos hasta [2024-12]
+            [2024-12]
+        )) AS PivotTable
+
+    UNION ALL
+
+    -- Fila de totales mensuales para todos los productos
+    SELECT
+        'Total' AS Producto,
+        SUM(ISNULL([2020-01], 0)) AS Enero_2020, SUM(ISNULL([2020-02], 0)) AS Febrero_2020, 
+        SUM(ISNULL([2020-03], 0)) AS Marzo_2020, SUM(ISNULL([2020-04], 0)) AS Abril_2020,
+        SUM(ISNULL([2020-05], 0)) AS Mayo_2020, SUM(ISNULL([2020-06], 0)) AS Junio_2020,
+        SUM(ISNULL([2020-07], 0)) AS Julio_2020, SUM(ISNULL([2020-08], 0)) AS Agosto_2020,
+        SUM(ISNULL([2020-09], 0)) AS Septiembre_2020, SUM(ISNULL([2020-10], 0)) AS Octubre_2020,
+        SUM(ISNULL([2020-11], 0)) AS Noviembre_2020, SUM(ISNULL([2020-12], 0)) AS Diciembre_2020,
+        SUM(ISNULL([2021-01], 0)) AS Enero_2021, SUM(ISNULL([2021-02], 0)) AS Febrero_2021,
+        -- Continúa para todos los meses y años hasta [2024-12]
+        SUM(ISNULL([2024-12], 0)) AS Diciembre_2024,
+        -- Total acumulado
+        SUM(ISNULL([2020-01], 0)) + SUM(ISNULL([2020-02], 0)) + SUM(ISNULL([2020-03], 0)) + 
+        SUM(ISNULL([2024-12], 0)) AS Total_Producto
+    FROM 
+        (SELECT 
+            FORMAT(V.Fecha_Venta, 'yyyy-MM') AS Periodo,
+            P.Nombre AS Producto,
+            SUM(DV.Cantidad * DV.Precio_Unitario) AS Total_Vendido
+        FROM Ventas V
+        JOIN Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+        JOIN Productos P ON DV.Producto_ID = P.Producto_ID
+        GROUP BY 
+            FORMAT(V.Fecha_Venta, 'yyyy-MM'),
+            P.Nombre
+        ) AS Ventas_Mensuales
+    PIVOT
+        (SUM(Total_Vendido) FOR Periodo IN (
+            [2020-01], [2020-02], [2020-03], [2020-04], [2020-05], [2020-06], [2020-07], 
+            [2020-08], [2020-09], [2020-10], [2020-11], [2020-12], [2021-01], [2021-02], 
+            -- Continúa con todos los periodos hasta [2024-12]
+            [2024-12]
+        )) AS PivotTable;
     """
     ),
+
+  ("Facturas y Compras por Cliente", """
+    SELECT 
+        C.Nombre_Completo AS Cliente,
+        COUNT(DISTINCT V.Venta_ID) AS Total_Facturas,
+        SUM(DV.Cantidad * P.Precio_Venta) AS Total_Compras
+    FROM 
+        Ventas V
+    INNER JOIN 
+        Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+    INNER JOIN 
+        Productos P ON DV.Producto_ID = P.Producto_ID
+    INNER JOIN 
+        Clientes C ON V.Cliente_ID = C.Cliente_ID
+    GROUP BY 
+        C.Nombre_Completo;
+"""),
+
+("Primera y Última Compra por Cliente", """
+    SELECT 
+        C.Nombre_Completo AS Cliente,
+        MIN(V.Fecha_Venta) AS Primera_Compra,
+        MAX(V.Fecha_Venta) AS Ultima_Compra
+    FROM 
+        Ventas V
+    INNER JOIN 
+        Clientes C ON V.Cliente_ID = C.Cliente_ID
+    GROUP BY 
+        C.Nombre_Completo;
+"""),
+
+("Total Compras por Cliente en Año Específico", """
+    SELECT 
+        C.Nombre_Completo AS Cliente,
+        YEAR(V.Fecha_Venta) AS Año,
+        SUM(DV.Cantidad) AS Total_Unidades_Compradas,
+        SUM(DV.Cantidad * P.Precio_Venta) AS Total_Compras
+    FROM 
+        Ventas V
+    INNER JOIN 
+        Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+    INNER JOIN 
+        Productos P ON DV.Producto_ID = P.Producto_ID
+    INNER JOIN 
+        Clientes C ON V.Cliente_ID = C.Cliente_ID
+    WHERE 
+        YEAR(V.Fecha_Venta) = 2024  -- Puedes cambiar el año aquí
+    GROUP BY 
+        C.Nombre_Completo, YEAR(V.Fecha_Venta);
+"""),
+
+("Compras por Cliente por Mes y Año", """
+    SELECT 
+        C.Nombre_Completo AS Cliente,
+        YEAR(V.Fecha_Venta) AS Año,
+        MONTH(V.Fecha_Venta) AS Mes,
+        COUNT(DISTINCT V.Venta_ID) AS Total_Compras
+    FROM 
+        Ventas V
+    INNER JOIN 
+        Clientes C ON V.Cliente_ID = C.Cliente_ID
+    GROUP BY 
+        C.Nombre_Completo, YEAR(V.Fecha_Venta), MONTH(V.Fecha_Venta)
+    ORDER BY 
+        Cliente, Año, Mes;
+"""),
+
+("Clientes que No Han Comprado en Año Específico", """
+    SELECT 
+        C.Nombre_Completo AS Cliente
+    FROM 
+        Clientes C
+    WHERE 
+        C.Cliente_ID NOT IN (
+            SELECT V.Cliente_ID
+            FROM Ventas V
+            INNER JOIN Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+            WHERE YEAR(V.Fecha_Venta) = 2024 -- Cambia el año aquí
+        );
+"""),
+
+("Vendedores que No Han Vendido en Año Específico", """
+    SELECT 
+        VEN.Nombre_Completo AS Vendedor
+    FROM 
+        Vendedores VEN
+    WHERE 
+        VEN.Vendedor_ID NOT IN (
+            SELECT V.Vendedor_ID
+            FROM Ventas V
+            INNER JOIN Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+            WHERE YEAR(V.Fecha_Venta) = 2024 -- Cambia el año aquí
+        );
+"""),
+
+("Productos que No Se Han Vendido en Año Específico", """
+    SELECT 
+        P.Nombre AS Producto
+    FROM 
+        Productos P
+    WHERE 
+        P.Producto_ID NOT IN (
+            SELECT DV.Producto_ID
+            FROM Detalle_Ventas DV
+            INNER JOIN Ventas V ON DV.Venta_ID = V.Venta_ID
+            WHERE YEAR(V.Fecha_Venta) = 2024 
+        );
+""")
+
+    
+    
     ]
     for descripcion, consulta in tablas_consultas:
                 script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
@@ -1855,7 +2163,7 @@ VALUES\n"""
         -- Consolida información clave de las ventas, como el número de factura, fecha, cliente, vendedor, ciudad,
         -- producto, precios, cantidades, totales, costos, margen y porcentaje de margen.
 
-        CREATE VIEW Vista_General_Ventas AS
+        CREATE  OR ALTER VIEW Vista_General_Ventas AS
         SELECT 
             V.Venta_ID AS Numero_Factura, -- Número único de la factura
             V.Fecha_Venta AS Fecha, -- Fecha de la venta
@@ -1893,7 +2201,55 @@ VALUES\n"""
     """
     
     ),
+    ("Vista general de ventas con detalles adicionales", """
+    -- Creación de la vista general de ventas con información adicional
+    -- Incluye existencia del producto, subtotal, ITBIS, y otros cálculos relacionados con la venta.
+
+    CREATE OR ALTER VIEW Vista_General_Ventas AS
+    SELECT 
+        V.Venta_ID AS Numero_Factura, -- Número único de la factura
+        V.Fecha_Venta AS Fecha, -- Fecha de la venta
+        C.Nombre_Completo AS Cliente, -- Nombre del cliente
+        VEN.Nombre_Completo AS Vendedor, -- Nombre del vendedor
+        CIU.Nombre AS Ciudad, -- Ciudad del vendedor
+        P.Nombre AS Producto, -- Nombre del producto
+        P.Existencia, -- Existencia actual del producto
+        P.Precio_Compra, -- Precio de compra del producto
+        P.Precio_Venta, -- Precio de venta del producto
+        DV.Cantidad, -- Cantidad de productos vendidos
+        DV.Cantidad * P.Precio_Venta AS Subtotal, -- Subtotal de la venta sin ITBIS
+        DV.Cantidad * P.Precio_Venta * 0.18 AS ITBIS, -- Cálculo del ITBIS (18%)
+        (DV.Cantidad * P.Precio_Venta) + (DV.Cantidad * P.Precio_Venta * 0.18) AS Total, -- Total de la venta incluyendo ITBIS
+        DV.Cantidad * P.Precio_Compra AS Costo, -- Costo total de los productos vendidos
+        (DV.Cantidad * P.Precio_Venta) - (DV.Cantidad * P.Precio_Compra) AS Margen, -- Margen de ganancia
+        CASE 
+            WHEN (DV.Cantidad * P.Precio_Venta) > 0 
+            THEN ((DV.Cantidad * P.Precio_Venta) - (DV.Cantidad * P.Precio_Compra)) / (DV.Cantidad * P.Precio_Venta) * 100
+            ELSE 0
+        END AS Porcentaje_Margen -- Porcentaje de margen respecto al total
+    FROM 
+        Ventas V
+    INNER JOIN 
+        Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
+    INNER JOIN 
+        Productos P ON DV.Producto_ID = P.Producto_ID
+    INNER JOIN 
+        Clientes C ON V.Cliente_ID = C.Cliente_ID
+    INNER JOIN 
+        Vendedores VEN ON V.Vendedor_ID = VEN.Vendedor_ID
+    INNER JOIN 
+        Ciudades CIU ON VEN.Ciudad_ID = CIU.Ciudad_ID;
+
+    -- Consulta la vista creada.
+    SELECT * FROM Vista_General_Ventas;
+"""
+),
+
+    
+    
     ]
+    
+    
     
     for descripcion, consulta in tablas_consultas:
                 script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
