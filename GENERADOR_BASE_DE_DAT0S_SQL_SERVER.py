@@ -717,7 +717,9 @@ def generar_script_sql(tipo_negocio, fecha_inicio, fecha_fin, clientes, vendedor
         {"id": 27, "nombre": "Boca Chica", "codigo": "BC001", "latitud": 18.4750, "longitud": -69.7119},
         {"id": 28, "nombre": "Elías Piña", "codigo": "EP001", "latitud": 18.4967, "longitud": -71.7567},
         {"id": 29, "nombre": "La Altagracia", "codigo": "LA001", "latitud": 18.5441, "longitud": -68.3755},
-        {"id": 30, "nombre": "Dajabón", "codigo": "DAJ001", "latitud": 19.3750, "longitud": -71.7031}
+        {"id": 30, "nombre": "Dajabón", "codigo": "DAJ001", "latitud": 19.3750, "longitud": -71.7031},
+        {"id": 31, "nombre": "Monte Plata", "codigo": "MP001", "latitud": 18.8081, "longitud": -69.7860},
+        {"id": 32, "nombre": "Bonao", "codigo": "BON001", "latitud": 18.9792, "longitud": -70.4106}
     ]
 
   # Modify the Ciudades table insertion
@@ -732,11 +734,32 @@ def generar_script_sql(tipo_negocio, fecha_inicio, fecha_fin, clientes, vendedor
     
     script_sql = f"""
 
--- =========================================
--- BASE DE DATOS
--- =========================================
+-- ===========================================================
+-- BASE DE DATOS PARA PRACTICAR EN SQL SERVER 
+-- POR: ING. JUANCITO PEÑA VIZCAINO  
+-- ===========================================================
+
+/*
+🚀 No olvides suscribirte a mi canal donde estaré subiendo este video para que no te lo pierdas, 
+compartir el contenido que ya tengo, darle like y dejar tus comentarios.. 
+¡Tu apoyo es muy importante para mí y me ayudas a seguir creando aplicaciones y  contenido! 💚
+
+Redes Sociales y Contenido:
+1-🎬 Youtube:    https://www.youtube.com/@JuancitoPenaV 
+2-👨‍💼 LinkedIn:   https://www.linkedin.com/in/juancitope%C3%B1a/
+3-📰 Blog:       https://advisertecnology.com/
+4-📷 Instagram:  https://www.instagram.com/juancito.pena.v/
+5-📑 Facebook:   https://www.facebook.com/juancito.p.v
+6-🐦 Twitter:    https://twitter.com/JuancitoPenaV
+*/
+====================================================================================
+
+-CREAR UNA BASE DE DATOS LLAMADA: AQUI LE PONES TU NOMBRE QUE QUIERAS
+
 CREATE DATABASE Tienda_{tipo_negocio.capitalize()}_BD;
 GO
+
+--USAR LA BASE DE DATOS CREADA:
 
 USE Tienda_{tipo_negocio.capitalize()}_BD;
 GO
@@ -744,6 +767,7 @@ GO
 -- =========================================
 -- Tabla de Ciudades
 -- =========================================
+
 CREATE TABLE Ciudades (
     Ciudad_ID    INT PRIMARY KEY,
     Nombre       VARCHAR(100),
@@ -757,6 +781,7 @@ CREATE TABLE Ciudades (
 -- =========================================
 -- Tabla de Clientes
 -- =========================================
+
 CREATE TABLE Clientes (
     Cliente_ID       INT PRIMARY KEY,
     Nombre_Completo  VARCHAR(255),
@@ -765,6 +790,7 @@ CREATE TABLE Clientes (
 );
 
 -- Insertar datos en la tabla Clientes
+
 INSERT INTO Clientes (Cliente_ID, Nombre_Completo, Ciudad_ID)
 VALUES\n"""
 
@@ -781,12 +807,15 @@ VALUES\n"""
 -- =========================================
 -- Tabla de Vendedores
 -- =========================================
+
 CREATE TABLE Vendedores (
     Vendedor_ID      INT PRIMARY KEY,
     Nombre_Completo  VARCHAR(255),
     Ciudad_ID        INT,
     FOREIGN KEY (Ciudad_ID) REFERENCES Ciudades(Ciudad_ID)
 );
+
+--Inserción de Vendedores:
 
 INSERT INTO Vendedores (Vendedor_ID, Nombre_Completo, Ciudad_ID)
 VALUES\n"""
@@ -799,9 +828,12 @@ VALUES\n"""
         script_sql += ",\n" if i < vendedores - 1 else ";\n\n"
         
        # Productos
-    script_sql += """-- =========================================
+    script_sql += """
+    
+-- =========================================
 -- Tabla de Productos
 -- =========================================
+
 CREATE TABLE Productos (
     Producto_ID      INT PRIMARY KEY,
     Nombre           VARCHAR(255),
@@ -811,6 +843,8 @@ CREATE TABLE Productos (
     Precio_Compra    DECIMAL(10,2),
     Precio_Venta     DECIMAL(10,2)
 );
+
+--Inserción de Productos:
 
 INSERT INTO Productos (Producto_ID, Nombre, Tipo_Negocio, Fecha_Entrada, Existencia, Precio_Compra, Precio_Venta) 
 VALUES\n"""
@@ -828,9 +862,11 @@ VALUES\n"""
 
     # Resto del script (Stored Procedures, Triggers, Tablas de Ventas, etc.)
     script_sql += """
+    
 -- =========================================
 -- Stored Procedure: Actualización Inventario
 -- =========================================
+
 CREATE PROCEDURE SP_ActualizarInventario
     @Producto_ID    INT,
     @Cantidad       INT
@@ -877,6 +913,7 @@ GO
 -- =========================================
 -- Log de Inventario
 -- =========================================
+
 CREATE TABLE Log_Inventario (
     Log_ID              INT IDENTITY(1,1) PRIMARY KEY,
     Producto_ID         INT,
@@ -892,6 +929,7 @@ CREATE TABLE Log_Inventario (
 -- =========================================
 -- Tabla de Ventas
 -- =========================================
+
 CREATE TABLE Ventas (
     Venta_ID INT PRIMARY KEY,
     Cliente_ID INT,
@@ -904,6 +942,7 @@ CREATE TABLE Ventas (
 GO
 
 -- Inserción de Ventas
+
 INSERT INTO Ventas (Venta_ID, Cliente_ID, Vendedor_ID, Fecha_Venta, Total_Venta) 
 VALUES
 """
@@ -931,9 +970,12 @@ VALUES
 
 
     # Detalles de Ventas
-    script_sql += """-- =========================================
+    script_sql += """
+
+-- =========================================
 -- Tabla de Detalle de Ventas
 -- =========================================
+
 CREATE TABLE Detalle_Ventas (
     Detalle_ID INT PRIMARY KEY,
     Venta_ID INT,
@@ -949,6 +991,7 @@ CREATE TABLE Detalle_Ventas (
 -- =========================================
 -- Trigger de Actualización de Inventario
 -- =========================================
+
 CREATE TRIGGER TR_ActualizarInventario
 ON Detalle_Ventas
 AFTER INSERT
@@ -987,6 +1030,7 @@ END;
 GO
 
 -- Inserción de detalles de ventas
+
 INSERT INTO Detalle_Ventas (Detalle_ID, Venta_ID, Producto_ID, Cantidad, Precio_Unitario, Subtotal) 
 VALUES\n"""
 
@@ -1064,11 +1108,17 @@ VALUES\n"""
 
     tablas_consultas = [
         ("Obtener el nombre de la base de datos actual", "SELECT DB_NAME() AS BaseDeDatos_Actual;"),
+        
         ("Ver el tamaño de la base de datos (en MB)", "EXEC sp_spaceused;"),
+        
         ("Ver cuántas tablas tiene la base de datos", "SELECT COUNT(*) AS NumeroDeTablas FROM information_schema.tables WHERE table_type = 'BASE TABLE';"),
+       
         ("Ver los tipos de datos disponibles en la base de datos", "SELECT DISTINCT data_type FROM information_schema.columns ORDER BY data_type;"),
+       
         ("Ver los índices existentes en la base de datos", "SELECT name AS IndexName, type_desc AS IndexType, object_id AS TableID FROM sys.indexes WHERE object_id > 100;"),
+       
         ("Ver el esquema completo de todas las tablas en la base de datos", "SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE FROM information_schema.columns ORDER BY TABLE_NAME, ORDINAL_POSITION;"),
+        
         ("Contar el total de registros en cada tabla", """
             SELECT 
                 t.name AS NombreTabla,
@@ -1083,7 +1133,9 @@ VALUES\n"""
                 t.name
             ORDER BY 
                 TotalRegistros DESC;
+                
         """),
+        
         ("Ver las relaciones (llaves foráneas) entre tablas", """
             SELECT 
                 fk.name AS NombreRelacion,
@@ -1105,12 +1157,151 @@ VALUES\n"""
                 sys.columns cr ON fkc.referenced_object_id = cr.object_id AND fkc.referenced_column_id = cr.column_id
             ORDER BY 
                 tp.name, tr.name;
+                
         """)
     ]
     for descripcion, consulta in tablas_consultas:
             script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
             
-    
+    # Análisis EDA para Base de Datos
+    script_sql += "-- =========================================\n"
+    script_sql += "-- ANÁLISIS EXPLORATORIO DE DATOS (EDA)\n"
+    script_sql += "-- =========================================\n\n"
+
+    consultas_eda = [
+        ("Distribución de registros por tabla", """
+        -- Número de registros y porcentaje de ocupación por tabla
+        WITH TablaSizes AS (
+            SELECT 
+                t.name AS NombreTabla,
+                SUM(p.rows) AS TotalRegistros,
+                (SUM(p.rows) * 100.0 / (SELECT SUM(rows) FROM sys.partitions WHERE index_id < 2)) AS PorcentajeOcupacion
+            FROM 
+                sys.tables t
+            INNER JOIN 
+                sys.partitions p ON t.object_id = p.object_id
+            WHERE 
+                p.index_id IN (0, 1)
+            GROUP BY 
+                t.name
+        )
+        SELECT 
+            NombreTabla, 
+            TotalRegistros, 
+            ROUND(PorcentajeOcupacion, 2) AS PorcentajeOcupacion
+        FROM 
+            TablaSizes
+        ORDER BY 
+            TotalRegistros DESC;
+        """),
+        
+        ("Análisis de nulidad en columnas", """
+        -- Porcentaje de valores nulos por columna en cada tabla
+        SELECT 
+            TABLE_NAME AS Tabla,
+            COLUMN_NAME AS Columna,
+            DATA_TYPE AS TipoDato,
+            CASE 
+                WHEN IS_NULLABLE = 'YES' THEN 'Sí' 
+                ELSE 'No' 
+            END AS AdmiteNulos,
+            (
+                SELECT 
+                    (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES))
+                FROM 
+                    INFORMATION_SCHEMA.TABLES t
+                WHERE 
+                    t.TABLE_NAME = c.TABLE_NAME
+            ) AS PorcentajeNulos
+        FROM 
+            INFORMATION_SCHEMA.COLUMNS c
+        ORDER BY 
+            PorcentajeNulos DESC;
+        """),
+        
+        ("Rango de valores por columna numérica", """
+       -- Rango de valores por columna numérica
+        -- Estadísticas descriptivas para columnas numéricas
+        DECLARE @SQL NVARCHAR(MAX) = '';
+
+        SELECT @SQL = @SQL + 
+            'SELECT ''' + TABLE_NAME + ''' AS Tabla, 
+                    ''' + COLUMN_NAME + ''' AS Columna, 
+                    ''' + DATA_TYPE + ''' AS TipoDato,
+                    MIN(' + COLUMN_NAME + ') AS ValorMinimo,
+                    MAX(' + COLUMN_NAME + ') AS ValorMaximo,
+                    AVG(CAST(' + COLUMN_NAME + ' AS FLOAT)) AS Promedio,
+                    STDEV(CAST(' + COLUMN_NAME + ' AS FLOAT)) AS DesviacionEstandar
+            FROM ' + TABLE_NAME + '
+            UNION ALL '
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE 
+            DATA_TYPE IN ('int', 'decimal', 'numeric', 'float', 'real', 'smallint', 'bigint')
+            AND TABLE_NAME IN (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE');
+
+        -- Eliminar el último UNION ALL
+        SET @SQL = LEFT(@SQL, LEN(@SQL) - 10);
+
+        -- Ejecutar la consulta dinámica
+        EXEC sp_executesql @SQL;
+        GO
+        """),
+        
+        ("Análisis de distribución de fechas", """
+        -- Rango de fechas y distribución por año
+        -- Análisis de distribución de fechas
+        DECLARE @SQL NVARCHAR(MAX) = '';
+
+        SELECT @SQL = @SQL + 
+            'SELECT ''' + TABLE_NAME + ''' AS Tabla, 
+                    ''' + COLUMN_NAME + ''' AS ColumnaFecha, 
+                    MIN(CAST(' + COLUMN_NAME + ' AS DATE)) AS FechaInicial,
+                    MAX(CAST(' + COLUMN_NAME + ' AS DATE)) AS FechaFinal,
+                    DATEDIFF(YEAR, 
+                        MIN(CAST(' + COLUMN_NAME + ' AS DATE)), 
+                        MAX(CAST(' + COLUMN_NAME + ' AS DATE))
+                    ) AS RangoAños
+            FROM ' + TABLE_NAME + '
+            WHERE ' + COLUMN_NAME + ' IS NOT NULL
+            UNION ALL '
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE 
+            DATA_TYPE IN ('date', 'datetime', 'datetime2', 'smalldatetime')
+            AND TABLE_NAME IN (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE');
+
+        -- Eliminar el último UNION ALL
+        SET @SQL = LEFT(@SQL, LEN(@SQL) - 10);
+
+        -- Ejecutar la consulta dinámica
+        EXEC sp_executesql @SQL;
+        GO
+        """),
+               
+        
+        ("Análisis de cardinalidad de relaciones", """
+        -- Cardinalidad y características de las relaciones entre tablas
+        SELECT 
+            fk.name AS NombreRelacion,
+            tp.name AS TablaPrincipal,
+            tr.name AS TablaReferencia,
+            (
+                SELECT COUNT(*) 
+                FROM sys.foreign_key_columns fkc 
+                WHERE fkc.constraint_object_id = fk.object_id
+            ) AS NumeroColumnasRelacionadas
+        FROM 
+            sys.foreign_keys fk
+        INNER JOIN 
+            sys.tables tp ON fk.parent_object_id = tp.object_id
+        INNER JOIN 
+            sys.tables tr ON fk.referenced_object_id = tr.object_id
+        ORDER BY 
+            NumeroColumnasRelacionadas DESC;
+        """)
+    ]
+
+    for descripcion, consulta in consultas_eda:
+        script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
 
     # Consultas avanzadas sobre ventas y productos
     script_sql += "-- =========================================\n"
@@ -1119,6 +1310,7 @@ VALUES\n"""
 
     tablas_consultas = [
         ("Obtener las ventas de los últimos 30 días",
+         
         "SELECT \n"
         "    V.Venta_ID, \n"
         "    V.Fecha_Venta, \n"
@@ -1137,6 +1329,7 @@ VALUES\n"""
         "    V.Fecha_Venta DESC;"),
 
         ("Total de ventas por ciudad (usando INNER JOIN con varias tablas)",
+         
         "SELECT \n"
         "    CI.Nombre AS Ciudad, \n"
         "    COUNT(V.Venta_ID) AS Total_Ventas, \n"
@@ -1150,9 +1343,12 @@ VALUES\n"""
         "GROUP BY \n"
         "    CI.Nombre\n"
         "ORDER BY \n"
-        "    Total_Ventas_Monto DESC;"),
+        "    Total_Ventas_Monto DESC;"
+        
+        ),
 
         ("Obtener el total de ventas por mes durante el último año",
+         
         "SELECT \n"
         "    YEAR(V.Fecha_Venta) AS Año, \n"
         "    MONTH(V.Fecha_Venta) AS Mes, \n"
@@ -1164,9 +1360,12 @@ VALUES\n"""
         "GROUP BY \n"
         "    YEAR(V.Fecha_Venta), MONTH(V.Fecha_Venta)\n"
         "ORDER BY \n"
-        "    Año DESC, Mes DESC;"),
+        "    Año DESC, Mes DESC;"
+        
+        ),
 
         ("Obtener el precio promedio y las cantidades vendidas de los productos",
+         
         "SELECT \n"
         "    P.Nombre AS Producto, \n"
         "    AVG(DV.Precio_Unitario) AS Precio_Promedio, \n"
@@ -1176,9 +1375,12 @@ VALUES\n"""
         "INNER JOIN \n"
         "    Productos P ON DV.Producto_ID = P.Producto_ID\n"
         "GROUP BY \n"
-        "    P.Nombre\nORDER BY Total_Cantidad_Vendida DESC;"),
+        "    P.Nombre\nORDER BY Total_Cantidad_Vendida DESC;"
+        
+        ),
 
         ("Obtener los productos con las ventas totales más altas en el último mes",
+         
         "SELECT \n" 
         "   P.Nombre AS Producto,\n" 
         "   SUM(DV.Subtotal) AS Total_Venta_Producto\n" 
@@ -1189,22 +1391,28 @@ VALUES\n"""
         "GROUP BY P.Nombre\nORDER BY Total_Venta_Producto DESC;"),
 
         ("Obtener los productos con existencias menores a 50",
+        
         "SELECT P.Nombre AS Producto,\nP.Existencia AS Existencia\nFROM Productos P\nWHERE P.Existencia < 50 ORDER BY P.Existencia ASC;"),
 
         ("Obtener los movimientos de inventario para un producto en particular (por ejemplo, Producto_ID = 1)",
+        
         "SELECT LI.Fecha_Movimiento,\nLI.Tipo_Movimiento,\nLI.Cantidad,\nLI.Existencia_Anterior,\nLI.Existencia_Nueva\nFROM Log_Inventario LI INNER JOIN Productos P ON LI.Producto_ID = P.Producto_ID WHERE P.Producto_ID = 1 ORDER BY LI.Fecha_Movimiento DESC;"),
 
         ("Obtener el total de ventas por vendedor y el número de ventas realizadas",
+        
         "SELECT V.Nombre_Completo AS Vendedor,\nCOUNT(VP.Venta_ID) AS Numero_Ventas,\nSUM(VP.Total_Venta) AS Total_Ventas\nFROM Ventas VP INNER JOIN Vendedores V ON VP.Vendedor_ID = V.Vendedor_ID GROUP BY V.Nombre_Completo ORDER BY Total_Ventas DESC;"),
 
         ("Obtener el total de ventas por tipo de negocio de los productos",
+        
         "SELECT P.Tipo_Negocio,\nSUM(DV.Subtotal) AS Total_Ventas_Tipo_Negocio\nFROM Detalle_Ventas DV INNER JOIN Productos P ON DV.Producto_ID = P.Producto_ID GROUP BY P.Tipo_Negocio ORDER BY Total_Ventas_Tipo_Negocio DESC;"),
 
         ("Obtener las ventas totales por año",
+       
         "SELECT YEAR(V.Fecha_Venta) AS Año,\nSUM(V.Total_Venta) AS Total_Ventas_Anuales\nFROM Ventas V GROUP BY YEAR(V.Fecha_Venta) ORDER BY Año DESC;"),
 
         ("Obtener los cambios de existencia para cada producto durante el mes actual",
-        """ SELECT P.Nombre AS Producto,
+        """ 
+        SELECT P.Nombre AS Producto,
             SUM(LI.Cantidad) AS Total_Cambio_Existencia
             FROM Log_Inventario LI 
             INNER JOIN Productos P ON LI.Producto_ID = P.Producto_ID 
@@ -1212,7 +1420,8 @@ VALUES\n"""
             AND LI.Fecha_Movimiento < DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) + 1, 0)
             GROUP BY P.Nombre 
             ORDER BY Total_Cambio_Existencia DESC;
-            """)
+            """
+        )
          
     ]
     for descripcion, consulta in tablas_consultas:
@@ -1220,6 +1429,7 @@ VALUES\n"""
     
     tablas_consultas = [
         ("Ventas totales por producto, vendedor y cliente en el mes actual", """
+           
             SELECT 
             P.Nombre AS Producto,
             VEND.Nombre_Completo AS Vendedor,
@@ -1243,9 +1453,11 @@ VALUES\n"""
             ORDER BY 
                 Total_Ventas DESC;
 
-        """),
+        """
+        ),
         
         ("Análisis de ventas por ciudad (Top 10 ciudades con más ventas)", """
+                     
             SELECT 
                 Ci.Nombre AS Ciudad,
                 SUM(DV.Cantidad * DV.Precio_Unitario) AS Total_Ventas
@@ -1261,9 +1473,11 @@ VALUES\n"""
                 Ci.Nombre
             ORDER BY 
                 Total_Ventas DESC;
-        """),
+        """
+        ),
         
         ("Ranking de productos por ventas en el último trimestre", """
+            
             SELECT 
                 P.Nombre AS Producto,
                 SUM(DV.Cantidad * DV.Precio_Unitario) AS Total_Ventas,
@@ -1284,6 +1498,7 @@ VALUES\n"""
         """),
         
         ("Clientes con el mayor volumen de ventas (Análisis ABC 80/20)", """
+          
             WITH Cliente_Ventas AS (
                 SELECT 
                     C.Nombre_Completo AS Cliente,
@@ -1308,9 +1523,12 @@ VALUES\n"""
                 Cliente_Ventas
             ORDER BY 
                 Total_Ventas DESC;
-        """),
+        """
+        
+        ),
         
         ("Ventas por producto y mes (tabla pivote)", """
+            
             SELECT 
                 P.Nombre AS Producto,
                 YEAR(V.Fecha_Venta) AS Anio,
@@ -1329,7 +1547,8 @@ VALUES\n"""
         """),
         
         ("Ventas por vendedor y fecha (tabla pivote vertical)", """
-              SELECT 
+             
+           SELECT 
                 Vd.Nombre_Completo AS Vendedor,
                 CONVERT(VARCHAR(7), V.Fecha_Venta, 120) AS Fecha,
                 SUM(DV.Cantidad * DV.Precio_Unitario) AS Total_Ventas
@@ -1342,9 +1561,12 @@ VALUES\n"""
                 Vd.Nombre_Completo, CONVERT(VARCHAR(7), V.Fecha_Venta, 120)
             ORDER BY 
                 Vd.Nombre_Completo, Fecha;
-        """),
+        """
+        
+        ),
         
         ("Total ventas por tipo de negocio de producto", """
+           
             SELECT 
                 P.Tipo_Negocio,
                 SUM(DV.Cantidad * DV.Precio_Unitario) AS Total_Ventas
@@ -1358,7 +1580,9 @@ VALUES\n"""
                 P.Tipo_Negocio
             ORDER BY 
                 Total_Ventas DESC;
-        """),
+        """
+        
+        ),
         
         ("Análisis de Pareto 80/20 en productos (Top 20% de productos que generan el 80% de las ventas)", """
            
@@ -1414,7 +1638,8 @@ VALUES\n"""
         ORDER BY 
             Total_Ventas DESC;
 
-        """)
+        """
+        )
     ]
 
     for descripcion, consulta in tablas_consultas:
@@ -1426,6 +1651,7 @@ VALUES\n"""
 
     tablas_consultas = [
     ("Unir ventas con detalles y productos", """
+           
             SELECT 
                 V.Venta_ID,
                 C.Nombre_Completo AS Cliente,
@@ -1441,9 +1667,12 @@ VALUES\n"""
                 Detalle_Ventas DV ON V.Venta_ID = DV.Venta_ID
             JOIN 
                 Productos P ON DV.Producto_ID = P.Producto_ID;
-    """),
+    """
+    
+    ),
         
     ("Ventas por ciudad y total por producto", """
+           
             SELECT 
                 CI.Nombre AS Ciudad,
                 P.Nombre AS Producto,
@@ -1461,7 +1690,9 @@ VALUES\n"""
                 Productos P ON DV.Producto_ID = P.Producto_ID
             GROUP BY 
                 CI.Nombre, P.Nombre;
-    """),
+    """
+    
+    ),
         
     ("Ranking de vendedores por total de ventas", """
             SELECT 
@@ -1474,7 +1705,9 @@ VALUES\n"""
                 Vendedores V ON VT.Vendedor_ID = V.Vendedor_ID
             GROUP BY 
                 V.Nombre_Completo;
-    """),
+    """
+    
+    ),
     
     ("Ranking de productos por total de ventas", """
         SELECT 
@@ -1489,8 +1722,12 @@ VALUES\n"""
             Productos P ON DT.Producto_ID = P.Producto_ID
         GROUP BY 
             P.Nombre;
-    """),
+    """
+    
+    ),
+    
     ("Ranking de clientes por total de compras", """
+       
         SELECT 
             C.Nombre_Completo AS Cliente,
             SUM(VT.Total_Venta) AS Total_Comprado,
@@ -1501,10 +1738,13 @@ VALUES\n"""
             Clientes C ON VT.Cliente_ID = C.Cliente_ID
         GROUP BY 
             C.Nombre_Completo;
-    """),
+    """
+    
+    ),
     
     
     ("Tabla pivote de ventas por mes y año", """
+       
         SELECT 
             YEAR(V.Fecha_Venta) AS Año,
             MONTH(V.Fecha_Venta) AS Mes,
@@ -1513,7 +1753,9 @@ VALUES\n"""
             GROUP BY 
             YEAR(V.Fecha_Venta), MONTH(V.Fecha_Venta)
             ORDER BY Año, Mes;
-    """),
+    """
+    
+    ),
         
    ("Ventas Anuales por Producto con Totales por Año", """
     -- Esta consulta muestra las ventas por producto y año (2020-2024),
@@ -1568,13 +1810,13 @@ VALUES\n"""
             ) AS Ventas_Anuales
         PIVOT
             (SUM(Total_Vendido) FOR Año IN ([2020], [2021], [2022], [2023], [2024])) AS PivotTable;
-    """),
-
-
+    """
     
-    
-        
+    ),
+
+   
     ("Clientes clasificados por tipo ABC", """
+           
             WITH VentasPorCliente AS (
                 SELECT 
                     C.Cliente_ID,
@@ -1595,7 +1837,9 @@ VALUES\n"""
                 FROM VentasPorCliente
             )
             SELECT * FROM ClasificacionABC;
-    """),
+            
+    """
+    ),
     ]
     for descripcion, consulta in tablas_consultas:
                 script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
@@ -1645,7 +1889,10 @@ VALUES\n"""
 
         -- Consulta la vista CREADA.
         SELECT * FROM Vista_General_Ventas;
-    """),
+        
+    """
+    
+    ),
     ]
     
     for descripcion, consulta in tablas_consultas:
@@ -1715,7 +1962,9 @@ VALUES\n"""
             ClasificacionPareto
         ORDER BY 
             Total_Vendido DESC;
-    """),
+            
+    """
+    ),
 
     ("Análisis de Pareto por cliente", """
         -- Creación del análisis de Pareto para clasificar a los clientes por total de ventas,
@@ -1772,7 +2021,9 @@ VALUES\n"""
             ClasificacionPareto
         ORDER BY 
             Total_Vendido DESC;
-    """),
+            
+    """
+    ),
     
     ("Análisis de Pareto por vendedor", """
         -- Creación del análisis de Pareto para clasificar a los vendedores por total de ventas,
@@ -1829,7 +2080,10 @@ VALUES\n"""
             ClasificacionPareto
         ORDER BY 
             Total_Vendido DESC;
-    """),
+            
+    """
+    
+    ),
     ]
     
     for descripcion, consulta in tablas_consultas:
@@ -1933,16 +2187,18 @@ VALUES\n"""
             END AS Narrativa_Rotacion
         FROM 
             RotacionCalculada;
-    """)
+            
+    """
+    )
 
 
     ]
     for descripcion, consulta in tablas_consultas:
                 script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
     
-    script_sql += "-- =========================================\n"
-    script_sql += "--                                            \n"
-    script_sql += "-- =========================================\n\n"
+    script_sql += "-- ===================================================\n"
+    script_sql += "--   FIN DE TODAS LAS CONSULTAS -RECUERDA COMPARIR                                           \n"
+    script_sql += "-- ===================================================\n\n"
        
     return script_sql
 
@@ -1963,7 +2219,7 @@ tipo_negocio = st.selectbox("Selecciona el tipo de negocio", list(productos_base
 num_clientes = st.number_input("Cantidad de clientes (Max=240)", min_value=1, max_value=240, value=35)
 num_vendedores = st.number_input("Cantidad de vendedores (Max=50)", min_value=1, max_value=50, value=15)
 num_productos = st.number_input("Cantidad de productos (Max=100)", min_value=1, max_value=100, value=35)
-num_facturas = st.number_input("Cantidad de facturas/ventas", min_value=1, max_value=10000, value=1000)
+num_facturas = st.number_input("Cantidad de facturas/ventas Max-500", min_value=1, max_value=500, value=250)
 
 # Parámetros de fechas
 fecha_inicio = st.date_input("Fecha de inicio", value=datetime(2020, 1, 1))
