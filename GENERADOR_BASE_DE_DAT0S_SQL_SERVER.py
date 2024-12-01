@@ -2206,7 +2206,7 @@ VALUES\n"""
 # Interfaz de Streamlit
 st.markdown(
     """
-    <h2 style='text-align: center;'>🗃️ Generador de Scripts SQL para Base de Datos de Ventas 🗃️</h2>
+    <h2 style='text-align: center;'>🗃️ Generador de Base de Datos por Tipo de Negocio = Scripts SQL 🗃️</h2>
     <h5 style='text-align: center;'>🧑‍💻 Creado por Juancito Pña 🧑‍💻</h5>
     """,
     unsafe_allow_html=True,
