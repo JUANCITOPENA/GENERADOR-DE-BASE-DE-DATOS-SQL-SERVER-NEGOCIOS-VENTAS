@@ -1033,6 +1033,16 @@ VALUES\n"""
     # Resto del script (Stored Procedures, Triggers, Tablas de Ventas, etc.)
     script_sql += """
     
+    
+       
+-- ===============================================
+-- ACTUALIZAR A 1,000 UNIDADES TODOS LOS PRODUCTOS
+-- ===============================================
+ 
+UPDATE productos
+SET Existencia = 1000;
+    
+    
 -- =========================================
 -- Stored Procedure: Actualización Inventario
 -- =========================================
@@ -1223,21 +1233,187 @@ VALUES\n"""
             detalle_id += 1
 
     script_sql += ",\n".join(detalles_ventas) + ";\n\n"
+        # Detalles de Ventas
+    
+
+    script_sql += """
+
+--======================================================================================================  --   
+-- PROCEDIMIENTO ALMACENADO PARA GENERAR VENTAS Y DETALLE DE VENTAS DE FORMA RANDON Y ESCALA DESEADA --
+--======================================================================================================  \n  
+
+-- El comando CREATE OR ALTER PROCEDURE en SQL Server se utiliza para crear un procedimiento almacenado 
+-- o modificarlo si ya existe, sin la necesidad de eliminarlo primero. En este caso, el procedimiento almacenado
+-- 'GenerarVentasYDetalleVentas' se utiliza para generar datos ficticios en las tablas de ventas y detalle de ventas
+-- dentro de un rango de fechas determinado. 
+
+-- El propósito principal del procedimiento 'GenerarVentasYDetalleVentas' es simular la creación de registros de ventas
+-- para pruebas o para generar datos de ejemplo, lo que puede ser útil en escenarios como:
+-- - Generación de datos para pruebas de rendimiento.
+-- - Simulación de transacciones de ventas para validación de sistemas.
+-- - Pruebas de integración con otras aplicaciones que dependen de la información de ventas.
+
+-- Este procedimiento toma tres parámetros:
+
+-- 1. @FechaInicio: Fecha de inicio del rango para las ventas a generar.
+-- 2. @FechaFin: Fecha de fin del rango para las ventas a generar.
+-- 3. @CantidadFacturas: Cantidad de facturas a generar.
+
+-- El procedimiento realiza las siguientes operaciones:
+
+-- 1. Verifica que los parámetros proporcionados sean válidos (la fecha de inicio debe ser menor que la fecha de fin,
+--    y la cantidad de facturas debe ser mayor que 0).
+-- 2. Genera ventas aleatorias con clientes y vendedores seleccionados de las tablas correspondientes.
+-- 3. Genera detalles de ventas, asignando productos aleatorios con cantidades aleatorias.
+-- 4. Calcula el total de cada venta y actualiza las tablas correspondientes.
+-- 5. Inserta los datos generados en las tablas reales de ventas y detalles de ventas.
+
+-- El uso de CREATE OR ALTER PROCEDURE permite mantener el mismo procedimiento sin tener que eliminarlo y recrearlo 
+-- cada vez que se haga una modificación, lo que lo hace más eficiente y flexible.
+
+--CREAMOS EL PROCEDIMIENTO--
+
+CREATE OR ALTER PROCEDURE GenerarVentasYDetalleVentas 
+    @FechaInicio DATE,
+    @FechaFin DATE,
+    @CantidadFacturas INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Validaciones iniciales
+        IF @FechaInicio >= @FechaFin
+            THROW 50000, 'La fecha de inicio debe ser menor que la fecha de fin.', 1;
+
+        IF @CantidadFacturas <= 0
+            THROW 50001, 'La cantidad de facturas debe ser mayor que 0.', 1;
+
+        -- Variables iniciales
+        DECLARE @UltimaVentaID INT = (SELECT COALESCE(MAX(Venta_ID), 0) + 1 FROM Ventas);
+        DECLARE @UltimoDetalleID INT = (SELECT COALESCE(MAX(Detalle_ID), 0) + 1 FROM Detalle_Ventas);
+
+        -- Cargar datos de referencia
+        CREATE TABLE #Clientes (Cliente_ID INT PRIMARY KEY);
+        INSERT INTO #Clientes 
+        SELECT Cliente_ID FROM Clientes;
+
+        CREATE TABLE #Vendedores (Vendedor_ID INT PRIMARY KEY);
+        INSERT INTO #Vendedores 
+        SELECT Vendedor_ID FROM Vendedores;
+
+        CREATE TABLE #Productos (Producto_ID INT PRIMARY KEY, Precio_Venta DECIMAL(10, 2), Existencia INT);
+        INSERT INTO #Productos (Producto_ID, Precio_Venta, Existencia)
+        SELECT Producto_ID, Precio_Venta, Existencia 
+        FROM Productos 
+        WHERE Existencia > 0;
+
+        -- Generar ventas
+        CREATE TABLE #Ventas (
+            Venta_ID INT PRIMARY KEY,
+            Cliente_ID INT,
+            Vendedor_ID INT,
+            Fecha_Venta DATETIME,
+            Total_Venta DECIMAL(10, 2)
+        );
+
+        CREATE TABLE #DetalleVentas (
+            Detalle_ID INT PRIMARY KEY,
+            Venta_ID INT,
+            Producto_ID INT,
+            Cantidad INT,
+            Precio_Unitario DECIMAL(10, 2),
+            Subtotal DECIMAL(10, 2)
+        );
+
+        -- Generar ventas con fechas dentro del rango especificado
+        INSERT INTO #Ventas (Venta_ID, Cliente_ID, Vendedor_ID, Fecha_Venta, Total_Venta)
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY NEWID()) + @UltimaVentaID AS Venta_ID,
+            (SELECT TOP 1 Cliente_ID FROM #Clientes ORDER BY NEWID()) AS Cliente_ID,
+            (SELECT TOP 1 Vendedor_ID FROM #Vendedores ORDER BY NEWID()) AS Vendedor_ID,
+            -- Generar una fecha aleatoria dentro del rango
+            DATEADD(DAY, ABS(CHECKSUM(NEWID())) % DATEDIFF(DAY, @FechaInicio, @FechaFin), @FechaInicio) AS Fecha_Venta,
+            0 AS Total_Venta
+        FROM master.dbo.spt_values
+        WHERE type = 'P' AND number < @CantidadFacturas;
+
+        -- Generar detalles de ventas
+        INSERT INTO #DetalleVentas (Detalle_ID, Venta_ID, Producto_ID, Cantidad, Precio_Unitario, Subtotal)
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY NEWID()) + @UltimoDetalleID AS Detalle_ID,
+            Venta_ID,
+            Producto_ID,
+            Cantidad,
+            Precio_Venta,
+            Cantidad * Precio_Venta AS Subtotal
+        FROM (
+            SELECT 
+                Venta_ID,
+                Producto_ID,
+                ABS(CHECKSUM(NEWID())) % 5 + 1 AS Cantidad, -- Cantidad aleatoria entre 1 y 5
+                Precio_Venta
+            FROM #Ventas
+            CROSS APPLY (SELECT TOP 3 Producto_ID, Precio_Venta FROM #Productos ORDER BY NEWID()) ProductosSeleccionados
+        ) Detalles;
+
+        -- Actualizar totales
+        UPDATE V
+        SET Total_Venta = D.Total
+        FROM #Ventas V
+        INNER JOIN (
+            SELECT Venta_ID, SUM(Subtotal) AS Total
+            FROM #DetalleVentas
+            GROUP BY Venta_ID
+        ) D ON V.Venta_ID = D.Venta_ID;
+
+        -- Insertar en las tablas reales
+        INSERT INTO Ventas (Venta_ID, Cliente_ID, Vendedor_ID, Fecha_Venta, Total_Venta)
+        SELECT Venta_ID, Cliente_ID, Vendedor_ID, Fecha_Venta, Total_Venta 
+        FROM #Ventas;
+
+        INSERT INTO Detalle_Ventas (Detalle_ID, Venta_ID, Producto_ID, Cantidad, Precio_Unitario, Subtotal)
+        SELECT Detalle_ID, Venta_ID, Producto_ID, Cantidad, Precio_Unitario, Subtotal 
+        FROM #DetalleVentas;
+
+        -- Limpiar tablas temporales
+        DROP TABLE #Clientes;
+        DROP TABLE #Vendedores;
+        DROP TABLE #Productos;
+        DROP TABLE #Ventas;
+        DROP TABLE #DetalleVentas;
+
+        PRINT 'Datos generados exitosamente.';
+    END TRY
+    BEGIN CATCH
+        -- Manejo de errores
+        PRINT ERROR_MESSAGE();
+    END CATCH
+END;
+
+---ACTUALIZAR A 2000 LAS UNIDADES DE PRODCUTOS:
+    
+UPDATE Productos SET Existencia = 2000;
+
+---INSERTAR DE FORMA RANDON VENTAS Y DETALLES CON LAS RELACIONES:
+
+EXEC GenerarVentasYDetalleVentas '2020-01-01', '2024-12-30', 500;
 
 
-
-        
+"""
+   
+     
     # Consultas básicas sobre la base de datos
-    script_sql += "-- =========================================\n"
-    script_sql += "--APRENDAMOS A MANIPULAR LOS DATOS CON CRUD --\n"
-    script_sql += "-- =========================================\n\n"
+    script_sql += "-- ===========================================\n"
+    script_sql += "-- APRENDAMOS A MANIPULAR LOS DATOS CON CRUD --\n"
+    script_sql += "-- ===========================================\n\n"
 
     tablas_consultas = [
         ("Obtener el nombre de la base de datos actual", "SELECT DB_NAME() AS BaseDeDatos_Actual;"),
         
-        # =========================================
-        # CREATE (INSERTAR REGISTROS)
-        # =========================================
+        # --=========================================
+        # --CREATE (INSERTAR REGISTROS)
+        # --=========================================
         ("Insertar una ciudad", 
         "INSERT INTO Ciudades (Ciudad_ID, Nombre, Codigo, Latitud, Longitud) "
         "VALUES (33, 'Ciudad de México', 'CDMX', 19.4326, -99.1332);"),
@@ -1262,9 +1438,9 @@ VALUES\n"""
         "INSERT INTO Detalle_Ventas (Detalle_ID, Venta_ID, Producto_ID, Cantidad, Precio_Unitario, Subtotal) "
         "VALUES (489, 251, 1, 1, 800.00, 800.00);"),
 
-        # =========================================
-        # READ (CONSULTAR REGISTROS)
-        # =========================================
+        # --=========================================
+        # --READ (CONSULTAR REGISTROS)
+        # --=========================================
         ("Obtener todas las ciudades", "SELECT * FROM Ciudades;"),
 
         ("Obtener todos los clientes", "SELECT * FROM Clientes;"),
@@ -1280,18 +1456,18 @@ VALUES\n"""
         "INNER JOIN Productos P ON D.Producto_ID = P.Producto_ID "
         "WHERE D.Venta_ID = 1;"),
 
-        # =========================================
-        # UPDATE (ACTUALIZAR REGISTROS)
-        # =========================================
+        # --=========================================
+        # --UPDATE (ACTUALIZAR REGISTROS)
+        # --=========================================
         ("Actualizar la información de un cliente", 
         "UPDATE Clientes SET Nombre_Completo = 'Juan Pérez García' WHERE Cliente_ID = 1;"),
 
         ("Actualizar el precio de un producto", 
         "UPDATE Productos SET Precio_Venta = 850.00 WHERE Producto_ID = 1;"),
 
-        # =========================================
-        # DELETE (ELIMINAR REGISTROS)
-        # =========================================
+        # --=========================================
+        # --DELETE (ELIMINAR REGISTROS)
+        # --=========================================
         ("Eliminar un detalle de venta", 
         "DELETE FROM Detalle_Ventas WHERE Detalle_ID = 1;"),
 
@@ -1307,20 +1483,50 @@ VALUES\n"""
         ("Eliminar una ciudad", 
         "DELETE FROM Ciudades WHERE Ciudad_ID = 1;"),
 
-        # =========================================
-        # ELIMINACIÓN CASCADA Y RESTRICCIONES
-        # =========================================
+        # --=========================================
+        # --ELIMINACIÓN CASCADA Y RESTRICCIONES
+        # --=========================================
         ("Crear una tabla con eliminación en cascada", 
         "CREATE TABLE Clientes ("
         "Cliente_ID INT PRIMARY KEY, "
         "Nombre_Completo VARCHAR(255), "
         "Ciudad_ID INT, "
-        "FOREIGN KEY (Ciudad_ID) REFERENCES Ciudades(Ciudad_ID) ON DELETE CASCADE);")
+        "FOREIGN KEY (Ciudad_ID) REFERENCES Ciudades(Ciudad_ID) ON DELETE CASCADE);"),
+        
+        
+        
     ]
 
     for descripcion, consulta in tablas_consultas:
             script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
-        
+
+
+
+
+
+    # Consultas básicas sobre la base de datos
+    script_sql += "-- ===============================================================================\n"
+    script_sql += "-- MANIPULACIÓN DE RESTRICCIONES DE CLAVES FORÁNEAS Y ELIMINACIÓN DE REGISTROS --\n"
+    script_sql += "-- ===============================================================================\n\n"
+
+    tablas_consultas = [
+        ("Deshabilitar las restricciones de clave foránea", 
+        "EXEC sp_MSforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL';"),
+
+        ("Borrar todos los registros de Detalle_Ventas", 
+        "DELETE FROM Detalle_Ventas;"),
+
+        ("Borrar todos los registros de Ventas", 
+        "DELETE FROM Ventas;"),
+
+        ("Restaurar las restricciones de clave foránea", 
+        "EXEC sp_MSforeachtable 'ALTER TABLE ? CHECK CONSTRAINT ALL';"),
+    ]
+
+    for descripcion, consulta in tablas_consultas:
+        script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
+
+
 
         
     # Consultas básicas sobre la base de datos
@@ -1357,6 +1563,8 @@ VALUES\n"""
                 TotalRegistros DESC;
                 
         """),
+        
+        
         
         ("Ver las relaciones (llaves foráneas) entre tablas", """
             SELECT 
@@ -1867,9 +2075,9 @@ VALUES\n"""
     for descripcion, consulta in tablas_consultas:
                 script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
                 
-    script_sql += "-- =========================================\n"
+    script_sql += "-- ============================================\n"
     script_sql += "-- CONSULTAS AVANZADAS SOBRE LA BASE DE DATOS \n"
-    script_sql += "-- =========================================\n\n"
+    script_sql += "-- ===========================================\n\n"
 
     tablas_consultas = [
     ("Unir ventas con detalles y productos", """
@@ -2255,9 +2463,9 @@ VALUES\n"""
     for descripcion, consulta in tablas_consultas:
                 script_sql += f"-- {descripcion}\n{consulta}\nGO\n"
     
-    script_sql += "-- =========================================\n"
-    script_sql += "-- VISTA GENERAL DE VENTAS Y RELACIONES \n"
-    script_sql += "-- =========================================\n\n"
+    script_sql += "-- ===========================================\n"
+    script_sql += "-- VISTA GENERAL DE VENTAS Y RELACIONES   ==== \n"
+    script_sql += "-- ===========================================\n\n"
 
     tablas_consultas = [
             
@@ -2555,9 +2763,10 @@ VALUES\n"""
     tablas_consultas = [
     
     ("Análisis de Rotación de Inventario con Status", """
-       -- =========================================
--- CÓDIGO PARA EL ANÁLISIS DE ROTACIÓN DE INVENTARIO Y ESTADO DE STOCK
--- =========================================
+
+-- =================================================================================\n
+-- CÓDIGO PARA EL ANÁLISIS DE ROTACIÓN DE INVENTARIO Y ESTADO DE STOCK              \n
+-- =================================================================================\n
 
 -- Se utilizan CTEs (Common Table Expressions) para calcular métricas de ventas, existencias iniciales y rotación de productos.
 -- Las CTEs permiten estructurar la consulta de manera más legible y modular.
@@ -2683,7 +2892,7 @@ GO
        
     tablas_consultas = [
     
-    ("INTRODUCCIÓN A SQL SERVER PARTE TEORICA:", """
+    ("--INTRODUCCIÓN A SQL SERVER PARTE TEORICA:", """
 
 -- ==============================================================================================================
 
@@ -3200,7 +3409,6 @@ END CATCH
 -- =========================================
 
 -- ========================================================================================================================================
-
 -- STORED PROCEDURES (PROCEDIMIENTOS ALMACENADOS)
 -- ========================================================================================================================================
 
@@ -3297,8 +3505,6 @@ END CATCH
 -- Uso de índices, estadísticas, y planes de ejecución para mejorar el rendimiento.
 -- Ejemplo de índice:
 -- CREATE INDEX idx_Precio ON Productos(Precio);
-
-
      
 -- ========================================
 -- Este análisis tiene como objetivo evaluar la eficiencia con la que se venden y renuevan los productos dentro de un inventario.
