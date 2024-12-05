@@ -920,7 +920,7 @@ Redes Sociales y Contenido:
 
 
 --==============================================================================================================
--PARTE PRACTICA - CREAR UNA BASE DE DATOS LLAMADA: AQUI LE PONES TU NOMBRE QUE QUIERAS
+--PARTE PRACTICA - CREAR UNA BASE DE DATOS LLAMADA: AQUI LE PONES TU NOMBRE QUE QUIERAS
 --==============================================================================================================
 
 CREATE DATABASE Tienda_{tipo_negocio.capitalize()}_BD;
