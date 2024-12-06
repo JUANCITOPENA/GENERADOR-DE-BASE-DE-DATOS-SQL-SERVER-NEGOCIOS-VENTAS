@@ -909,12 +909,13 @@ compartir el contenido que ya tengo, darle like y dejar tus comentarios..
 ¡Tu apoyo es muy importante para mí y me ayudas a seguir creando aplicaciones y  contenido! 💚
 
 Redes Sociales y Contenido:
-1-🎬 Youtube:    https://www.youtube.com/@JuancitoPenaV 
+
+1-🎬 Youtube:    https://www.youtube.com/channel/UCSob-3E5z4IHtMF5B4bN-FA
 2-👨‍💼 LinkedIn:   https://www.linkedin.com/in/juancitope%C3%B1a/
-3-📰 Blog:       https://advisertecnology.com/
-4-📷 Instagram:  https://www.instagram.com/juancito.pena.v/
-5-📑 Facebook:   https://www.facebook.com/juancito.p.v
-6-🐦 Twitter:    https://twitter.com/JuancitoPenaV
+3-📷 Instagram:  https://www.instagram.com/juancito.pena.v/
+4-📑 Facebook:   https://www.facebook.com/juancito.p.v
+5-🐦 Twitter:    https://twitter.com/JuancitoPenaV
+
 */
 --==================================================================================================================
 
